@@ -1,0 +1,22 @@
+// thickness: h = 25.4e-6 m
+// elastic modulus E = 70 GPa = 70e9 N/m^2
+// stretching stiffness = E h = 1.8e6 N/m
+// bending stiffness ~= E (h^3) / 12 = 96e-6 mNm
+// density = 2.8 g/cc = 2.8e3 kg/m^3
+// yield strength ~= 350 MPa => yield strain ~= 5e-3 => yield curvature ~= 400
+{
+    "density": 0.071,
+    "stretching": [
+        [1.8e6, 0, 1.8e6, 1.8e6],
+        [1.8e6, 0, 1.8e6, 1.8e6],
+        [1.8e6, 0, 1.8e6, 1.8e6],
+        [1.8e6, 0, 1.8e6, 1.8e6],
+        [1.8e6, 0, 1.8e6, 1.8e6],
+        [1.8e6, 0, 1.8e6, 1.8e6]
+    ],
+    "bending": [
+        [96e-6, 96e-6, 96e-6, 96e-6, 96e-6],
+        [96e-6, 96e-6, 96e-6, 96e-6, 96e-6],
+        [96e-6, 96e-6, 96e-6, 96e-6, 96e-6]
+    ]
+}

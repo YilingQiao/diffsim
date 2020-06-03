@@ -1,0 +1,43 @@
+// Test for robustness to intersecting obstacles
+{
+    "frame_time": 0.04,
+    "frame_steps": 8,
+    "duration": 2,
+    "cloths": [{
+        "mesh": "meshes/square4.obj",
+        "transform": {"translate": [-0.5,0,0.5], "rotate": [45, 1,0,0]},
+        // "transform": {"translate": [0.5, 0, 0.5]},
+        "materials": [{
+            "data": "materials/gray-interlock.json",
+            "density_mult": 5,
+            "stretching_mult": 5,
+            "bending_mult": 5
+        }],
+        "remeshing": {
+            "refine_angle": 0.15,
+            "refine_compression": 0.005,
+            "refine_velocity": 0.5,
+            "size": [50e-3, 200e-3],
+            "aspect_min": 0.1
+        }
+    }],
+    "motions": [[
+        {"time": 0, "transform": {"scale": 0.5, "translate": [0,-0.55,0]}},
+        {"time": 1, "transform": {"scale": 0.5, "translate": [0,-0.45,0]}},
+        {"time": 2, "transform": {"scale": 0.5, "translate": [0,-0.55,0]}}
+    ], [
+        {"time": 0, "transform": {"scale": 0.5, "translate": [0,0.55,0]}},
+        {"time": 1, "transform": {"scale": 0.5, "translate": [0,0.45,0]}},
+        {"time": 2, "transform": {"scale": 0.5, "translate": [0,0.55,0]}}
+    ]],
+    "obstacles": [{
+        "mesh": "meshes/sphere.obj",
+        "motion": 0
+    }, {
+        "mesh": "meshes/sphere.obj",
+        "motion": 1
+    }],
+    "gravity": [0, 0, -9.8],
+    "obs_friction": 0,
+    "magic": {"fixed_high_res_mesh": true}
+}

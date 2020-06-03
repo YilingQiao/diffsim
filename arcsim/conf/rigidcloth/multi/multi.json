@@ -1,0 +1,40 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 2,
+    "end_time": 1,
+    "obstacles": [
+    {
+        "mesh": "meshes/rigidcloth/multi/cone3.obj",
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[0,0,0,1]},
+        "velocity": [0, 0, 0, 0, 0, -1],
+        "movable": 1
+    },
+    {
+        "mesh": "meshes/rigidcloth/multi/cone4.obj",
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[0,0,0,1]},
+        "velocity": [0, 0, 0, 0, 0, -1],
+        "movable": 1
+    },
+    {
+        "mesh": "meshes/rigidcloth/multi/cube.obj",
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[0,0,0,1]},
+        "velocity": [0, 0, 0, 0, 0, -1],
+        "movable": 1
+    },
+    {
+        "mesh": "meshes/rigidcloth/multi/domino.obj",
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[0,0,0,1]},
+        "velocity": [0, 0, 0, 0, 0, -1],
+        "movable": 1
+    },
+    {
+        "mesh": "meshes/rigidcloth/multi/plane.obj",
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[0,0,0,1]},
+        "velocity": [0, 0, 0, 0, 0, 0],
+        "movable": 0
+    }
+    ],
+    "gravity":[0,0,-1],
+    "disable":["remeshing"],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

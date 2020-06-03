@@ -1,0 +1,49 @@
+// Test of lack of popping/jittering artifacts due to post-remeshing projection
+{
+    "frame_time": 0.04,
+    "frame_steps": 8,
+    "end_time": 13,
+    "cloths": [{
+        "mesh": "meshes/square4.obj",
+        "transform": {"translate": [-0.5, -0.5, 0]},
+        "materials": [{
+            "data": "materials/paper.json"
+        }],
+        "remeshing": {
+            "refine_angle": 0.5,
+            "refine_compression": 0.5e-3,
+            "size": [10e-3, 200e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "motions": [[
+        {"time": 1, "transform": {"translate": [0,0,0]}},
+        {"time": 6, "transform": {"translate": [0.45,0,0]},
+                      "velocity": {"translate": [0,0,0]}},
+        {"time": 7, "transform": {"translate": [0.45,0,0]},
+                      "velocity": {"translate": [0,0,0]}},
+        {"time": 12, "transform": {"translate": [0,0,0]}}
+    ], [
+        {"time": 1, "transform": {"translate": [0,0,0]}},
+        {"time": 6, "transform": {"translate": [-0.45,0,0]},
+                      "velocity": {"translate": [0,0,0]}},
+        {"time": 7, "transform": {"translate": [-0.45,0,0]},
+                      "velocity": {"translate": [0,0,0]}},
+        {"time": 12, "transform": {"translate": [0,0,0]}}
+    ]],
+    // "motions": [[
+    //     {"time": 1, "transform": {"translate": [0,0,0]}},
+    //     {"time": 5, "transform": {"translate": [0.45,0,0]}},
+    //     {"time": 9, "transform": {"translate": [0,0,0]}}
+    // ], [
+    //     {"time": 1, "transform": {"translate": [0,0,0]}},
+    //     {"time": 5, "transform": {"translate": [-0.45,0,0]}},
+    //     {"time": 9, "transform": {"translate": [0,0,0]}}
+    // ]],
+    "handles": [
+        {"nodes": [0,3], "motion": 0},
+        {"nodes": [1,2], "motion": 1}
+    ],
+    "gravity": [0, 0, -9.8],
+    "disable": ["strainlimiting"]
+}

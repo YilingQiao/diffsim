@@ -1,0 +1,113 @@
+{
+    "frame_time": 0.04, // Required: Length of each frame
+    "frame_steps": 8, // Optional, default 1: Number of substeps per frame
+    "end_time": 10, // Optional, default infinity: Length of simulation in time
+    // "end_frame": <frame_num> // Optional, default infinity:
+    //                          // Length of simulation in number of frames
+    // Simulation will run until end_time or end_frame, whichever comes first
+
+    "cloths": [{ // Required: List of cloth objects
+        "mesh": "meshes/square4.obj", // Required: Initial mesh
+                                      // See "Creating cloth meshes" in README
+        "transform": { // Optional, default identity: Initial pose of mesh
+            "translate": [-0.5, -1, 0.5] // Optional
+            // "rotate": [<angle>, <axis_x>, <axis_y>, <axis_z>] // Optional
+            // "scale": <scale> // Optional
+        },
+        "materials": [{ // Required: List of material properties for each cloth.
+                        // This is a list because different patches of the
+                        // same mesh are allowed to have different materials,
+                        // but this functionality is not used very much.
+                        // Just make a list of one element and be done with it.
+            "data": "materials/gray-interlock.json", // Required: material data
+                                                     // see materials/README
+            // "density_mult": <d> // Optional: Multiply density by a factor
+            // "stretching_mult": <s> // Optional: Multiply stretching stiffness
+            // "bending_mult": <b>, // Optional: Multiply bending stiffness
+            "thicken": 2 // Optional: Multiply all of the above
+            // "damping": <damp> // Optional: Stiffness-proportional damping
+            // "strain_limits": [<min>, <max>] // Optional, default [0.9, 1.1]
+                                               // Actually this is 1 + strain
+            // "yield_curv": <kappa> // Optional, units of 1/length
+            // "weakening": <g> // Optional: reduce stiffnesses upon yielding
+        }],
+        "remeshing": { // Required: Remeshing parameters
+            "refine_angle": 0.3, // Required: Max allowed change in normals
+            "refine_compression": 0.005, // Required: Max allowed compression
+            "refine_velocity": 0.5, // Required: Max allowed change in velocity
+            "size": [10e-3, 200e-3], // Required: Bounds on size of triangles
+            "aspect_min": 0.2 // Required: Lower bound on triangle aspect ratio
+        }
+    }],
+
+    "motions": [[ // Optional: List of motions for handles and/or obstacles.
+                  // Each motion is a list of keyframed transformations.
+                  // Motion is interpolated using a cubic Hermite spline
+                  // with Catmull-Rom derivatives at keyframes;
+                  // derivatives at first and last keyframe are zero
+        {
+            "time": 0, // Required: Keyframe time
+            "transform": { // Required: Keyframe transformation
+                "scale": 0.1,        // Same format as transform in cloth:
+                "translate": [0,0,0] // translation, rotation, scaling
+            }
+        },
+        {"time": 1, "transform": {"scale": 0.1, "translate": [0,0,0]}},
+        {"time": 2, "transform": {"scale": 0.1, "translate": [0,0,0]}},
+        {"time": 3, "transform": {"scale": 0.1, "translate": [0,-1.5,0]}},
+        {"time": 4, "transform": {"scale": 0.1, "translate": [0,0,0]}},
+        {"time": 5, "transform": {"scale": 0.1, "translate": [0,1.5,0]}},
+        {"time": 6, "transform": {"scale": 0.1, "translate": [0,0,0]}},
+        {"time": 7, "transform": {"scale": 0.1, "translate": [0,-0.4,0]}}
+    ]],
+    // Alternatively, the value of "motions" can be an object as follows:
+    // "motions": { // If an object not a list, refers to motion data in file
+    //     "motfile": <filename>, // Required, see e.g. meshes/dance.mot
+    //     "fps": <fps>, // Required: frame rate of motion keyframes
+    //     "transform": <transform> // Optional: overall transformation
+    //                              // applied to motion sequence
+    // },
+
+    "handles": [{ // List of "handles" i.e. sets of constrained vertices
+        // "cloth": <i> // Optional, default 0: Vertices of <i>th cloth
+        "vertices": [2,3], // Required: Indices of vertices under this handle.
+                           // Must be boundary vertices in initial mesh,
+                           // otherwise they may be deleted by remeshing
+        // "motion": <j> // Optional: Index of motion to attach to
+                         // If omitted, handle does not move
+        // "start_time": <time> // Optional, default 0: When handle activates
+        "end_time": 7 // Optional, default infinity: When handle deactivates
+    }],
+
+    "obstacles": [{ // List of static or scripted obstacles
+        "mesh": "meshes/sphere.obj", // Required: Obstacle geometry
+        // "transform": <transform> // Optional
+        "motion": 0 // Optional: Index of motion for obstacle frame
+    }],
+    // Alternatively, "obstacles" can be a printf-style format string with one
+    // field for an integer. This specifies as many obstacles as there exist
+    // files named printf(obstacles, i) for i = 0, 1, 2, ...
+    // The ith obstacle is automatically assigned the ith motion.
+    // See karate.json or dress-*.json for why this is useful.
+
+    "gravity": [0, 0, -9.8], // Optional, default 0: Acceleration due to gravity
+
+    // "wind": { // Optional. By default, everything experiences air resistance
+                 // in the normal direction due to still air.
+                 // For windy scene, set nonzero velocity.
+                 // For vacuum, set density to zero.
+    //     // "density": <rho> // Optional, default 1: Air density
+    //     "velocity": [7.5, 0, 0] // Optional, default 0: Wind velocity
+    //     // "drag": <drag> // Optional, default 0: Tangential drag due to air
+    // }
+
+    // "friction": <mu> // Optional, default 0.6: Coeff. of cloth-cloth friction
+    // "obs_friction": <mu> // Optional, default 0.3: Cloth-obstacle friction
+
+    // "disable": ["strainlimiting", "remeshing"] // Optional, default []
+        // List of modules to disable. choose any or all of: "proximity",
+        // "physics", "strainlimiting", "collision", "remeshing", "separation"
+
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+    // magic numbers to make the simulation behave
+}

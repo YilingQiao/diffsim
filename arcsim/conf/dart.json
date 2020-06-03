@@ -1,0 +1,34 @@
+// "Dart" style paper airplane crashing into a wall
+// Narain et al. 2013, Figure 6
+{
+    "frame_time": 0.0004,
+    "frame_steps": 40,
+    "end_time": 0.2,
+    "cloths": [{
+        "mesh": "meshes/dart.obj",
+        "transform": {"rotate": [-2, 1,0,0], "translate": [0,-0.75,0]},
+        "velocity": {"linear": [0,15,0]},
+        "materials": [{
+            "data": "materials/paper.json",
+            "yield_curv": 200,
+            "weakening": 0.5
+        }],
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 2e-4,
+            "size": [3e-3, 100e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "obstacles": [{
+        "mesh": "meshes/square.obj",
+        "transform": {"rotate": [90, 1,0,0], "translate": [-0.5,-0,-0.5]}
+    }],
+    "gravity": [0, 0, -9.8],
+    "disable": ["strainlimiting"],
+    "magic": {
+        "preserve_creases": true,
+        "repulsion_thickness": 0.2e-3,
+        "collision_stiffness": 1e11
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 4,
+    "end_time": 5,
+    "cloths": [{
+        "mesh": "meshes/big_flag.obj",
+        "transform":{"scale":0.7,"translate":[-3,-0,2],"rotate":[180,0,1,0]},
+        "materials": [{"data": "materials/gray-interlock.json",
+"stretching_mult":1e-3,
+"bending_mult":1e4,
+                       "thicken": 2}],
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 0.005,
+            "refine_velocity": 0.5,
+            "size": [10e-3, 100e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "obstacles": [{
+        "mesh": "meshes/bucket.obj"
+    },{
+        "mesh": "meshes/bucketobs.obj"
+    },{
+        "mesh": "meshes/table.obj"
+    },{
+        "mesh": "meshes/ground.obj"
+    }],
+"disable":["remeshing"],
+    "gravity": [0, 0, -9.8],
+"wind":{"density":0},
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

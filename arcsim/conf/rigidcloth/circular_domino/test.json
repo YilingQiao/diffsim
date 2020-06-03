@@ -1,0 +1,21 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 2,
+    "end_time": 10,
+    "obstacles": [
+    {
+        "mesh": "meshes/rigidcloth/circular_domino2/domino.obj",
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[90,0,1,0]},
+        "velocity": [0, 0, 50, 0.2, 0.2, 0.2],
+        "movable": 1
+    },
+    {
+        "mesh": "meshes/rigidcloth/circular_domino2/ground.obj",
+        "transform":{"scale":1.2,"translate":[0,0,0],"rotate":[0,1,0,0]},
+        "movable": 0
+    }
+    ],
+    "disable":["remeshing"],
+    "gravity":[0,0,-4],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

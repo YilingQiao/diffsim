@@ -1,0 +1,68 @@
+// Sheet of letter paper folded twice
+// Narain et al. 2013, Figure 5
+{
+    "frame_time": 0.04,
+    "frame_steps": 40,
+    "end_time": 14,
+    "cloths": [{
+        "mesh": "meshes/letter-with-midpoints.obj",
+        "transform": {"translate": [-0.1, -0.15, 1e-3]},
+        // "transform": {"translate": [0.5, 0, 0.5]},
+        "materials": [{
+            "data": "materials/paper.json",
+            "yield_curv": 200,
+            "weakening": 1
+        }],
+        "remeshing": {
+            "refine_angle": 0.2,
+            "refine_compression": 0.1e-3,
+            "size": [3e-3, 100e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "motions": [[
+        {"time": 0, "transform": {"translate": [0, 0, 0]}},
+        {"time": 1, "transform": {"translate": [-0.108, -0.140, 0.160]},
+                    "velocity": {"translate": [-0.32, -0.42, 0]}
+        },
+        {"time": 2, "transform": {"translate": [-0.216, -0.280, 1e-3]}}
+    ], [
+        {"time": 2, "transform": {"translate": [0, 0, 0]}},
+        {"time": 6, "transform": {"translate": [0.3,0.6,0]}}
+    ], [
+        {"time": 5, "transform": {"translate": [0, 0, 0]}},
+        {"time": 6, "transform": {"translate": [-0.14, 0.100, 0.160]},
+                    "velocity": {"translate": [-0.42, 0.3, 0]}
+        },
+        {"time": 7, "transform": {"translate": [-0.280, 0.200, 3e-3]}}
+    ], [
+        {"time": 8, "transform": {"translate": [0, 0, 0]}},
+        {"time": 12, "transform": {"translate": [0.3,-0.6,0]}}
+    ], [
+        {"time": 5, "transform": {"translate": [0,0,0]}},
+        {"time": 6, "transform": {"translate": [0,0,-5e-3]}}
+    ]],
+    "handles": [
+        {"nodes": [0], "end_time": 9, "fade_time": 1},
+        {"nodes": [1], "motion": 2, "start_time": 5, "end_time": 11, "fade_time": 0.5},
+        {"nodes": [2], "motion": 0, "end_time": 9, "fade_time": 1},
+        {"nodes": [3], "motion": 4, "start_time": 5, "end_time": 11, "fade_time": 0.5},
+        {"nodes": [8], "start_time": 5, "end_time": 9, "fade_time": 1}
+    ],
+    "obstacles": [{
+        "mesh": "meshes/square.obj",
+        "transform": {"translate": [-0.5,-0.5,0]}
+    }, {
+        "mesh": "meshes/roller.obj",
+        "transform": {"translate": [-0.15,-0.3,0.057], "rotate": [90, 1,2,0], "scale": 0.05},
+        "motion": 1
+    }, {
+        "mesh": "meshes/roller.obj",
+        "transform": {"translate": [-0.3,0.3,0.060], "rotate": [90, 1,-2,0], "scale": 0.05},
+        "motion": 3
+    }],
+    "gravity": [0, 0, -9.8],
+    // "obs_friction": 0.2,
+    "disable": ["strainlimiting"],
+    "magic": {"collision_stiffness": 1e11, "handle_stiffness": 1e4}
+}

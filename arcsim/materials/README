@@ -1,0 +1,14 @@
+Material parameters are from the database of data-driven elastic
+models for cloth by Wang, Ramamoorthi, and O'Brien
+(http://graphics.berkeley.edu/papers/Wang-DDE-2011-08/).
+
+ivory-rib-knit:         underwear       95% cotton 5% spandex
+pink-ribbon-brown:      blanket         100% polyester
+white-dots-on-blk:      tablecloth      100% polyester
+navy-sparkle-sweat:     sweater         96% polyester 4% spandex
+camel-ponte-roma:       jacket          60% polyester 40% rayon
+gray-interlock:         t-shirt         60% cotton 40% polyester
+11oz-black-denim:       jeans           99% cotton 1% spandex
+white-swim-solid:       swimsuit        87% nylon 13% spandex
+tango-red-jet-set:      jacket          100% polyester
+royal-target:           pants           65% cotton 35% polyester

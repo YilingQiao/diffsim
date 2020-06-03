@@ -1,0 +1,22 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 1,
+    "end_time": 1,
+    "obstacles": [
+    {
+        "mesh": "meshes/rigidcloth/multi/cube0.obj",
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[0,0,0,1]},
+        "velocity": [0, 0, 0, 0, 0, 0],
+        "movable": 1
+    },
+    {
+        "mesh": "meshes/rigidcloth/multi/plane0.obj",
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[0,0,0,1]},
+        "velocity": [0, 0, 0, 0, 0, 0],
+        "movable": 0
+    }
+    ],
+    "gravity":[0,0,-9.8],
+    "disable":["remeshing"],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

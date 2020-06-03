@@ -1,0 +1,43 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 2,
+    "end_time": 1,
+    "cloths": [
+    {
+        "mesh": "meshes/rigidcloth/scale/flag1.obj",
+        "materials": [{"data": "materials/gray-interlock.json",
+                       "thicken": 2}],
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[0,0,1,0]},
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 0.005,
+            "refine_velocity": 0.5,
+            "size": [10e-3, 100e-3],
+            "aspect_min": 0.2
+        }
+    },
+    {
+        "mesh": "meshes/rigidcloth/scale/flag2.obj",
+        "materials": [{"data": "materials/gray-interlock.json",
+                       "thicken": 2}],
+        "transform":{"scale":1,"translate":[-0.15,-0,-0],"rotate":[0,0,1,0]},
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 0.005,
+            "refine_velocity": 0.5,
+            "size": [10e-3, 100e-3],
+            "aspect_min": 0.2
+        }
+    }
+    ],
+    "obstacles": [
+    {
+        "mesh": "meshes/rigidcloth/scale/bunny.obj",
+        "transform":{"scale":1,"translate":[-0.15,-0,-0],"rotate":[0,0,1,0]},
+        "velocity": [0, 0, 0, 0, 0, 0],
+        "movable": 1
+    }
+    ],
+    "disable":["remeshing"],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

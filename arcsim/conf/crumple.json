@@ -1,0 +1,36 @@
+// Sheet of letter paper crumpled in a shrinking sphere
+// Narain et al. 2013, Figure 1
+{
+    "frame_time": 0.04,
+    "frame_steps": 40,
+    "end_time": 10,
+    "cloths": [{
+        "mesh": "meshes/letter.obj",
+        "transform": {"translate": [-0.1, 0, -0.15], "rotate": [90, 1,0,0]},
+        // "transform": {"translate": [0.5, 0, 0.5]},
+        "materials": [{
+            "data": "materials/paper.json",
+            "damping": 1e-3,
+            "yield_curv": 200,
+            "weakening": 2
+        }],
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 1e-4,
+            "size": [3e-3, 100e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "motions": [[
+        {"time": 1, "transform": {"scale": 0.2}},
+        {"time": 5, "transform": {"scale": 0.05}},
+        {"time": 9, "transform": {"scale": 0.2}}
+    ]],
+    "obstacles": [{
+        "mesh": "meshes/sphere-inv.obj",
+        "motion": 0
+    }],
+    "gravity": [0, 0, -9.8],
+    "disable": ["strainlimiting"],
+    "magic": {"collision_stiffness": 1e12}
+}

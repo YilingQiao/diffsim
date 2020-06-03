@@ -1,0 +1,33 @@
+// Dress on female character
+// Narain et al. 2012, Figure 10(b)
+{
+    "frame_time": 0.04,
+    "frame_steps": 8,
+    "end_time": 20,
+    "cloths": [{
+        "mesh": "meshes/dress3.obj",
+        "transform": {
+            "translate": [0, 0.02, -0.84],
+            "rotate": [-90, 0, 0, 1]
+        },
+        "materials": [{"data": "materials/gray-interlock.json"}],
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 0.01,
+            "refine_velocity": 0.5,
+            "size": [10e-3, 200e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "motions": {
+        "motfile": "meshes/dance-paused.mot",
+        "fps": 30,
+        "transform": {
+            "translate": [0, 0, -1],
+            "rotate": [-90, 0, 0, 1]
+        }
+    },
+    "obstacles": "meshes/female-objs/body%04d.obj",
+    "gravity": [0, 0, -9.8],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

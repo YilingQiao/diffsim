@@ -1,0 +1,60 @@
+// Cylinder subjected to axial compression
+// Narain et al. 2013, Figure 3
+{
+    "frame_time": 0.04,
+    "frame_steps": 40,
+    "end_time": 7,
+    "cloths": [{
+        "mesh": "meshes/cylinder.obj",
+        "materials": [{
+            "data": "materials/paper.json",
+            "yield_curv": 200,
+            "weakening": 1,
+            "stretching_mult": 1.0e-2
+        }],
+        "remeshing": {
+            "refine_angle": 0.2,
+            "refine_compression": 3.0e-4,
+            "size": [3e-3, 100e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "motions": [[
+        {"time": 0, "transform": {"translate": [0, 0, 0]}},
+        {"time": 5, "transform": {"translate": [0, 0, -0.15]}},
+        {"time": 10, "transform": {"translate": [0, 0, 0]}}
+    ]],
+    "obstacles": [{
+        "mesh": "meshes/square.obj",
+        "transform": {"translate": [-0.5,-0.5,-2e-3]}
+    }, {
+        "mesh": "meshes/square.obj",
+        "transform": {"translate": [-0.5,0.5,0.218], "rotate": [180, 1,0,0]},
+        "motion": 0,
+        "end_time": 5
+    }],
+    "handles": [{
+        "type": "circle",
+        "label": 1,
+        "circumference": 0.280,
+        "u": [1,0],
+        "center": [0, 0, 0],
+        "axis0": [1,0,0],
+        "axis1": [0,1,0]
+    }, {
+        "type": "circle",
+        "label": 2,
+        "motion": 0,
+        "circumference": 0.280,
+        "u": [1,0],
+        "center": [0, 0, 0.216],
+        "axis0": [1,0,0],
+        "axis1": [0,1,0],
+        "end_time": 5
+    }],
+    "gravity": [0, 0, -9.8],
+    "disable": ["strainlimiting"],
+    "magic": {
+        "handle_stiffness": 1e6
+    }
+}

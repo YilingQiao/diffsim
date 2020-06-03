@@ -1,0 +1,27 @@
+// Flag blowing in the wind
+// Narain et al. 2012, Figure 8
+{
+    "frame_time": 0.04,
+    "frame_steps": 8,
+    "duration": 20,
+    "cloths": [{
+        "mesh": "meshes/flag.obj",
+	"transform": {"translate": [0, 0, 0], "rotate": [120, 1, 1, 1]},
+        "materials": [{
+	    "data": "materials/camel-ponte-roma.json",
+            "thicken": 2,
+            "strain_limits": [0.95, 1.05]
+	}],
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 0.01,
+            "refine_velocity": 1,
+            "size": [20e-3, 500e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "handles": [{"nodes": [0,3]}],
+    "gravity": [0, 0, -9.8],
+    "wind": {"velocity": [10, 0, 0]},
+    "magic": {"repulsion_thickness": 10e-3, "collision_stiffness": 1e6}
+}

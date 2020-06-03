@@ -1,0 +1,35 @@
+The provided Makefile can be used to compile the software on Linux or
+Mac OS X.
+
+You will need to have the following libraries installed:
+
+* BLAS
+* Boost
+* freeglut
+* gfortran
+* LAPACK
+* libpng
+
+On Linux, you should be able to get all of them through your
+distribution's package manager.
+
+On a Mac, BLAS and LAPACK already come with XCode. Get Boost, libpng,
+and freeglut through MacPorts or Homebrew.
+
+IMPORTANT:
+On a Mac, the default GCC that ships with XCode causes OpenMP programs
+to crash. If you use MacPorts, install its latest GCC and use that. If
+not, get it from http://hpc.sourceforge.net/.
+
+To compile the software, first go into the dependencies/ directory and
+run 'make' to compile the required additional libraries (ALGLIB,
+JsonCpp, and TAUCS). If that is successful (i.e. running 'make' again
+does nothing), you can compile the simulator itself by going back to
+the parent directory and running 'make'. The Makefile puts executables
+in the bin/ directory. By default, it produces an optimized build,
+bin/arcsim. The debug build can be compiled using 'make debug', which
+produces bin/arcsimd.
+
+Try running 'bin/arcsim simulate conf/sphere.json' to see if all is
+well: you should see a square sheet hanging above a sphere, and once
+you hit Space it should start simulating.

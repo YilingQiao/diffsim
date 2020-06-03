@@ -1,0 +1,15 @@
+json
+separate obs
+create bvh
+find ixns
+separate obs finish
+json
+reuse!!
+separate obs
+create bvh
+find ixns
+separate obs finish
+cloth solver
+   collision 1 --- 
+   collision 5 --- 
+0

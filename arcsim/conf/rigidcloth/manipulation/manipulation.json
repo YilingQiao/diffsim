@@ -1,0 +1,22 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 1,
+    "end_time": 4,
+    "obstacles": [
+    {
+        "mesh": "meshes/rigidcloth/manipulation/cone4.obj",
+        "transform":{"scale":1,"translate":[0,0,-0],"rotate":[0,0,1,0]},
+        "velocity": [0, 0, 0, 0, 0, -0],
+        "movable": 1
+    },
+    {
+        "mesh": "meshes/rigidcloth/manipulation/gripper3.obj",
+        "transform":{"scale":1,"translate":[0,0,-0],"rotate":[0,0,1,0]},
+        "velocity": [0,0,0,0,0,1],
+        "movable": 1
+    }
+    ],
+    "disable":["remeshing"],
+    "gravity": [0, 0, -1],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

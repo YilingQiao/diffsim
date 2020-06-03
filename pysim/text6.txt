@@ -1,0 +1,1839 @@
+json
+separate obs
+create bvh
+find ixns
+separate obs finish
+   collision 1 --- 
+   collision 5 --- 
+0
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.1e-05
+apply_inelastic_projection_forward 2 0.106042
+apply_inelastic_projection_forward 3 0.0001
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.5e-05
+apply_inelastic_projection_forward 2 0.108893
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.107734
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.109248
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.107245
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.109303
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.108139
+apply_inelastic_projection_forward 3 8.2e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.107235
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.10734
+apply_inelastic_projection_forward 3 8.2e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.106969
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.109336
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.108325
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.116185
+apply_inelastic_projection_forward 3 6.8e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.4e-05
+apply_inelastic_projection_forward 2 0.107754
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.109163
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.109018
+apply_inelastic_projection_forward 3 6.8e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.109005
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.108783
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.106974
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.108687
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.6e-05
+apply_inelastic_projection_forward 2 0.108513
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.10684
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.108405
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.106862
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.109131
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.109161
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.7e-05
+apply_inelastic_projection_forward 2 0.116191
+apply_inelastic_projection_forward 3 6.9e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.5e-05
+apply_inelastic_projection_forward 2 0.108886
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.108769
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.107232
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.108658
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.4e-05
+apply_inelastic_projection_forward 2 0.107665
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.107466
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.108108
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.4e-05
+apply_inelastic_projection_forward 2 0.107911
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.109625
+apply_inelastic_projection_forward 3 8.1e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.2e-05
+apply_inelastic_projection_forward 2 0.106702
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.5e-05
+apply_inelastic_projection_forward 2 0.109206
+apply_inelastic_projection_forward 3 8.2e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.109037
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.107259
+apply_inelastic_projection_forward 3 6.6e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.3e-05
+apply_inelastic_projection_forward 2 0.115155
+apply_inelastic_projection_forward 3 8.5e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.9e-05
+apply_inelastic_projection_forward 2 0.108619
+apply_inelastic_projection_forward 3 6.8e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.7e-05
+apply_inelastic_projection_forward 2 0.11148
+apply_inelastic_projection_forward 3 6.9e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.5e-05
+apply_inelastic_projection_forward 2 0.112737
+apply_inelastic_projection_forward 3 6.8e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.6e-05
+apply_inelastic_projection_forward 2 0.108774
+apply_inelastic_projection_forward 3 6.9e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.6e-05
+apply_inelastic_projection_forward 2 0.10864
+apply_inelastic_projection_forward 3 6.8e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.4e-05
+apply_inelastic_projection_forward 2 0.109238
+apply_inelastic_projection_forward 3 7.4e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.4e-05
+apply_inelastic_projection_forward 2 0.109626
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.5e-05
+apply_inelastic_projection_forward 2 0.108701
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 9 --- 
+apply_inelastic_projection_forward 1 2.4e-05
+apply_inelastic_projection_forward 2 0.108935
+apply_inelastic_projection_forward 3 6.7e-05
+   collision 10 --- 
+0 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+1 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+2 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+3 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+4 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+5 velocity 1e-16 *
+ 0.0000
+ 1.6266
+ 0.0000
+ 0.0000
+ 0.0000
+-124999875975204.4688
+[ Variable[CPUDoubleType]{6} ]
+6 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+7 velocity 1e-16 *
+ 0.0000
+ 1.6266
+ 0.0000
+ 0.0000
+ 0.0000
+-124999875975204.4688
+[ Variable[CPUDoubleType]{6} ]
+8 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+9 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+10 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+11 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+12 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+13 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+14 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+15 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+16 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+17 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+18 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+19 velocity 1e-16 *
+ 0.0000
+ 1.6266
+ 0.0000
+ 0.0000
+ 0.0000
+-124999875975204.4688
+[ Variable[CPUDoubleType]{6} ]
+20 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+21 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+22 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+23 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+24 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+25 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+26 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+27 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+28 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+29 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+30 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+31 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+32 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+33 velocity 1e-16 *
+ 0.0000
+ 1.6266
+ 0.0000
+ 0.0000
+ 0.0000
+-124999875975204.4688
+[ Variable[CPUDoubleType]{6} ]
+34 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+35 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+36 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+37 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+38 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+39 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+40 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+41 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+42 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+43 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+44 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+45 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+46 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+47 velocity 1e-17 *
+ 0.0000
+ 8.2024
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+48 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+49 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+50 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+51 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+52 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+53 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+54 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+55 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+56 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+57 velocity 1e-17 *
+ 0.0000
+ 4.0318
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+58 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+59 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+60 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+61 velocity 1e-17 *
+ 0.0000
+ 4.0318
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+62 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+63 velocity 1e-17 *
+ 0.0000
+ 4.0318
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+64 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+65 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+66 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+67 velocity 1e-17 *
+ 0.0000
+ 1.9464
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+68 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+69 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+70 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+71 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+72 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+73 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+74 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+75 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+76 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+77 velocity  0.0000
+-0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+78 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+79 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+80 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+81 velocity 1e-17 *
+ 0.0000
+ 1.9464
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+82 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+83 velocity 1e-17 *
+ 0.0000
+ 3.0586
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+84 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+85 velocity 1e-17 *
+ 0.0000
+ 4.0318
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+86 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+87 velocity 1e-17 *
+ 0.0000
+ 4.0318
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+88 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+89 velocity 1e-17 *
+ 0.0000
+ 4.0318
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+90 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+91 velocity 1e-17 *
+ 0.0000
+ 4.0318
+ 0.0000
+ 0.0000
+ 0.0000
+-1249998759752044.5000
+[ Variable[CPUDoubleType]{6} ]
+92 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+93 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+94 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+95 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+96 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+97 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+98 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.3768
+[ Variable[CPUDoubleType]{6} ]
+99 velocity  0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+ 0.0000
+-0.0125
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+1
+   collision 9 --- 
+apply_inelastic_projection_forward 1 5.9e-05
+apply_inelastic_projection_forward 2 1.58648
+apply_inelastic_projection_forward 3 0.000153
+   collision 9 --- 
+apply_inelastic_projection_forward 1 4.9e-05
+apply_inelastic_projection_forward 2 1.82429
+apply_inelastic_projection_forward 3 0.000261
+   collision 9 --- 
+apply_inelastic_projection_forward 1 7.2e-05
+apply_inelastic_projection_forward 2 3.81776
+apply_inelastic_projection_forward 3 0.000524
+   collision 9 --- 
+apply_inelastic_projection_forward 1 5e-05
+apply_inelastic_projection_forward 2 2.20594
+apply_inelastic_projection_forward 3 0.000248
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.7e-05
+apply_inelastic_projection_forward 2 1.18301
+apply_inelastic_projection_forward 3 0.000145
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.6e-05
+apply_inelastic_projection_forward 2 1.45977
+apply_inelastic_projection_forward 3 0.000141
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.8e-05
+apply_inelastic_projection_forward 2 1.37225
+apply_inelastic_projection_forward 3 0.000145
+   collision 9 --- 
+apply_inelastic_projection_forward 1 6.1e-05
+apply_inelastic_projection_forward 2 3.89302
+apply_inelastic_projection_forward 3 0.000383
+   collision 9 --- 
+apply_inelastic_projection_forward 1 4.8e-05
+apply_inelastic_projection_forward 2 2.58
+apply_inelastic_projection_forward 3 0.000247
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.7e-05
+apply_inelastic_projection_forward 2 1.54158
+apply_inelastic_projection_forward 3 0.000139
+   collision 9 --- 
+apply_inelastic_projection_forward 1 6.2e-05
+apply_inelastic_projection_forward 2 3.05964
+apply_inelastic_projection_forward 3 0.00038
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.8e-05
+apply_inelastic_projection_forward 2 1.42261
+apply_inelastic_projection_forward 3 0.000141
+   collision 9 --- 
+apply_inelastic_projection_forward 1 6e-05
+apply_inelastic_projection_forward 2 2.85752
+apply_inelastic_projection_forward 3 0.000395
+   collision 9 --- 
+apply_inelastic_projection_forward 1 5e-05
+apply_inelastic_projection_forward 2 3.00208
+apply_inelastic_projection_forward 3 0.000254
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.7e-05
+apply_inelastic_projection_forward 2 1.45349
+apply_inelastic_projection_forward 3 0.000137
+   collision 9 --- 
+apply_inelastic_projection_forward 1 4.9e-05
+apply_inelastic_projection_forward 2 2.83955
+apply_inelastic_projection_forward 3 0.000311
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.9e-05
+apply_inelastic_projection_forward 2 1.56506
+apply_inelastic_projection_forward 3 0.000145
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.7e-05
+apply_inelastic_projection_forward 2 1.44571
+apply_inelastic_projection_forward 3 0.000128
+   collision 9 --- 
+apply_inelastic_projection_forward 1 4.1e-05
+apply_inelastic_projection_forward 2 2.65784
+apply_inelastic_projection_forward 3 0.000247
+   collision 9 --- 
+apply_inelastic_projection_forward 1 6.5e-05
+apply_inelastic_projection_forward 2 2.33449
+apply_inelastic_projection_forward 3 0.000251
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.8e-05
+apply_inelastic_projection_forward 2 1.59321
+apply_inelastic_projection_forward 3 0.000168
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.8e-05
+apply_inelastic_projection_forward 2 1.54406
+apply_inelastic_projection_forward 3 0.000149
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.8e-05
+apply_inelastic_projection_forward 2 1.7894
+apply_inelastic_projection_forward 3 0.00013
+   collision 9 --- 
+apply_inelastic_projection_forward 1 3.7e-05
+apply_inelastic_projection_forward 2 1.47413
+apply_inelastic_projection_forward 3 0.000145
+   collision 9 --- 
+apply_inelastic_projection_forward 1 4.8e-05
+apply_inelastic_projection_forward 2 2.38239
+apply_inelastic_projection_forward 3 0.000259
+   collision 9 --- 
+apply_inelastic_projection_forward 1 5.9e-05
+apply_inelastic_projection_forward 2 2.76532
+apply_inelastic_projection_forward 3 0.000383
+   collision 9 --- 
+apply_inelastic_projection_forward 1 8.4e-05
+apply_inelastic_projection_forward 2 3.30596
+apply_inelastic_projection_forward 3 0.000614
+   collision 10 --- 
+0 velocity 0.001 *
+ 0.7562
+ 1.6034
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3818
+[ Variable[CPUDoubleType]{6} ]
+1 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+2 velocity 0.001 *
+-4.9379
+ 3.9263
+-0.0000
+ 0.0000
+ 0.0000
+-249.8209
+[ Variable[CPUDoubleType]{6} ]
+3 velocity 0.001 *
+-1.9391
+ 2.2632
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3427
+[ Variable[CPUDoubleType]{6} ]
+4 velocity 0.0001 *
+ 9.5730
+ 9.5730
+ 0.0000
+ 0.0000
+ 0.0000
+-2500.7381
+[ Variable[CPUDoubleType]{6} ]
+5 velocity 0.001 *
+-2.5113
+-1.6796
+ 0.0000
+ 0.0000
+ 0.0000
+-12.4914
+[ Variable[CPUDoubleType]{6} ]
+6 velocity 0.001 *
+-5.0657
+ 3.8097
+ 0.0000
+ 0.0000
+ 0.0000
+-250.1460
+[ Variable[CPUDoubleType]{6} ]
+7 velocity 0.001 *
+ 3.0449
+-3.2066
+ 0.0000
+ 0.0000
+ 0.0000
+-12.5042
+[ Variable[CPUDoubleType]{6} ]
+8 velocity 0.001 *
+ 1.0830
+ 1.0830
+-0.0000
+ 0.0000
+ 0.0000
+-249.7873
+[ Variable[CPUDoubleType]{6} ]
+9 velocity 0.0001 *
+-7.2146
+ 7.2146
+ 0.0000
+ 0.0000
+ 0.0000
+-124.5363
+[ Variable[CPUDoubleType]{6} ]
+10 velocity 0.001 *
+-3.6455
+ 1.5555
+ 0.0000
+ 0.0000
+ 0.0000
+-250.1002
+[ Variable[CPUDoubleType]{6} ]
+11 velocity 0.0001 *
+-6.6657
+ 7.4963
+ 0.0000
+ 0.0000
+ 0.0000
+-125.3013
+[ Variable[CPUDoubleType]{6} ]
+12 velocity 0.001 *
+-0.6931
+ 2.7656
+ 0.0000
+ 0.0000
+ 0.0000
+-249.9940
+[ Variable[CPUDoubleType]{6} ]
+13 velocity 0.0001 *
+-6.9490
+ 8.0135
+ 0.0000
+ 0.0000
+ 0.0000
+-125.2155
+[ Variable[CPUDoubleType]{6} ]
+14 velocity 0.0001 *
+ 7.7643
+ 7.7643
+ 0.0000
+ 0.0000
+ 0.0000
+-2501.3005
+[ Variable[CPUDoubleType]{6} ]
+15 velocity 0.0001 *
+-1.0866
+ 6.7192
+ 0.0000
+ 0.0000
+ 0.0000
+-123.3525
+[ Variable[CPUDoubleType]{6} ]
+16 velocity 0.001 *
+-4.9055
+ 3.9610
+ 0.0000
+ 0.0000
+ 0.0000
+-250.1223
+[ Variable[CPUDoubleType]{6} ]
+17 velocity 0.0001 *
+-3.5751
+ 7.4279
+ 0.0000
+ 0.0000
+ 0.0000
+-125.6647
+[ Variable[CPUDoubleType]{6} ]
+18 velocity 0.0001 *
+ 9.2441
+ 9.2441
+-0.0000
+ 0.0000
+ 0.0000
+-2502.6933
+[ Variable[CPUDoubleType]{6} ]
+19 velocity 0.001 *
+-2.7598
+ 1.8651
+ 0.0000
+ 0.0000
+ 0.0000
+-12.1917
+[ Variable[CPUDoubleType]{6} ]
+20 velocity 0.01 *
+-0.0229
+ 1.1151
+ 0.0000
+ 0.0000
+ 0.0000
+-25.0228
+[ Variable[CPUDoubleType]{6} ]
+21 velocity 0.001 *
+-2.5845
+ 1.5217
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3272
+[ Variable[CPUDoubleType]{6} ]
+22 velocity 0.01 *
+-0.0315
+ 1.1091
+ 0.0000
+ 0.0000
+ 0.0000
+-25.0187
+[ Variable[CPUDoubleType]{6} ]
+23 velocity 0.0001 *
+ 7.0679
+-0.4093
+ 0.0000
+ 0.0000
+ 0.0000
+-124.1141
+[ Variable[CPUDoubleType]{6} ]
+24 velocity 0.001 *
+ 7.1705
+ 8.9631
+ 0.0000
+ 0.0000
+ 0.0000
+-250.6174
+[ Variable[CPUDoubleType]{6} ]
+25 velocity 0.001 *
+ 1.2467
+ 2.8150
+ 0.0000
+ 0.0000
+ 0.0000
+-12.4474
+[ Variable[CPUDoubleType]{6} ]
+26 velocity 0.001 *
+ 1.2589
+ 1.2589
+ 0.0000
+ 0.0000
+ 0.0000
+-249.9372
+[ Variable[CPUDoubleType]{6} ]
+27 velocity 0.001 *
+-1.1013
+-0.7504
+ 0.0000
+ 0.0000
+ 0.0000
+-12.5140
+[ Variable[CPUDoubleType]{6} ]
+28 velocity 0.001 *
+-1.3376
+ 3.0870
+ 0.0000
+ 0.0000
+ 0.0000
+-250.1145
+[ Variable[CPUDoubleType]{6} ]
+29 velocity 0.001 *
+ 1.1021
+-1.4255
+ 0.0000
+ 0.0000
+ 0.0000
+-12.4501
+[ Variable[CPUDoubleType]{6} ]
+30 velocity 0.0001 *
+ 9.5084
+ 9.5084
+ 0.0000
+ 0.0000
+ 0.0000
+-2497.0337
+[ Variable[CPUDoubleType]{6} ]
+31 velocity 0.0001 *
+-7.6705
+-1.0287
+ 0.0000
+ 0.0000
+ 0.0000
+-123.8879
+[ Variable[CPUDoubleType]{6} ]
+32 velocity 0.001 *
+-8.7486
+ 0.6629
+ 0.0000
+ 0.0000
+ 0.0000
+-250.2391
+[ Variable[CPUDoubleType]{6} ]
+33 velocity 0.001 *
+-0.7106
+ 1.1107
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3585
+[ Variable[CPUDoubleType]{6} ]
+34 velocity 0.001 *
+-1.6972
+ 2.6058
+ 0.0000
+ 0.0000
+ 0.0000
+-250.0265
+[ Variable[CPUDoubleType]{6} ]
+35 velocity 0.001 *
+-1.5261
+ 1.9950
+ 0.0000
+ 0.0000
+ 0.0000
+-12.5323
+[ Variable[CPUDoubleType]{6} ]
+36 velocity 0.001 *
+ 3.8736
+ 3.8736
+ 0.0000
+ 0.0000
+ 0.0000
+-250.3767
+[ Variable[CPUDoubleType]{6} ]
+37 velocity 0.001 *
+-1.3439
+ 0.0496
+ 0.0000
+ 0.0000
+ 0.0000
+-12.4074
+[ Variable[CPUDoubleType]{6} ]
+38 velocity 0.001 *
+-2.9491
+ 0.1504
+-0.0000
+ 0.0000
+ 0.0000
+-249.9489
+[ Variable[CPUDoubleType]{6} ]
+39 velocity 0.001 *
+ 1.8270
+ 0.7645
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3540
+[ Variable[CPUDoubleType]{6} ]
+40 velocity 0.001 *
+-2.9630
+ 0.1387
+ 0.0000
+ 0.0000
+ 0.0000
+-249.8712
+[ Variable[CPUDoubleType]{6} ]
+41 velocity 0.0001 *
+-0.2686
+ 4.8424
+ 0.0000
+ 0.0000
+ 0.0000
+-124.6178
+[ Variable[CPUDoubleType]{6} ]
+42 velocity 0.0001 *
+ 8.2633
+ 8.2633
+ 0.0000
+ 0.0000
+ 0.0000
+-2500.4124
+[ Variable[CPUDoubleType]{6} ]
+43 velocity 0.001 *
+ 2.4008
+ 3.1124
+ 0.0000
+ 0.0000
+ 0.0000
+-12.4163
+[ Variable[CPUDoubleType]{6} ]
+44 velocity 0.001 *
+-5.5718
+ 0.0286
+ 0.0000
+ 0.0000
+ 0.0000
+-249.9113
+[ Variable[CPUDoubleType]{6} ]
+45 velocity 0.001 *
+-2.0941
+ 3.1682
+ 0.0000
+ 0.0000
+ 0.0000
+-12.4849
+[ Variable[CPUDoubleType]{6} ]
+46 velocity 0.0001 *
+ 9.9757
+ 9.9757
+ 0.0000
+ 0.0000
+ 0.0000
+-2502.4063
+[ Variable[CPUDoubleType]{6} ]
+47 velocity 0.0001 *
+ 1.4838
+-28.1203
+ 0.0000
+ 0.0000
+ 0.0000
+-124.8458
+[ Variable[CPUDoubleType]{6} ]
+48 velocity 0.01 *
+ 0.8759
+ 1.0948
+ 0.0000
+ 0.0000
+ 0.0000
+-25.0718
+[ Variable[CPUDoubleType]{6} ]
+49 velocity 0.0001 *
+-8.6589
+ 8.6589
+ 0.0000
+ 0.0000
+ 0.0000
+-124.5500
+[ Variable[CPUDoubleType]{6} ]
+50 velocity 0.001 *
+-3.6627
+ 1.6552
+ 0.0000
+ 0.0000
+ 0.0000
+-250.0429
+[ Variable[CPUDoubleType]{6} ]
+51 velocity 0.001 *
+-1.0089
+ 1.0692
+ 0.0000
+ 0.0000
+ 0.0000
+-12.5623
+[ Variable[CPUDoubleType]{6} ]
+52 velocity 0.001 *
+-0.9734
+ 2.6798
+ 0.0000
+ 0.0000
+ 0.0000
+-250.0205
+[ Variable[CPUDoubleType]{6} ]
+53 velocity 0.001 *
+ 1.4784
+ 0.4586
+ 0.0000
+ 0.0000
+ 0.0000
+-12.4367
+[ Variable[CPUDoubleType]{6} ]
+54 velocity 0.001 *
+-4.1012
+-0.0549
+ 0.0000
+ 0.0000
+ 0.0000
+-249.9123
+[ Variable[CPUDoubleType]{6} ]
+55 velocity 0.001 *
+-0.8493
+ 1.1660
+ 0.0000
+ 0.0000
+ 0.0000
+-12.4571
+[ Variable[CPUDoubleType]{6} ]
+56 velocity 0.0001 *
+ 7.8864
+ 7.8864
+ 0.0000
+ 0.0000
+ 0.0000
+-2500.3755
+[ Variable[CPUDoubleType]{6} ]
+57 velocity 0.001 *
+-2.5553
+ 2.5553
+ 0.0000
+ 0.0000
+ 0.0000
+-12.2379
+[ Variable[CPUDoubleType]{6} ]
+58 velocity 0.001 *
+ 4.1945
+ 4.1945
+ 0.0000
+ 0.0000
+ 0.0000
+-250.0538
+[ Variable[CPUDoubleType]{6} ]
+59 velocity 0.001 *
+-1.2267
+ 1.2267
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3964
+[ Variable[CPUDoubleType]{6} ]
+60 velocity 0.001 *
+ 2.5810
+ 1.0574
+-0.0000
+ 0.0000
+ 0.0000
+-249.9767
+[ Variable[CPUDoubleType]{6} ]
+61 velocity 0.001 *
+-1.6971
+ 0.1305
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3911
+[ Variable[CPUDoubleType]{6} ]
+62 velocity 0.001 *
+-3.9657
+ 2.9460
+-0.0000
+ 0.0000
+ 0.0000
+-249.8365
+[ Variable[CPUDoubleType]{6} ]
+63 velocity 0.001 *
+-2.4808
+ 0.5288
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3398
+[ Variable[CPUDoubleType]{6} ]
+64 velocity 0.0001 *
+ 0.5908
+ 1.0151
+ 0.0000
+ 0.0000
+ 0.0000
+-2499.3757
+[ Variable[CPUDoubleType]{6} ]
+65 velocity 0.0001 *
+-3.6003
+ 4.8631
+ 0.0000
+ 0.0000
+ 0.0000
+-124.6973
+[ Variable[CPUDoubleType]{6} ]
+66 velocity 0.001 *
+-4.3771
+-0.0737
+ 0.0000
+ 0.0000
+ 0.0000
+-250.0465
+[ Variable[CPUDoubleType]{6} ]
+67 velocity 0.001 *
+-1.7030
+-2.8572
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3162
+[ Variable[CPUDoubleType]{6} ]
+68 velocity 0.001 *
+-0.8555
+ 8.5554
+ 0.0000
+ 0.0000
+ 0.0000
+-250.2277
+[ Variable[CPUDoubleType]{6} ]
+69 velocity 0.001 *
+-1.3865
+ 1.3865
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3852
+[ Variable[CPUDoubleType]{6} ]
+70 velocity 0.001 *
+ 2.5180
+ 0.9116
+ 0.0000
+ 0.0000
+ 0.0000
+-249.9403
+[ Variable[CPUDoubleType]{6} ]
+71 velocity 0.0001 *
+-0.4700
+ 2.5809
+ 0.0000
+ 0.0000
+ 0.0000
+-124.8507
+[ Variable[CPUDoubleType]{6} ]
+72 velocity 0.001 *
+-0.3085
+ 3.3978
+ 0.0000
+ 0.0000
+ 0.0000
+-249.9151
+[ Variable[CPUDoubleType]{6} ]
+73 velocity 0.0001 *
+ 7.2455
+-15.2063
+ 0.0000
+ 0.0000
+ 0.0000
+-123.3011
+[ Variable[CPUDoubleType]{6} ]
+74 velocity 0.0001 *
+ 8.2510
+ 8.2510
+-0.0000
+ 0.0000
+ 0.0000
+-2496.5522
+[ Variable[CPUDoubleType]{6} ]
+75 velocity 0.001 *
+-2.6529
+ 1.5464
+ 0.0000
+ 0.0000
+ 0.0000
+-12.4137
+[ Variable[CPUDoubleType]{6} ]
+76 velocity 0.01 *
+-0.0298
+ 1.1069
+ 0.0000
+ 0.0000
+ 0.0000
+-25.0511
+[ Variable[CPUDoubleType]{6} ]
+77 velocity 1e-07 *
+ 6.4524
+-15589.7857
+ 0.0000
+ 0.0000
+ 0.0000
+-124305.0642
+[ Variable[CPUDoubleType]{6} ]
+78 velocity 0.001 *
+-2.8519
+ 0.2527
+-0.0000
+ 0.0000
+ 0.0000
+-249.8264
+[ Variable[CPUDoubleType]{6} ]
+79 velocity 0.0001 *
+-3.2700
+ 5.0693
+ 0.0000
+ 0.0000
+ 0.0000
+-125.1210
+[ Variable[CPUDoubleType]{6} ]
+80 velocity 0.001 *
+-0.9493
+ 9.4933
+ 0.0000
+ 0.0000
+ 0.0000
+-250.3550
+[ Variable[CPUDoubleType]{6} ]
+81 velocity 0.001 *
+-1.7266
+ 1.7266
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3324
+[ Variable[CPUDoubleType]{6} ]
+82 velocity 0.001 *
+-0.7779
+ 7.7787
+ 0.0000
+ 0.0000
+ 0.0000
+-250.2010
+[ Variable[CPUDoubleType]{6} ]
+83 velocity 0.001 *
+-2.5694
+ 2.4064
+ 0.0000
+ 0.0000
+ 0.0000
+-12.2516
+[ Variable[CPUDoubleType]{6} ]
+84 velocity 0.001 *
+ 1.0162
+ 1.0162
+-0.0000
+ 0.0000
+ 0.0000
+-249.9194
+[ Variable[CPUDoubleType]{6} ]
+85 velocity 0.001 *
+-1.5625
+ 0.8732
+ 0.0000
+ 0.0000
+ 0.0000
+-12.3815
+[ Variable[CPUDoubleType]{6} ]
+86 velocity 0.001 *
+ 7.5497
+ 9.4371
+-0.0000
+ 0.0000
+ 0.0000
+-250.7649
+[ Variable[CPUDoubleType]{6} ]
+87 velocity 0.0001 *
+ 9.9081
+-7.9086
+ 0.0000
+ 0.0000
+ 0.0000
+-124.0769
+[ Variable[CPUDoubleType]{6} ]
+88 velocity 0.001 *
+-3.0311
+ 0.1737
+ 0.0000
+ 0.0000
+ 0.0000
+-249.8527
+[ Variable[CPUDoubleType]{6} ]
+89 velocity 0.0001 *
+-9.0472
+-13.9678
+ 0.0000
+ 0.0000
+ 0.0000
+-123.6241
+[ Variable[CPUDoubleType]{6} ]
+90 velocity 0.0001 *
+ 8.9588
+ 8.9588
+-0.0000
+ 0.0000
+ 0.0000
+-2498.0315
+[ Variable[CPUDoubleType]{6} ]
+91 velocity 0.001 *
+-1.8856
+ 1.1434
+ 0.0000
+ 0.0000
+ 0.0000
+-12.2533
+[ Variable[CPUDoubleType]{6} ]
+92 velocity 0.01 *
+-0.0388
+ 1.1014
+ 0.0000
+ 0.0000
+ 0.0000
+-25.0226
+[ Variable[CPUDoubleType]{6} ]
+93 velocity 0.001 *
+-2.5710
+ 2.5710
+ 0.0000
+ 0.0000
+ 0.0000
+-12.2258
+[ Variable[CPUDoubleType]{6} ]
+94 velocity 0.001 *
+ 4.1916
+ 4.1916
+ 0.0000
+ 0.0000
+ 0.0000
+-250.0818
+[ Variable[CPUDoubleType]{6} ]
+95 velocity 0.001 *
+-2.7178
+ 2.7178
+ 0.0000
+ 0.0000
+ 0.0000
+-12.1844
+[ Variable[CPUDoubleType]{6} ]
+96 velocity 0.001 *
+ 4.2111
+ 4.2111
+ 0.0000
+ 0.0000
+ 0.0000
+-250.0437
+[ Variable[CPUDoubleType]{6} ]
+97 velocity 0.0001 *
+-3.4076
+-1.3107
+ 0.0000
+ 0.0000
+ 0.0000
+-124.3313
+[ Variable[CPUDoubleType]{6} ]
+98 velocity 0.001 *
+-4.2929
+-0.0436
+ 0.0000
+ 0.0000
+ 0.0000
+-249.8841
+[ Variable[CPUDoubleType]{6} ]
+99 velocity 0.0001 *
+ 3.1362
+ 0.8963
+ 0.0000
+ 0.0000
+ 0.0000
+-124.3036
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+2
+size=89

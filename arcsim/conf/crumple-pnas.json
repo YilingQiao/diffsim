@@ -1,0 +1,32 @@
+// Aluminium foil disk crumpled in a shrinking sphere
+// Narain et al. 2013, Figure 8
+{
+    "frame_time": 0.01,
+    "frame_steps": 10,
+    "duration": 5,
+    "cloths": [{
+        "mesh": "meshes/disk.obj",
+        "transform": {"scale": 50e-3},
+        // "transform": {"translate": [0.5, 0, 0.5]},
+        "materials": [{
+            "data": "materials/aluminium.json",
+            "yield_curv": 150
+        }],
+        "remeshing": {
+            "refine_angle": 0.2,
+            "refine_compression": 10e-6,
+            "size": [1e-3, 20e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "motions": [[
+        {"time": 0, "transform": {"scale": 51e-3}},
+        {"time": 2.5, "transform": {"scale": 20e-3}},
+        {"time": 5, "transform": {"scale": 8.2e-3}}
+    ]],
+    "obstacles": [{
+        "mesh": "meshes/sphere-inv.obj",
+        "motion": 0
+    }],
+    "magic": {"collision_stiffness": 1e10, "repulsion_thickness": 2.5e-4}
+}

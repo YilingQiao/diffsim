@@ -1,0 +1,51 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 2,
+    "end_time": 10,
+    // "cloths": [
+    // {
+    //     "mesh": "meshes/big_flag_mv.obj",
+    //     "materials": [{"data": "materials/gray-interlock.json",
+    //                    "thicken": 2}],
+    //     "remeshing": {
+    //         "refine_angle": 0.3,
+    //         "refine_compression": 0.005,
+    //         "refine_velocity": 0.5,
+    //         "size": [10e-3, 100e-3],
+    //         "aspect_min": 0.2
+    //     }
+    // }
+    // // {
+    // //     "mesh": "meshes/big_flag.obj",
+    // //     "transform":{"scale":1.5,"translate":[0.9,-0,0],"rotate":[20,1,0,0]},
+    // //     "materials": [{"data": "materials/gray-interlock.json",
+    // //                    "thicken": 2}],
+    // //     "remeshing": {
+    // //         "refine_angle": 0.3,
+    // //         "refine_compression": 0.005,
+    // //         "refine_velocity": 0.5,
+    // //         "size": [10e-3, 100e-3],
+    // //         "aspect_min": 0.2
+    // //     }
+    // // }
+    // ],
+    "obstacles": [
+    {
+        "mesh": "meshes/big_flag.obj",
+        "transform":{"scale":1.5,"translate":[0.7,-0,-0.1],"rotate":[20,1,0,0]},
+        "velocity": [0, 0, 0, 0, 0, 0.2]
+    },
+    {
+        "mesh": "meshes/big_flag.obj",
+        "transform":{"scale":1.5,"translate":[0,-0,0.1],"rotate":[22,1,0,0]},
+        "velocity": [0, 0, 0, 0, 0, -0.2]
+    }
+    //{
+    //    "mesh": "meshes/contain.obj",
+    //    "transform":{"scale":0.3,"translate":[0,0,-0.55]}
+    //}
+    ],
+    "disable":["remeshing"],
+    "gravity": [0, 0, -9.8],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

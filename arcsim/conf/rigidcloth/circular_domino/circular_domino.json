@@ -1,0 +1,37 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 1,
+    "end_time": 50,
+    "cloths": [{
+        "mesh": "meshes/rigidcloth/circular_domino2/flag.obj",
+        "transform":{"scale":1,"translate":[-0.3,0,0],"rotate":[0,0,1,0]},
+        "materials": [{"data": "materials/gray-interlock.json",
+"stretching_mult":1e-3,
+"bending_mult":1e4,
+                       "thicken": 2}],
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 0.005,
+            "refine_velocity": 0.5,
+            "size": [10e-3, 100e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "obstacles": [
+    {
+        "mesh": "meshes/rigidcloth/circular_domino2/domino.obj",
+        "transform":{"scale":1,"translate":[0,-0,-0],"rotate":[0,0,0,1]},
+        "velocity": [0, 0, 0, 0, 0, 0],
+        "movable": 1
+    },
+    {
+        "mesh": "meshes/rigidcloth/circular_domino2/ground.obj",
+        "transform":{"scale":1.2,"translate":[0,0,0],"rotate":[0,1,0,0]},
+        "movable": 0
+    }
+    ],
+    "disable":["remeshing"],
+    "gravity":[0,0,-4],
+    "handles": [{"nodes": [60,25], "end_time": 50}],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

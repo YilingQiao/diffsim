@@ -1,0 +1,24 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 2,
+    "end_time": 2,
+    "cloths": [{
+        "mesh": "meshes/demo_wind.obj",
+        "materials": [{"data": "materials/init_mat.json",
+"stretching_mult":1e0,
+"bending_mult":1e0,
+                       "thicken": 2}],
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 0.005,
+            "refine_velocity": 0.5,
+            "size": [10e-3, 100e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "handles": [{"nodes": [2,3]}],
+"disable":["remeshing"],
+    "gravity": [0, 0, -9.8],
+"wind":{"velocity": [5, 0, 0]},
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

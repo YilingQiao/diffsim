@@ -1,0 +1,48 @@
+// Test for wrinkle anticipation, diamond buckling, coarsening
+// Narain et al. 2012, Figure 9
+{
+    "frame_time": 0.04,
+    "frame_steps": 4,
+    "end_time": 15,
+    "cloths": [{
+        "mesh": "meshes/sleeve.obj",
+        "transform": {"translate": [-0.5, -0.125, -0.125]},
+        // "transform": {"translate": [0.5, 0, 0.5]},
+        "materials": [{"data": "materials/ivory-rib-knit.json"}],
+        "remeshing": {
+            "refine_angle": 0.2,
+            "refine_compression": 0.005,
+            "refine_velocity": 0.5,
+            "size": [10e-3, 200e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "motions": [[
+        {"time": 1, "transform": {"rotate": [0, 0, 1, 0]}},
+        {"time": 3, "transform": {"rotate": [-10, 0, 1, 0]}},
+        {"time": 5, "transform": {"rotate": [0, 0, 1, 0]}},
+        {"time": 7, "transform": {"rotate": [-10, 0, 1, 0]}},
+        {"time": 9, "transform": {"rotate": [0, 0, 1, 0]}},
+        {"time": 11, "transform": {"rotate": [-10, 0, 1, 0]}},
+        {"time": 13, "transform": {"rotate": [0, 0, 1, 0]}}
+    ], [
+        {"time": 1, "transform": {"rotate": [0, 0, 1, 0]}},
+        {"time": 3, "transform": {"rotate": [10, 0, 1, 0]}},
+        {"time": 5, "transform": {"rotate": [0, 0, 1, 0]}},
+        {"time": 7, "transform": {"rotate": [10, 0, 1, 0]}},
+        {"time": 9, "transform": {"rotate": [0, 0, 1, 0]}},
+        {"time": 11, "transform": {"rotate": [10, 0, 1, 0]}},
+        {"time": 13, "transform": {"rotate": [0, 0, 1, 0]}}
+    ]],
+    "obstacles": [{
+        "mesh": "meshes/pole.obj",
+        "transform": {"scale": 0.12},
+        "motion": 0
+    }, {
+        "mesh": "meshes/pole.obj",
+        "transform": {"scale": 0.12, "rotate": [180, 0, 1, 0]},
+        "motion": 1
+    }],
+    "gravity": [0, 0, -9.8],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

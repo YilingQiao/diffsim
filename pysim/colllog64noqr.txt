@@ -1,0 +1,1832 @@
+json
+separate obs
+create bvh
+find ixns
+separate obs finish
+json
+reuse!!
+separate obs
+create bvh
+find ixns
+separate obs finish
+cloth solver
+   collision 1 --- 
+   collision 5 --- 
+0
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+1
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+2
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+3
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+4
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+5
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+6
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+7
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+8
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+9
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+10
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+11
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+12
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+13
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+14
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+15
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+16
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+17
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+18
+   collision 9 --- 
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+19
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+20
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+21
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+22
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+23
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+24
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+25
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+26
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+27
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+28
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+29
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+30
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+31
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+32
+   collision 9 --- 
+   collision 10 --- 
+0 velocity  0
+ 0
+ 0
+ 0
+ 0
+ 0
+[ Variable[CPUDoubleType]{6} ]
+   collision 11 --- 
+   collision 5 --- 
+33
+size=1412
+size=1411
+size=1410
+size=1407
+size=1399
+size=1396
+size=1394
+size=1390
+size=1383
+size=1381
+size=1378
+size=1373
+size=1367
+size=1349
+size=954
+size=1340
+size=953
+size=1322
+size=951
+size=1302
+size=950
+size=1289
+size=949
+size=1271
+size=945
+size=1251
+size=939
+size=1227
+size=928
+size=1193
+size=913
+size=1154
+size=1097
+size=883
+size=1040
+size=845
+size=1001
+size=789
+size=964
+size=768
+size=696
+size=881
+size=821
+size=80
+size=347
+size=54
+size=157
+size=61
+size=543
+size=19
+size=53
+size=308
+size=134
+size=193
+size=44
+size=149
+size=18
+size=108
+size=52
+size=19
+size=475
+size=52
+size=99
+size=99
+size=25
+size=28
+size=17
+size=15
+size=29
+size=27
+size=32
+size=53
+size=26
+size=5
+size=14
+size=16
+size=14
+size=14
+size=17
+size=17
+size=26
+size=40
+size=29
+size=35
+size=32
+size=37
+size=42
+size=17
+size=15
+size=29
+size=30
+size=5
+size=27
+size=16
+size=41
+size=24
+size=78
+size=14
+size=16
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=13
+size=4
+size=4
+size=4
+size=4
+size=4
+size=13
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=13
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=13
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+['demo_collision.py', '200202_coll']
+step=0
+forward time=19834.284359931946
+loss=0.7291390936927669
+step 0: d=0.187 loss=0.7291390936927669
+
+collsion backward time=1.8010261058807373 for nvar=783
+collsion backward time=1.502563238143921 for nvar=783
+collsion backward time=1.5112650394439697 for nvar=783
+collsion backward time=1.5001673698425293 for nvar=783
+collsion backward time=1.4695513248443604 for nvar=780
+collsion backward time=1.4858217239379883 for nvar=780
+collsion backward time=1.4496302604675293 for nvar=780
+collsion backward time=1.4468345642089844 for nvar=780
+collsion backward time=1.421952486038208 for nvar=777
+collsion backward time=1.4152960777282715 for nvar=777
+collsion backward time=1.4032275676727295 for nvar=777
+collsion backward time=1.4042387008666992 for nvar=777
+collsion backward time=1.3764991760253906 for nvar=777
+collsion backward time=1.3275187015533447 for nvar=771
+collsion backward time=0.5710110664367676 for nvar=633
+collsion backward time=1.2909648418426514 for nvar=771
+collsion backward time=0.500262975692749 for nvar=633
+collsion backward time=1.2354035377502441 for nvar=768
+collsion backward time=0.4977717399597168 for nvar=633
+collsion backward time=1.1791868209838867 for nvar=762
+collsion backward time=0.5005447864532471 for nvar=633
+collsion backward time=1.15478515625 for nvar=762
+collsion backward time=0.496737003326416 for nvar=633
+collsion backward time=1.11678147315979 for nvar=759
+collsion backward time=0.5024657249450684 for nvar=633
+collsion backward time=1.0884504318237305 for nvar=756
+collsion backward time=0.47530174255371094 for nvar=633
+collsion backward time=1.0259153842926025 for nvar=750
+collsion backward time=0.3995325565338135 for nvar=630
+collsion backward time=0.9568712711334229 for nvar=741
+collsion backward time=0.37230730056762695 for nvar=624
+collsion backward time=0.8536298274993896 for nvar=729
+collsion backward time=0.726283073425293 for nvar=699
+collsion backward time=0.3512406349182129 for nvar=609
+collsion backward time=0.5633914470672607 for nvar=669
+collsion backward time=1.3811945915222168 for nvar=591
+collsion backward time=1.899446725845337 for nvar=654
+collsion backward time=0.8912770748138428 for nvar=558
+collsion backward time=0.5344510078430176 for nvar=645
+collsion backward time=0.9104270935058594 for nvar=552
+collsion backward time=0.7026891708374023 for nvar=504
+collsion backward time=0.3779575824737549 for nvar=600
+collsion backward time=0.4067244529724121 for nvar=570
+collsion backward time=0.0012116432189941406 for nvar=60
+collsion backward time=0.027797460556030273 for nvar=252
+collsion backward time=0.0009925365447998047 for nvar=42
+collsion backward time=0.005801677703857422 for nvar=114
+collsion backward time=0.0007541179656982422 for nvar=45
+collsion backward time=0.09189915657043457 for nvar=384
+collsion backward time=0.00037550926208496094 for nvar=15
+collsion backward time=0.0004971027374267578 for nvar=42
+collsion backward time=0.16476202011108398 for nvar=228
+collsion backward time=0.024535179138183594 for nvar=99
+collsion backward time=0.053754568099975586 for nvar=141
+collsion backward time=0.0004203319549560547 for nvar=30
+collsion backward time=0.01840996742248535 for nvar=111
+collsion backward time=0.0002067089080810547 for nvar=15
+collsion backward time=0.0030972957611083984 for nvar=84
+collsion backward time=0.0012118816375732422 for nvar=39
+collsion backward time=0.0007441043853759766 for nvar=15
+collsion backward time=0.2712106704711914 for nvar=348
+collsion backward time=0.0020639896392822266 for nvar=42
+collsion backward time=0.012204170227050781 for nvar=78
+collsion backward time=0.013226509094238281 for nvar=75
+collsion backward time=0.0009248256683349609 for nvar=21
+collsion backward time=0.00034880638122558594 for nvar=21
+collsion backward time=0.0001842975616455078 for nvar=12
+collsion backward time=0.00017690658569335938 for nvar=12
+collsion backward time=0.0009565353393554688 for nvar=21
+collsion backward time=0.0003371238708496094 for nvar=21
+collsion backward time=0.0012402534484863281 for nvar=24
+collsion backward time=0.0009005069732666016 for nvar=42
+collsion backward time=0.00032329559326171875 for nvar=21
+collsion backward time=0.00016927719116210938 for nvar=3
+collsion backward time=0.00015544891357421875 for nvar=12
+collsion backward time=0.00036978721618652344 for nvar=12
+collsion backward time=0.0001537799835205078 for nvar=12
+collsion backward time=0.0001628398895263672 for nvar=12
+collsion backward time=0.00016355514526367188 for nvar=12
+collsion backward time=0.0001735687255859375 for nvar=12
+collsion backward time=0.00027632713317871094 for nvar=21
+collsion backward time=0.000579833984375 for nvar=33
+collsion backward time=0.0007266998291015625 for nvar=21
+collsion backward time=0.0014886856079101562 for nvar=27
+collsion backward time=0.0003516674041748047 for nvar=24
+collsion backward time=0.0005829334259033203 for nvar=30
+collsion backward time=0.0004076957702636719 for nvar=30
+collsion backward time=0.0001773834228515625 for nvar=12
+collsion backward time=0.00016188621520996094 for nvar=12
+collsion backward time=0.0003390312194824219 for nvar=21
+collsion backward time=0.0002865791320800781 for nvar=21
+collsion backward time=0.00016450881958007812 for nvar=3
+collsion backward time=0.0003535747528076172 for nvar=21
+collsion backward time=0.00022649765014648438 for nvar=12
+collsion backward time=0.0003879070281982422 for nvar=33
+collsion backward time=0.0002732276916503906 for nvar=21
+collsion backward time=0.007371425628662109 for nvar=63
+collsion backward time=0.00024271011352539062 for nvar=12
+collsion backward time=0.00017118453979492188 for nvar=12
+collsion backward time=0.0001876354217529297 for nvar=3
+collsion backward time=0.00015211105346679688 for nvar=3
+collsion backward time=0.0001289844512939453 for nvar=3
+collsion backward time=0.00013375282287597656 for nvar=3
+collsion backward time=0.00012564659118652344 for nvar=3
+collsion backward time=0.00013589859008789062 for nvar=3
+collsion backward time=0.00012445449829101562 for nvar=3
+collsion backward time=0.0001480579376220703 for nvar=12
+collsion backward time=0.00012922286987304688 for nvar=3
+collsion backward time=0.00012969970703125 for nvar=3
+collsion backward time=0.00012302398681640625 for nvar=3
+collsion backward time=0.0001399517059326172 for nvar=3
+collsion backward time=0.00013017654418945312 for nvar=3
+collsion backward time=0.00017070770263671875 for nvar=12
+collsion backward time=0.00012993812561035156 for nvar=3
+collsion backward time=0.00012969970703125 for nvar=3
+collsion backward time=0.00012421607971191406 for nvar=3
+collsion backward time=0.0001323223114013672 for nvar=3
+collsion backward time=0.00012063980102539062 for nvar=3
+collsion backward time=0.0001289844512939453 for nvar=3
+collsion backward time=0.00011920928955078125 for nvar=3
+collsion backward time=0.00012969970703125 for nvar=3
+collsion backward time=0.0001266002655029297 for nvar=3
+collsion backward time=0.0001327991485595703 for nvar=3
+collsion backward time=0.0001220703125 for nvar=3
+collsion backward time=0.00033855438232421875 for nvar=12
+collsion backward time=0.000125885009765625 for nvar=3
+collsion backward time=0.00013327598571777344 for nvar=3
+collsion backward time=0.00012731552124023438 for nvar=3
+collsion backward time=0.0001347064971923828 for nvar=3
+collsion backward time=0.00012969970703125 for nvar=3
+collsion backward time=0.000164031982421875 for nvar=3
+collsion backward time=0.00012183189392089844 for nvar=3
+collsion backward time=0.00013375282287597656 for nvar=3
+collsion backward time=0.0002834796905517578 for nvar=12
+collsion backward time=0.00013780593872070312 for nvar=3
+collsion backward time=0.00010895729064941406 for nvar=3
+collsion backward time=0.00012612342834472656 for nvar=3
+collsion backward time=0.00012445449829101562 for nvar=3
+collsion backward time=0.0001289844512939453 for nvar=3
+collsion backward time=0.00012135505676269531 for nvar=3
+collsion backward time=0.0001285076141357422 for nvar=3
+collsion backward time=0.00012159347534179688 for nvar=3
+collsion backward time=0.00014090538024902344 for nvar=3
+collsion backward time=0.00013017654418945312 for nvar=3size=14
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=14
+size=4
+size=4
+size=4
+size=4
+size=4
+size=14
+size=4
+size=4
+size=4
+size=13
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=14
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=13
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=23
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=13
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+
+collsion backward time=0.0003478527069091797 for nvar=12
+collsion backward time=0.00013065338134765625 for nvar=3
+collsion backward time=0.00013685226440429688 for nvar=3
+collsion backward time=0.0001308917999267578 for nvar=3
+collsion backward time=0.0001323223114013672 for nvar=3
+collsion backward time=0.00012540817260742188 for nvar=3
+collsion backward time=0.00013518333435058594 for nvar=3
+collsion backward time=0.00012826919555664062 for nvar=3
+collsion backward time=0.00015163421630859375 for nvar=3
+collsion backward time=0.00013017654418945312 for nvar=3
+collsion backward time=0.0001361370086669922 for nvar=3
+collsion backward time=0.00013017654418945312 for nvar=3
+collsion backward time=0.0001327991485595703 for nvar=3
+collsion backward time=0.00012922286987304688 for nvar=3
+collsion backward time=0.00013899803161621094 for nvar=3
+collsion backward time=0.00012993812561035156 for nvar=3
+collsion backward time=0.00013113021850585938 for nvar=3
+collsion backward time=0.00012969970703125 for nvar=3
+collsion backward time=0.00013184547424316406 for nvar=3
+collsion backward time=0.0003457069396972656 for nvar=12
+collsion backward time=0.00013947486877441406 for nvar=3
+collsion backward time=0.00013518333435058594 for nvar=3
+collsion backward time=0.0001342296600341797 for nvar=3
+collsion backward time=0.00012254714965820312 for nvar=3
+collsion backward time=0.00013899803161621094 for nvar=3
+collsion backward time=0.0003325939178466797 for nvar=12
+collsion backward time=0.0001399517059326172 for nvar=3
+collsion backward time=0.00012874603271484375 for nvar=3
+collsion backward time=0.0001347064971923828 for nvar=3
+collsion backward time=0.00034236907958984375 for nvar=12
+collsion backward time=0.00013113021850585938 for nvar=3
+collsion backward time=0.0001227855682373047 for nvar=3
+collsion backward time=0.00013327598571777344 for nvar=3
+collsion backward time=0.00013971328735351562 for nvar=3
+collsion backward time=0.00013327598571777344 for nvar=3
+collsion backward time=0.00014209747314453125 for nvar=3
+collsion backward time=0.00013875961303710938 for nvar=3
+collsion backward time=0.00012564659118652344 for nvar=3
+collsion backward time=0.0001404285430908203 for nvar=3
+collsion backward time=0.00015592575073242188 for nvar=3
+collsion backward time=0.0001468658447265625 for nvar=3
+collsion backward time=0.00013303756713867188 for nvar=3
+collsion backward time=0.00013256072998046875 for nvar=3
+collsion backward time=0.0001304149627685547 for nvar=3
+collsion backward time=0.00013184547424316406 for nvar=3
+collsion backward time=0.00013136863708496094 for nvar=3
+collsion backward time=0.00012946128845214844 for nvar=3
+collsion backward time=0.0001327991485595703 for nvar=3
+collsion backward time=0.00013208389282226562 for nvar=3
+collsion backward time=0.00013637542724609375 for nvar=3
+collsion backward time=0.00013589859008789062 for nvar=3
+collsion backward time=0.0001289844512939453 for nvar=3
+collsion backward time=0.00016355514526367188 for nvar=3
+collsion backward time=0.00032210350036621094 for nvar=12
+collsion backward time=0.0001404285430908203 for nvar=3
+collsion backward time=0.0001239776611328125 for nvar=3
+collsion backward time=0.0001354217529296875 for nvar=3
+collsion backward time=0.00012969970703125 for nvar=3
+collsion backward time=0.00013399124145507812 for nvar=3
+collsion backward time=0.00012421607971191406 for nvar=3
+collsion backward time=0.0001342296600341797 for nvar=3
+collsion backward time=0.0001285076141357422 for nvar=3
+collsion backward time=0.0001304149627685547 for nvar=3
+collsion backward time=0.0001270771026611328 for nvar=3
+collsion backward time=0.00013017654418945312 for nvar=3
+collsion backward time=0.00014781951904296875 for nvar=12
+collsion backward time=0.00013518333435058594 for nvar=3
+collsion backward time=0.00012946128845214844 for nvar=3
+collsion backward time=0.0001323223114013672 for nvar=3
+collsion backward time=0.0001246929168701172 for nvar=3
+collsion backward time=0.0001666545867919922 for nvar=3
+collsion backward time=0.00013494491577148438 for nvar=3
+collsion backward time=0.0001399517059326172 for nvar=3
+collsion backward time=0.00013518333435058594 for nvar=3
+collsion backward time=0.0001380443572998047 for nvar=3
+collsion backward time=0.00013327598571777344 for nvar=3
+collsion backward time=0.0001404285430908203 for nvar=3
+collsion backward time=0.0001289844512939453 for nvar=3
+collsion backward time=0.00013971328735351562 for nvar=3
+collsion backward time=0.00013136863708496094 for nvar=3
+collsion backward time=0.0003418922424316406 for nvar=21
+collsion backward time=0.0001354217529296875 for nvar=3
+collsion backward time=0.0001442432403564453 for nvar=3
+collsion backward time=0.000133514404296875 for nvar=3
+collsion backward time=0.0001392364501953125 for nvar=3
+collsion backward time=0.0001308917999267578 for nvar=3
+collsion backward time=0.00013899803161621094 for nvar=3
+collsion backward time=0.00013971328735351562 for nvar=3
+collsion backward time=0.00013709068298339844 for nvar=3
+collsion backward time=0.00013685226440429688 for nvar=3
+collsion backward time=0.00014400482177734375 for nvar=3
+collsion backward time=0.0001430511474609375 for nvar=3
+collsion backward time=0.00014591217041015625 for nvar=3
+collsion backward time=0.0001373291015625 for nvar=3
+collsion backward time=0.00013637542724609375 for nvar=3
+collsion backward time=0.00012612342834472656 for nvar=3
+collsion backward time=0.0001366138458251953 for nvar=3
+collsion backward time=0.00013208389282226562 for nvar=3
+collsion backward time=0.000133514404296875 for nvar=3
+collsion backward time=0.00012612342834472656 for nvar=3
+collsion backward time=0.0001342296600341797 for nvar=3
+collsion backward time=0.0001239776611328125 for nvar=3
+collsion backward time=0.00013399124145507812 for nvar=3
+collsion backward time=0.00014472007751464844 for nvar=12
+collsion backward time=0.00013399124145507812 for nvar=3
+collsion backward time=0.00013875961303710938 for nvar=3
+collsion backward time=0.00013303756713867188 for nvar=3
+collsion backward time=0.0001246929168701172 for nvar=3
+collsion backward time=0.00013065338134765625 for nvar=3
+collsion backward time=0.00012731552124023438 for nvar=3
+collsion backward time=0.00013303756713867188 for nvar=3
+collsion backward time=0.0001246929168701172 for nvar=3
+collsion backward time=0.00013065338134765625 for nvar=3
+collsion backward time=0.00013709068298339844 for nvar=3
+collsion backward time=0.00013446807861328125 for nvar=3
+collsion backward time=0.0001270771026611328 for nvar=3
+collsion backward time=0.0001327991485595703 for nvar=3
+collsion backward time=0.00012755393981933594 for nvar=3
+collsion backward time=0.0001285076141357422 for nvar=3
+collsion backward time=0.00014162063598632812 for nvar=3
+collsion backward time=0.00013685226440429688 for nvar=3
+collsion backward time=0.00012564659118652344 for nvar=3
+collsion backward time=0.00013184547424316406 for nvar=3
+collsion backward time=0.0001220703125 for nvar=3
+collsion backward time=0.0001571178436279297 for nvar=3
+collsion backward time=0.00012731552124023438 for nvar=3
+collsion backward time=0.0001347064971923828 for nvar=3
+collsion backward time=0.00012612342834472656 for nvar=3
+collsion backward time=0.00013375282287597656 for nvar=3
+collsion backward time=0.00012350082397460938 for nvar=3
+collsion backward time=0.00013065338134765625 for nvar=3
+collsion backward time=0.00012755393981933594 for nvar=3
+collsion backward time=0.00012731552124023438 for nvar=3
+collsion backward time=0.00012063980102539062 for nvar=3
+collsion backward time=0.00013566017150878906 for nvar=3
+collsion backward time=0.0001232624053955078 for nvar=3
+collsion backward time=0.0001404285430908203 for nvar=3
+collsion backward time=0.00012683868408203125 for nvar=3
+collsion backward time=0.00013780593872070312 for nvar=3
+collsion backward time=0.0001285076141357422 for nvar=3
+collsion backward time=0.00013899803161621094 for nvar=3
+collsion backward time=0.00012731552124023438 for nvar=3
+collsion backward time=0.0001342296600341797 for nvar=3
+collsion backward time=0.0001475811004638672 for nvar=3
+collsion backward time=0.00013685226440429688 for nvar=3size=14
+size=4
+size=4
+size=4
+size=4
+size=13
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=14
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=14
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+
+collsion backward time=0.0003211498260498047 for nvar=12
+collsion backward time=0.00013780593872070312 for nvar=3
+collsion backward time=0.00012969970703125 for nvar=3
+collsion backward time=0.00013256072998046875 for nvar=3
+collsion backward time=0.00012683868408203125 for nvar=3
+collsion backward time=0.0003113746643066406 for nvar=12
+collsion backward time=0.00012826919555664062 for nvar=3
+collsion backward time=0.0001323223114013672 for nvar=3
+collsion backward time=0.00012803077697753906 for nvar=3
+collsion backward time=0.0001347064971923828 for nvar=3
+collsion backward time=0.00012826919555664062 for nvar=3
+collsion backward time=0.0001323223114013672 for nvar=3
+collsion backward time=0.00012564659118652344 for nvar=3
+collsion backward time=0.00013256072998046875 for nvar=3
+collsion backward time=0.00013303756713867188 for nvar=3
+collsion backward time=0.00013375282287597656 for nvar=3
+collsion backward time=0.0001285076141357422 for nvar=3
+collsion backward time=0.0003085136413574219 for nvar=12
+collsion backward time=0.00013113021850585938 for nvar=3
+collsion backward time=0.00013327598571777344 for nvar=3
+collsion backward time=0.00012636184692382812 for nvar=3
+collsion backward time=0.00013399124145507812 for nvar=3
+collsion backward time=0.00012636184692382812 for nvar=3
+collsion backward time=0.00013113021850585938 for nvar=3
+collsion backward time=0.00012373924255371094 for nvar=3
+collsion backward time=0.0001361370086669922 for nvar=3
+collsion backward time=0.00012683868408203125 for nvar=3
+collsion backward time=0.00013685226440429688 for nvar=3
+collsion backward time=0.00013256072998046875 for nvar=3
+collsion backward time=0.0001327991485595703 for nvar=3
+collsion backward time=0.00012421607971191406 for nvar=3
+collsion backward time=0.00013136863708496094 for nvar=3
+collsion backward time=0.00013256072998046875 for nvar=3
+collsion backward time=0.00013256072998046875 for nvar=3
+collsion backward time=0.00013327598571777344 for nvar=3
+collsion backward time=0.00013017654418945312 for nvar=3
+collsion backward time=0.00012540817260742188 for nvar=3
+collsion backward time=0.00023889541625976562 for nvar=3
+collsion backward time=0.00013971328735351562 for nvar=3
+collsion backward time=0.00018286705017089844 for nvar=3
+collsion backward time=0.000125885009765625 for nvar=3
+collsion backward time=0.00013566017150878906 for nvar=3
+collsion backward time=0.00035953521728515625 for nvar=3
+collsion backward time=0.0008633136749267578 for nvar=12
+collsion backward time=0.00032329559326171875 for nvar=3
+collsion backward time=0.00029754638671875 for nvar=3
+collsion backward time=0.00028061866760253906 for nvar=3
+collsion backward time=0.00028777122497558594 for nvar=3
+collsion backward time=0.0002770423889160156 for nvar=3
+collsion backward time=0.0002849102020263672 for nvar=3
+collsion backward time=0.0002849102020263672 for nvar=3
+collsion backward time=0.0003230571746826172 for nvar=3
+collsion backward time=0.0002779960632324219 for nvar=3
+collsion backward time=0.0002777576446533203 for nvar=3
+collsion backward time=0.00027060508728027344 for nvar=3
+collsion backward time=0.0002849102020263672 for nvar=3
+collsion backward time=0.0002884864807128906 for nvar=3
+collsion backward time=0.0002846717834472656 for nvar=3
+collsion backward time=0.00028014183044433594 for nvar=3
+collsion backward time=0.0002994537353515625 for nvar=3
+collsion backward time=0.00029015541076660156 for nvar=3
+collsion backward time=0.0002818107604980469 for nvar=3
+collsion backward time=0.0002779960632324219 for nvar=3
+collsion backward time=0.0002772808074951172 for nvar=3
+collsion backward time=0.0002760887145996094 for nvar=3
+collsion backward time=0.0002772808074951172 for nvar=3
+collsion backward time=0.00021219253540039062 for nvar=3
+collsion backward time=0.0002205371856689453 for nvar=3
+collsion backward time=0.0002415180206298828 for nvar=3
+collsion backward time=0.0002257823944091797 for nvar=3
+collsion backward time=0.00022721290588378906 for nvar=3
+collsion backward time=0.0002281665802001953 for nvar=3
+collsion backward time=0.00023293495178222656 for nvar=3
+collsion backward time=0.00023102760314941406 for nvar=3
+collsion backward time=0.00022101402282714844 for nvar=3
+collsion backward time=0.0002315044403076172 for nvar=3
+collsion backward time=0.00022101402282714844 for nvar=3
+collsion backward time=0.00023508071899414062 for nvar=3
+collsion backward time=0.00026154518127441406 for nvar=3
+collsion backward time=0.0002391338348388672 for nvar=3
+collsion backward time=0.0002262592315673828 for nvar=3
+collsion backward time=0.00023221969604492188 for nvar=3
+collsion backward time=0.0002143383026123047 for nvar=3
+collsion backward time=0.00022459030151367188 for nvar=3
+collsion backward time=0.00022125244140625 for nvar=3
+collsion backward time=0.0002307891845703125 for nvar=3
+collsion backward time=0.00022149085998535156 for nvar=3
+collsion backward time=0.00022077560424804688 for nvar=3
+collsion backward time=0.0002193450927734375 for nvar=3
+collsion backward time=0.00022912025451660156 for nvar=3
+collsion backward time=0.00021529197692871094 for nvar=3
+collsion backward time=0.00023102760314941406 for nvar=3
+collsion backward time=0.0001742839813232422 for nvar=3
+collsion backward time=0.0001823902130126953 for nvar=3
+collsion backward time=0.00017642974853515625 for nvar=3
+collsion backward time=0.00017905235290527344 for nvar=3
+collsion backward time=0.0001761913299560547 for nvar=3
+collsion backward time=0.00017976760864257812 for nvar=3
+collsion backward time=0.00017762184143066406 for nvar=3
+collsion backward time=0.00019598007202148438 for nvar=3
+collsion backward time=0.0001766681671142578 for nvar=3
+collsion backward time=0.0002033710479736328 for nvar=3
+collsion backward time=0.0001804828643798828 for nvar=3
+collsion backward time=0.00018644332885742188 for nvar=3
+collsion backward time=0.00016880035400390625 for nvar=3
+collsion backward time=0.0001823902130126953 for nvar=3
+collsion backward time=0.00016951560974121094 for nvar=3
+collsion backward time=0.00018858909606933594 for nvar=3
+collsion backward time=0.0001747608184814453 for nvar=3
+collsion backward time=0.00019097328186035156 for nvar=3
+collsion backward time=0.0001780986785888672 for nvar=3
+collsion backward time=0.00017976760864257812 for nvar=3
+collsion backward time=0.00016760826110839844 for nvar=3
+collsion backward time=0.0001819133758544922 for nvar=3
+collsion backward time=0.00016546249389648438 for nvar=3
+collsion backward time=0.00019025802612304688 for nvar=3
+collsion backward time=0.00017523765563964844 for nvar=3
+collsion backward time=0.00018453598022460938 for nvar=3
+collsion backward time=0.0001773834228515625 for nvar=3
+collsion backward time=0.0001838207244873047 for nvar=3
+collsion backward time=0.0001747608184814453 for nvar=3
+collsion backward time=0.00018358230590820312 for nvar=3
+collsion backward time=0.00017070770263671875 for nvar=3
+collsion backward time=0.00018095970153808594 for nvar=3
+collsion backward time=0.00017523765563964844 for nvar=3
+collsion backward time=0.00017762184143066406 for nvar=3
+collsion backward time=0.0001742839813232422 for nvar=3
+collsion backward time=0.00015211105346679688 for nvar=3
+collsion backward time=0.0001392364501953125 for nvar=3
+collsion backward time=0.0001728534698486328 for nvar=3
+collsion backward time=0.00014400482177734375 for nvar=3
+collsion backward time=0.00016045570373535156 for nvar=3
+collsion backward time=0.000156402587890625 for nvar=3
+collsion backward time=0.0001544952392578125 for nvar=3
+collsion backward time=0.00014495849609375 for nvar=3
+collsion backward time=0.00015306472778320312 for nvar=3
+collsion backward time=0.00014853477478027344 for nvar=3
+collsion backward time=0.000152587890625 for nvar=3
+collsion backward time=0.0001506805419921875 for nvar=3
+collsion backward time=0.00015163421630859375 for nvar=3
+collsion backward time=0.00014519691467285156 for nvar=3
+collsion backward time=0.00015735626220703125 for nvar=3
+collsion backward time=0.00014734268188476562 for nvar=3
+collsion backward time=0.00015306472778320312 for nvar=3
+collsion backward time=0.0001537799835205078 for nvar=3size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+size=4
+
+collsion backward time=0.0001621246337890625 for nvar=3
+collsion backward time=0.0001494884490966797 for nvar=3
+collsion backward time=0.0001595020294189453 for nvar=3
+collsion backward time=0.00014472007751464844 for nvar=3
+collsion backward time=0.00015544891357421875 for nvar=3
+collsion backward time=0.00014543533325195312 for nvar=3
+collsion backward time=0.00015401840209960938 for nvar=3
+collsion backward time=0.0001881122589111328 for nvar=3
+collsion backward time=0.00014853477478027344 for nvar=3
+collsion backward time=0.0001361370086669922 for nvar=3
+collsion backward time=0.00014519691467285156 for nvar=3
+collsion backward time=0.0001780986785888672 for nvar=3
+collsion backward time=0.00015473365783691406 for nvar=3
+collsion backward time=0.00013780593872070312 for nvar=3
+collsion backward time=0.0001430511474609375 for nvar=3
+collsion backward time=0.0001590251922607422 for nvar=3
+collsion backward time=0.00014162063598632812 for nvar=3
+collsion backward time=0.0001354217529296875 for nvar=3
+collsion backward time=0.00013947486877441406 for nvar=3
+collsion backward time=0.0001404285430908203 for nvar=3
+collsion backward time=0.00014853477478027344 for nvar=3
+collsion backward time=0.00012803077697753906 for nvar=3
+collsion backward time=0.00013637542724609375 for nvar=3
+collsion backward time=0.00012826919555664062 for nvar=3
+collsion backward time=0.00013303756713867188 for nvar=3
+collsion backward time=0.0001251697540283203 for nvar=3
+collsion backward time=0.00013017654418945312 for nvar=3
+collsion backward time=0.000125885009765625 for nvar=3
+collsion backward time=0.000133514404296875 for nvar=3
+collsion backward time=0.00012826919555664062 for nvar=3
+collsion backward time=0.000133514404296875 for nvar=3
+collsion backward time=0.00012803077697753906 for nvar=3
+collsion backward time=0.00013184547424316406 for nvar=3
+collsion backward time=0.00012922286987304688 for nvar=3
+collsion backward time=0.00013971328735351562 for nvar=3
+collsion backward time=0.00012874603271484375 for nvar=3
+collsion backward time=0.0001380443572998047 for nvar=3
+collsion backward time=0.00012540817260742188 for nvar=3
+collsion backward time=0.00013399124145507812 for nvar=3
+collsion backward time=0.0001285076141357422 for nvar=3
+collsion backward time=0.0001316070556640625 for nvar=3
+collsion backward time=0.00012755393981933594 for nvar=3
+collsion backward time=0.0001595020294189453 for nvar=3
+collsion backward time=0.00019097328186035156 for nvar=3
+backward time=108.36421155929565
+tensor(1.5654, dtype=torch.float64)
+tensor([[-1.3792e-02, -1.0808e-04,  1.1043e-03, -1.7341e-03],
+        [-1.1925e-05,  7.7705e-06, -2.0838e-05, -1.6287e-05],
+        [-2.8371e-05, -9.2416e-05,  1.1801e-06, -2.6018e-04],
+        [-4.0488e-05, -2.1204e-04,  7.1207e-05, -2.5572e-04],
+        [ 2.0953e-04, -2.7874e-04, -5.2248e-05, -3.9332e-05],
+        [ 2.0139e-04,  2.1926e-04, -2.4533e-05, -1.0601e-04]],
+       dtype=torch.float64)
+tensor([[ 9.9227e+01,  1.4250e+00,  1.0109e+01,  9.5779e-03,  9.2362e+00],
+        [ 7.3988e+01, -2.5877e+01, -4.0274e+01,  2.7292e-02,  1.1088e+02],
+        [-1.7354e+02, -2.8475e+00, -7.2543e-01,  1.1239e+01, -3.2732e+01]],
+       dtype=torch.float64)
+done

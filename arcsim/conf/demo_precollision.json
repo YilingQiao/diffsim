@@ -1,0 +1,25 @@
+{
+    "frame_time": 0.04,
+    "frame_steps": 2,
+    "end_time": 2,
+    "cloths": [{
+        "mesh": "meshes/0000_00.obj",//big_flag.obj",//
+//"transform":{"rotate":[90,1,0,0],"translate":[-0.5,-0.5,0]},
+        "materials": [{"data": "materials/gray-interlock.json",
+                       "thicken": 2}],
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 0.005,
+            "refine_velocity": 0.5,
+            "size": [1e-3, 25e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "obstacles": [{
+        "mesh": "meshes/contain.obj",
+        "transform":{"scale":1,"translate":[-0.5,-1,-0.55]}
+    }],
+"disable":["remeshing"],
+    "gravity": [0, 0, -9.8],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

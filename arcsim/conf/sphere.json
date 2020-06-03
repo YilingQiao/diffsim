@@ -1,0 +1,25 @@
+// Square sheet of cloth interacting with moving sphere
+// Narain et al. 2012, Figure 2(b)
+{
+    "frame_time": 0.04,
+    "frame_steps": 2,
+    "end_time": 4,
+    "cloths": [{
+        "mesh": "meshes/big_flag.obj",//square4.obj",//
+        //"transform": {"translate": [-0.5, -0.5, 0]},
+        // "transform": {"translate": [0.5, 0, 0.5]},
+        "materials": [{"data": "materials/gray-interlock.json",
+                       "thicken": 2}],
+        "remeshing": {
+            "refine_angle": 0.3,
+            "refine_compression": 0.005,
+            "refine_velocity": 0.5,
+            "size": [10e-3, 200e-3],
+            "aspect_min": 0.2
+        }
+    }],
+    "handles": [{"nodes": [0]}],
+"disable":["remeshing"],
+    "gravity": [0, 0, -9.8],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e6}
+}

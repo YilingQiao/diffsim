@@ -51,7 +51,7 @@ spf = config['frame_steps']
 scalev=1
 
 def reset_sim(sim, epoch):
-	arcsim.init_physics(out_path+'/conf.json',out_path+'/out',False)
+	arcsim.init_physics(out_path+'/conf.json',out_path+'/out%d'%epoch,False)
 	print(sim.obstacles[0].curr_state_mesh.dummy_node.x)
 
 
@@ -60,7 +60,8 @@ def get_loss(ans, param_g):
 	vec = torch.tensor([0, 0],dtype=torch.float64)
 	loss = torch.norm(ans.narrow(0, 3, 2) - vec, p=2)
 	reg  = torch.norm(param_g, p=2)*0.05
- 
+
+	print("ans loss")
 	print(ans)
 	print(loss)
 	print(reg)
@@ -72,19 +73,35 @@ def run_sim(steps,sim,param_g):
 			
 	for obstacle in sim.obstacles:
 		for node in obstacle.curr_state_mesh.nodes:
-			node.m    *= 1
+			node.m    *= 0.1
 
 	# sim.obstacles[2].curr_state_mesh.dummy_node.x = param_g[1]
 	print("step")
-	for step in range(80):
+	
+
+	sim.cloths[0].materials[0].stretching = sim.cloths[0].materials[0].stretching*0.3
+	
+
+	dv = []
+	dv.append(torch.zeros([3],dtype=torch.float64))
+	dv.append(param_g)
+	dv.append(torch.zeros([1],dtype=torch.float64))
+	dv = torch.cat(dv)
+
+	for step in range(30):
+		#if (step%10==0):
+		#	sim.obstacles[0].curr_state_mesh.dummy_node.v += dv*np.exp(-step/30)
+
+		if (step==13):
+
+			for obstacle in sim.obstacles:
+				for node in obstacle.curr_state_mesh.nodes:
+					node.m    *= 0.04
+
+			sim.cloths[0].materials[0].stretching = sim.cloths[0].materials[0].stretching*10
+	
+
 		print(step)
-
-		dx = []
-		dx.append(param_g[step])
-		dx.append(torch.zeros([1],dtype=torch.float64))
-		dx = torch.cat(dx)
-		sim.obstacles[0].curr_state_mesh.dummy_node.v += dx
-
 		arcsim.sim_step()
 
 	cnt = 0
@@ -118,7 +135,7 @@ def do_train(cur_step,optimizer,sim,param_g):
 		# f.write('step {}: loss={}\n'.format(cur_step, loss.data))
 		# print('step {}: loss={}\n'.format(cur_step, loss.data))
 
-		loss.backward(retain_graph=True)
+		#loss.backward(retain_graph=True)
 
 
 
@@ -139,7 +156,7 @@ def do_train(cur_step,optimizer,sim,param_g):
 
 
 		optimizer.step()
-		if epoch>=100:
+		if epoch>=0:
 			quit()
 		epoch = epoch + 1
 		# break
@@ -149,9 +166,9 @@ with open(out_path+('/log%s.txt'%timestamp),'w',buffering=1) as f:
 	sim=arcsim.get_sim()
 	# reset_sim(sim)
 
-	param_g = torch.zeros([80, 5],dtype=torch.float64, requires_grad=True)
+	param_g = torch.zeros([2],dtype=torch.float64, requires_grad=True)
 
-	lr = 0.03
+	lr = 0.3
 	momentum = 0.4
 	f.write('lr={} momentum={}\n'.format(lr,momentum))
 	optimizer = torch.optim.SGD([{'params':param_g,'lr':lr}],momentum=momentum)

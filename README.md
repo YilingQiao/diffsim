@@ -4,8 +4,7 @@
 
 *Yi-Ling Qiao, Junbang Liang, Vladlen Koltun, Ming C. Lin*
 
-
-### Differentiable programming in Taichi allows you to optimize neural network controllers efficiently with brute-force gradient descent, instead of using reinforcement learning.
+(in progress)
 
 ## Usage
 1. Create a conda virtual environment and activate it.

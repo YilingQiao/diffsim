@@ -1,0 +1,22 @@
+{
+    "frame_time": 0.02,
+    "frame_steps": 1,
+    "end_time": 10,
+    "obstacles": [
+    {
+        "mesh": "meshes/rigidcloth/mujoco/abcube.obj",
+        "transform":{"scale":1,"translate":[0.2,0,0],"rotate":[0,0,1,0]},
+        "velocity": [0, 0, 0, -1, 0, -0],
+        "movable": 1
+    },
+    {
+        "mesh": "meshes/rigidcloth/mujoco/abcube.obj",
+        "transform":{"scale":0.98,"translate":[-0.2,0,0],"rotate":[0,0,1,0]},
+        "velocity": [0, 0, 0, 1, 0, -0],
+        "movable": 1
+    }
+    ],
+    "disable":["remeshing"],
+    "gravity":[0,0,0],
+    "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e7}
+}

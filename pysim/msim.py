@@ -22,8 +22,8 @@ with torch.autograd.profiler.profile() as prof:
 	# arcsim.msim(4,['arcsim','simulate','conf/rigidcloth/absparse/multi_make.json','out'])
 	
 	#arcsim.msim(4,['arcsim','simulate','conf/rigidcloth/circular_domino/circular_domino_make.json','out'])
-	arcsim.msim(3,['arcsim','replay','default_out/out'])
-	í
+	arcsim.msim(3,['arcsim','replay','default_out/out0'])
+	#arcsim.msim(3,['arcsim','replay','test/out1'])
 	# arcsim.msim(4,['arcsim','simulate','conf/rigidcloth/circular_domino/debug.json','out'])
 	#arcsim.msim(4,['arcsim','simulate','conf/gravity.json','out'])
 	#arcsim.msim(4,['arcsim','simulate','conf/rigidcloth/domino.json','out'])

@@ -1,7 +1,7 @@
 {
     "frame_time": 0.04,
     "frame_steps": 1,
-    "end_time": 4,
+    "end_time": 10,
     "cloths": [
     {
         "mesh": "meshes/rigidcloth/bounce/flag.obj",
@@ -19,13 +19,13 @@
     "obstacles": [
     {
         "mesh": "meshes/rigidcloth/bounce/ball.obj",
-        "transform":{"scale":1,"translate":[0,0,-0],"rotate":[0,0,1,0]},
-        "velocity": [0, 0, 0, 0, 0, 0],
+        "transform":{"scale":1,"translate":[0,0,0.4],"rotate":[0,0,1,0]},
+        "velocity": [0, 0, 0, 0, 0, -3],
         "movable": 1
     }
     ],
     "disable":["remeshing"],
-    "gravity":[0,0,-1],
+    "gravity":[0,0,-3],
     "handles": [{"nodes": [30,25,60,54], "end_time": 4}],
     "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e7}
 }

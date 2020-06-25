@@ -142,6 +142,9 @@ void collision_response (Simulation &sim, vector<Mesh*> &meshes, const vector<Co
 
     static int count_changed = 0;
 
+    static int num_step = 0;
+    num_step++;
+
     zones.clear();prezones.clear();
 
 
@@ -172,7 +175,7 @@ void collision_response (Simulation &sim, vector<Mesh*> &meshes, const vector<Co
         ti.tick();
 
         impacts = independent_impacts(impacts);
-        if (impacts.empty())
+        if (impacts.empty()) 
             break;
 
         //cout << "collision solving"  << endl;
@@ -235,6 +238,11 @@ void collision_response (Simulation &sim, vector<Mesh*> &meshes, const vector<Co
             compute_ws_data(*obs_meshes[o]);
 
         update_x0(*obs_meshes[o]);
+
+
+
+        //if (num_step==2)
+        //    exit(0);
 
         obs_meshes[o]->dummy_node->v = 
             (obs_meshes[o]->dummy_node->x - obs_meshes[o]->dummy_node->x0) / sim.step_time;
@@ -428,9 +436,6 @@ vector<Impact> find_impacts (const vector<AccelStruct*> &accs,
         append(impacts, CO::impacts[t]);
 
     }
-
-
-
     return impacts;
 }
 
@@ -465,7 +470,6 @@ Tensor pos (const Node *node, Tensor t) {return node->x0 + t*(node->x - node->x0
 void contact_jacobian(Impact &impact, Node *node, int k) {
     Tensor J;
     if (is_free(node)) {
-        cout << "found cloth node" << endl;
         J = torch::eye(3,TNOPT);
         impact.mesh_num.push_back(-1);
         impact.imp_nodes.push_back(node);
@@ -681,6 +685,7 @@ static double t2a_sub_signed_ee_distance( double* x1mx0,  double* y0mx0,  double
     // Tensor _w[4]; if (!w) w = _w;
 
     t2a_cross(n, x1mx0, y1my0);
+    //t2a_sub(n, x1mx0, x1mx0);
 
     w[0]=w[1]=w[2]=w[3]=0;
     if (t2a_norm2(n) < 1e-6) {
@@ -722,7 +727,7 @@ static double t2a_sub_signed_vf_distance( double *y0,  double *y1,  double *y2,
     if (t2a_norm2(n) < 1e-6) {
         over = true;
         return std::numeric_limits<double>::infinity();
-    }
+    } 
     t2a_normalize(n);
     double h = -t2a_dot(y0, n);
     over = (abs(h) > thres);
@@ -786,17 +791,19 @@ bool collision_test (Impact::Type type, const Node *node0, const Node *node1,
 
     
     double d_t[4];
+    // cout << "a: " <<a0 << " "<< a1 << " "<< a2 << " "<< a3 << " \n";
     int nsol = t2a_solve_cubic(a3, a2, a1, a0, d_t);
     d_t[nsol] = 1;
 
     // int nsol = t.size(0);
     // t[nsol] = 1; // also check at end of timestep
-    Tensor t = torch::tensor(vector<double>(d_t,d_t+nsol), TNOPT);
-    // cout << t << endl;
+    
+    //cout << nsol << endl;
     for (int i = 0; i < nsol; i++) {
+        //cout << d_t[i] << endl;
         if ((d_t[i] < 0) || (d_t[i] > 1))
             continue;
-        impact.t = t[i];
+        impact.t = ONE * d_t[i];
         double bx0[3], bx1[3], bx2[3], bx3[3], temp[3], temp1[3], temp2[3],temp_sum[3];
         t2a_mul_scalar(bx0, v0, d_t[i]); t2a_add(bx0, bx0, x0);
         t2a_mul_scalar(bx1, v1, d_t[i]); t2a_add(bx1, bx1, x1);
@@ -832,6 +839,14 @@ bool collision_test (Impact::Type type, const Node *node0, const Node *node1,
         if (t2a_dot(n, temp_sum) > 0)
             t2a_mul_scalar(n, n, -1);
         // compute nodes
+
+        //if (abs(n[0])<1e-8) n[0]*=1e-10;
+        //if (abs(n[1])<1e-8) n[1]*=1e-10;
+        //if (abs(n[2])<1e-8) n[2]*=1e-10;
+
+        // cout << type << " type - n " << n[0] << " " << n[1] << " " << n[2] << endl;
+
+        //cout << "add jacobian\n";
         contact_jacobian(impact, (Node*)node0, 0);
         contact_jacobian(impact, (Node*)node1, 1);
         contact_jacobian(impact, (Node*)node2, 2);
@@ -852,7 +867,7 @@ bool collision_test (Impact::Type type, const Node *node0, const Node *node1,
 // Independent impacts
 
 bool operator< (const Impact &impact0, const Impact &impact1) {
-    return (impact0.t < impact1.t).item<int>();
+    return (impact0.t +0.0001< impact1.t).item<int>();
 }
 
 bool conflict (const Impact &impact0, const Impact &impact1);
@@ -861,8 +876,19 @@ vector<Impact> independent_impacts (const vector<Impact> &impacts) {
     vector<Impact> sorted = impacts;
     sort(sorted.begin(), sorted.end());
     vector<Impact> indep;
+    //cout << "all impact num " << sorted.size();
     for (int e = 0; e < sorted.size(); e++) {
         const Impact &impact = sorted[e];
+        //cout << "impact " << e << " " << impact.t << endl;
+
+        //cout << impact.imp_nodes[0]->x << endl;
+        //cout << impact.imp_nodes[1]->x << endl;
+        //cout << impact.imp_nodes[2]->x << endl;
+        //cout << impact.imp_nodes[3]->x << endl;
+        //cout << impact.nodes[0]->x << endl;
+        //cout << impact.nodes[1]->x << endl;
+        //cout << impact.nodes[2]->x << endl;
+        //cout << impact.nodes[3]->x << endl;
         bool con = false;
         for (int e1 = 0; e1 < indep.size(); e1++)
             if (conflict(impact, indep[e1]))
@@ -889,6 +915,9 @@ void merge_zones (ImpactZone* zone0, ImpactZone *zone1,
 void add_impacts (const vector<Impact> &impacts, vector<ImpactZone*> &zones, vector<Mesh*> &meshes) {
     for (int z = 0; z < zones.size(); z++)
         zones[z]->active = false;
+
+    //cout << "impact size \n" << impacts.size() << endl;
+    //cout << "zones size \n" << zones.size() << endl;
     for (int i = 0; i < impacts.size(); i++) {
         const Impact &impact = impacts[i];
        
@@ -935,6 +964,8 @@ ImpactZone *find_or_create_zone (const Node *node, vector<ImpactZone*> &zones) {
         zone->nvar = 6;
     }
 
+    //cout << "- xold\n" << dummy_node->xold << endl;
+    //cout << "- m\n" << m << endl;
 
     zone->nodes.push_back(dummy_node);
     zones.push_back(zone);
@@ -1055,7 +1086,7 @@ vector<Tensor> apply_inelastic_projection_forward(Tensor xold, Tensor ws, Tensor
 
     double x[slx.nvar],oricon[slx.ncon];
     int sign;
-    slx.initialize(x);
+    //slx.initialize(x);
 
 
     //cout << " auglag 2 " << endl;
@@ -1083,11 +1114,6 @@ vector<Tensor> apply_inelastic_projection_forward(Tensor xold, Tensor ws, Tensor
     real_1d_array sm_1;
 
     precompute_derivative(a, q, r, lambda, sm_1, legals, grads, zone, slx,tmp);
-    
-
-
-  
-  
 
     Tensor q_tn = arr2ten(q), r_tn = arr2ten(r);
     Tensor lam_tn = ptr2ten(&lambda[0], lambda.size());
@@ -1125,6 +1151,10 @@ void apply_inelastic_projection (ImpactZone *zone,
     zone->n = vector<double>(dn, dn+zone->impacts.size()*3);
     Tensor out_x = func(inp_xold, inp_w, inp_n, zone).cast<Tensor>();
 
+    //cout << "inp_xold \n" << inp_xold << endl;
+    //cout << "inp_w \n" << inp_w << endl;
+    //cout << "inp_n \n" << inp_n << endl;
+    //cout << "out_x \n" << out_x << endl;
     
     // Tensor out_x = apply_inelastic_projection_forward(inp_xold, inp_w, inp_n, zone)[0];
     for (int i = 0; i < zone->nodes.size(); ++i)
@@ -1136,6 +1166,8 @@ vector<Tensor> compute_derivative(real_1d_array &ans, ImpactZone *zone,
                         real_2d_array &q, real_2d_array &r, real_1d_array &sm_1, vector<int> &legals, 
                         real_1d_array &dldx,
                         vector<double> &lambda, bool verbose=false) {
+    
+    //cout << "backward \n" ;
     real_1d_array  dz, dlam0, dlam, ana, dldw0, dldn0, dldx0;
     int nvar = zone->nvar;
     int ncon = zone->impacts.size();
@@ -1166,6 +1198,8 @@ vector<Tensor> compute_derivative(real_1d_array &ans, ImpactZone *zone,
     for (int i = 0; i < nvar; ++i)
         ana[i] += dz[i] / sm_1[i] / sm_1[i];
 
+    //cout << grad_xold<< endl;
+
     Tensor grad_xold = torch::from_blob(ana.getcontent(), {nvar}, TNOPT).clone();
     Tensor grad_w = torch::from_blob(dldw0.getcontent(), {ncon*4}, TNOPT).clone();
     Tensor grad_n = torch::from_blob(dldn0.getcontent(), {ncon* 3}, TNOPT).clone();
@@ -1189,12 +1223,14 @@ void NormalOpt::initialize (double *x) const {
     for (int n = 0; n < zone->nodes.size(); n++) {
         set_subvec(x, zone->node_index[n], zone->nodes[n]->x);
 
+
         Node *node = zone->nodes[n];
 
         if (zone->mesh_num[n] == -1) {
             set_subvec(node->d_x, 0, node->x);
             set_subvec(node->d_xold, 0, node->xold);
-            set_subvec(node->d_mass, 0, node->m);
+            //set_subvec(node->d_mass, 0, node->m);
+            node->d_mass[0] = node->m.item<double>();
 
         } else {
             set_subvec(node->d_x, 0, node->x.slice(0, 3, 6));
@@ -1215,6 +1251,11 @@ void NormalOpt::initialize (double *x) const {
                     node->d_ang_inertia[i][j] = accessor_ang_inertia[i][j];
         }
     }
+
+    //cout << "initialize\n";
+    //for (int i = 0; i < nvar; ++i) {
+    //    cout <<x[i] <<"\n";
+    //}
 }
 
 void NormalOpt::precompute (const double *x) const {
@@ -1225,7 +1266,7 @@ void NormalOpt::precompute (const double *x) const {
     //         update_rigid_trans(zone->mesh_num[n]);
     // }
 
-
+    
     for (int n = 0; n < zone->nodes.size(); n++) {
         if (zone->mesh_num[n] == -1) {
             t2a_get_subvec(zone->nodes[n]->d_x, x, zone->node_index[n]);
@@ -1234,18 +1275,11 @@ void NormalOpt::precompute (const double *x) const {
             t2a_get_subvec(zone->nodes[n]->d_angx, x, zone->node_index[n]);
             t2a_get_subvec(zone->nodes[n]->d_x, x, zone->node_index[n]+3);
             t2a_update_rigid_trans(zone->mesh_num[n]);
-
-
-            // cout << "0 " << node->d_x[0] << endl;
-            // cout << "1 " << node->d_xold[0] << endl;
-            // cout << "2 " << node->d_mass[0] << endl;
-            // cout << "3 " << node->d_angx[0] << endl;
-            // cout << "4 " << node->d_angxold[0] << endl;
-            // cout << "5 " << node->d_ang_inertia[0][0] << endl;
-            // cout << "6 " << t2a_invm << endl;
-            // exit(0);
         }
     }
+    //cout << "precompute\n";
+    //for (int i = 0; i < nvar; i++)
+    //    cout << x[i] << " ";
 }
 
 double NormalOpt::objective (const double *x) const {
@@ -1278,22 +1312,22 @@ double NormalOpt::objective (const double *x) const {
             e = e + e_lin ;
         } else {
             t2a_sub(temp, node->d_x, node->d_xold);
-            double e_lin = t2a_dot(temp, temp)* node->d_mass[0] * t2a_invm/2.0;
+            double e_lin = t2a_dot(temp, temp)* node->d_mass[0] * t2a_invm;
 
             // cout << "a " << temp[0] << endl;
 
             t2a_sub(temp, node->d_angx, node->d_angxold);
             // cout << "b " << temp[0] << endl;
-            t2a_matrix_mul_vec(temp2, node->d_ang_inertia, temp);
+            t2a_vec_mul_matrix(temp2, temp, node->d_ang_inertia);
             // cout << "c " << temp2[0] << endl;
-            double e_ang = t2a_dot(temp, temp2) * t2a_invm/2.0;
+            double e_ang = t2a_dot(temp, temp2) * t2a_invm;
 
             e = e + e_lin + e_ang;
         }
     }
 
     // cout << "objective end\n";
-    // cout << "objective: " << e << endl;
+    //cout << "objective: " << e << endl;
 
 
     return e;
@@ -1330,10 +1364,17 @@ void NormalOpt::obj_grad (const double *x, double *grad) const {
         const Node *node = zone->nodes[n];
 
         if (zone->mesh_num[n] == -1) {
-
+            
             t2a_sub(temp, node->d_x, node->d_xold);
+           
             t2a_mul_scalar(temp, temp, node->d_mass[0]*t2a_invm);
+        
             t2a_set_subvec(grad, start_dim, temp);
+
+
+
+
+            start_dim += 3;
 
         } else {
             // p_ang = inv_m*node->ang_inertia.matmul(w);
@@ -1342,10 +1383,17 @@ void NormalOpt::obj_grad (const double *x, double *grad) const {
             t2a_mul_scalar(temp2, temp2, t2a_invm);
             t2a_set_subvec(grad, start_dim, temp2);
 
+
+            //cout << "obj_grad-1 " << temp2[0] << endl;
+            //cout << "obj_grad-2 " << temp2[1] << endl;
+            //cout << "obj_grad-3 " << temp2[2] << endl;
             // Tensor p_lin = inv_m*node->total_mass * v;
             t2a_sub(temp, node->d_x, node->d_xold);
             t2a_mul_scalar(temp, temp, t2a_invm * node->d_mass[0]);
             t2a_set_subvec(grad, start_dim+3, temp);
+
+
+            //cout << "obj_grad-4 " << temp[0] << endl;
 
             start_dim += 6;
         }
@@ -1378,7 +1426,6 @@ double NormalOpt::constraint (const double *x, int j, int &sign) const {
         }
         
     }
-    // cout << "constraint end\n";
 
     return c1;
 }
@@ -1387,33 +1434,6 @@ void NormalOpt::con_grad (const double *x, int j, double factor,
                           double *grad) const {
     const Impact &impact = zone->impacts[j];
 
-    // cout << "con_grad \n";
-    // for (int n = 0; n < 4; n++) {
-    //     Node *node = impact.imp_nodes[n];
-    //     int i = find(node, zone->nodes);
-
-    //     if (i != -1) {
-    //         if (zone->mesh_num[i] == -1) {
-    //             for (int k = 0; k < 3; ++k) {
-    //                 grad[zone->node_index[i]+k] -= factor*zone->w[j*4+n]*zone->n[j*3+k];
-                    
-    //             }
-    //         } else {
-    //             auto accessor_J = impact.imp_Js[n].packed_accessor<double,2>();
-    //             for (int q = 0; q < 6; q++) {
-    //                 double sum_grad = 0.0;
-    //                 for (int k = 0; k < 3; k++) {
-    //                     sum_grad += factor*zone->w[j*4+n]*zone->n[j*3+k]*accessor_J[k][q];
-                      
-    //                 }
-    //                 grad[zone->node_index[i]+q] -= sum_grad;
-                  
-    //             }
-
-    //         }
-    //     }
-                
-    // }
 
     for (int n = 0; n < 4; n++) {
         Node *node = impact.imp_nodes[n];
@@ -1430,14 +1450,17 @@ void NormalOpt::con_grad (const double *x, int j, double factor,
                     double sum_grad = 0.0;
                     for (int k = 0; k < 3; k++) {
                         sum_grad += factor*zone->w[j*4+n]*zone->n[j*3+k]*impact.d_Js[n][k][q];
+                    
+                        //cout << "con_grad- " << q << "-" << k << factor*zone->w[j*4+n]*zone->n[j*3+k]*impact.d_Js[n][k][q] << endl;
+                        //cout << "con_grad- " << q << "-" << k << impact.d_Js[n][k][q] << endl;
+
                     }
+                
                     grad[zone->node_index[i]+q] -= sum_grad;
                   
                 }
-
             }
-        }
-                
+        }      
     }
 
     // cout << "con_grad end\n";

@@ -54,8 +54,7 @@ def make_json (max_line = 2):
 			new_cube['transform']['translate'][2] = 0.2
 			config['obstacles'].append(new_cube)
 			#print(config)
-		print(ini_x)
-		print(ini_y + j*ini_size)
+	
 		ini_size = single_length * (i+1) * 4
 		ini_x    += ini_size
 

@@ -13,7 +13,7 @@ import time
 sim = arcsim.get_sim()
 
 def reset_sim(sim):
-	arcsim.init_physics('conf/rigidcloth/absparse/multibody_make.json','200204_sparse/out',False)
+	arcsim.init_physics('conf/rigidcloth/absparse/multibody_make.json','sparse_out/out',False)
 
 
 

@@ -56,17 +56,9 @@ def reset_sim(sim, epoch):
 
 
 def get_loss(ans, param_g):
-	#[0.0000, 0.0000, 0.0000, 0.7500, 0.6954, 0.3159
-	vec = torch.tensor([0, 0],dtype=torch.float64)
-	loss = torch.norm(ans.narrow(0, 3, 2) - vec, p=2)
-	reg  = torch.norm(param_g, p=2)*0.05
-
-	print("ans loss")
-	print(ans)
-	print(loss)
-	print(reg)
-
-	return loss + reg
+	loss = torch.zeros([1],dtype=torch.float64)
+	
+	return loss 
 
 def run_sim(steps,sim,param_g):
 	

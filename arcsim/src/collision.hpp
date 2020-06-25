@@ -104,6 +104,13 @@ inline void t2a_matrix_mul_vec(double *ans, const double m[][3], const double *v
   }
 }
 
+inline void t2a_vec_mul_matrix(double *ans, const double *v, const double m[][3]){
+  for (int i = 0; i < 3; i++) {
+    ans[i] = 0;
+    for (int j = 0; j < 3; ++j) ans[i] += v[j] * m[j][i];
+  }
+}
+
 inline void t2a_mul_scalar(double *ans, const double *a, double b){
   for (int i = 0; i < 3; i++) ans[i] = a[i]*b;
 }
@@ -125,7 +132,7 @@ inline double t2a_stp(double *u, double *v, double *w) {
 inline double t2a_norm2(double *x) {return t2a_dot(x,x);}
 
 inline double t2a_l2norm(double *x) {
-  return std::sqrt(t2a_dot(x,x)/3);
+  return std::sqrt(t2a_dot(x,x));
 }
 
 

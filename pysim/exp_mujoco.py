@@ -15,7 +15,7 @@ n_cubes    = 3
 n_steps    = 30
 goal = torch.tensor([0.0000, 0.0000, 0.0000, 0, 0, 0.2],dtype=torch.float64)
 
-xml_path = '/media/yiling/DC30502330500744/yiling/diffarti/mujoco-py/xmls/exp_move.xml'
+xml_path = './mj_cubes.xml'
 model = load_model_from_path(xml_path)
 mjsim = MjSim(model)
 viewer = MjViewer(mjsim)

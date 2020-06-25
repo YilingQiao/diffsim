@@ -70,6 +70,7 @@ COMMON_FLAGS += $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir)) \
 CXXFLAGS += -pthread -fPIC -fwrapv -std=c++11 $(COMMON_FLAGS) $(WARNINGS) -fopenmp
 
 all: $(STATIC_LIB)
+	rm -rf ./build
 	python setup.py install --force
 
 $(OBJ_DIR):

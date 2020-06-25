@@ -13,7 +13,7 @@ import time
 sim = arcsim.get_sim()
 
 def reset_sim(sim):
-	arcsim.init_physics('conf/rigidcloth/absparse/abqr_make.json','200204_qr/out',False)
+	arcsim.init_physics('conf/rigidcloth/absparse/abqr_make.json','qr_out/out',False)
 
 
 

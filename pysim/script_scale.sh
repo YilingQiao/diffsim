@@ -1,8 +1,15 @@
 #!/bin/bash
 rm scale.txt	
-mprof clean
+
+# to profile memory
+# mprof clean
+# for i in {1..20..1}
+# do
+#	mprof run python run_scale.py $i 
+#	mprof list
+# done
+
 for i in {1..20..1}
 do
-	mprof run python run_scale.py $i 
-	mprof list
+	python run_scale.py $i 
 done

@@ -114,7 +114,7 @@ python exp_mujoco.py
 
 ## Bibtex
 ```
-@aritical{Qiao2020Scalable,
+@inproceedings{Qiao2020Scalable,
 author  = {Qiao, Yiling and Liang, Junbang and Koltun, Vladlen and Lin, Ming C.},
 title  = {Scalable Differentiable Physics for Learning and Control},
 booktitle = {ICML},

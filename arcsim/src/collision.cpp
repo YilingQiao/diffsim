@@ -840,13 +840,13 @@ bool collision_test (Impact::Type type, const Node *node0, const Node *node1,
             t2a_mul_scalar(n, n, -1);
         // compute nodes
 
-        //if (abs(n[0])<1e-8) n[0]*=1e-10;
-        //if (abs(n[1])<1e-8) n[1]*=1e-10;
-        //if (abs(n[2])<1e-8) n[2]*=1e-10;
+        // if (abs(n[0])<1e-8) n[0]*=1e-10;
+        // if (abs(n[1])<1e-8) n[1]*=1e-10;
+        // if (abs(n[2])<1e-8) n[2]*=1e-10;
 
         // cout << type << " type - n " << n[0] << " " << n[1] << " " << n[2] << endl;
-
-        //cout << "add jacobian\n";
+        // cout << "add jacobian\n";
+        
         contact_jacobian(impact, (Node*)node0, 0);
         contact_jacobian(impact, (Node*)node1, 1);
         contact_jacobian(impact, (Node*)node2, 2);
@@ -1028,13 +1028,13 @@ Tensor &get_xold (const Node *node);
 
 void precompute_derivative(real_2d_array &a, real_2d_array &q, real_2d_array &r0, vector<double> &lambda,
                             real_1d_array &sm_1, vector<int> &legals, double **grads, ImpactZone *zone,
-                            NormalOpt &slx, double *tmp) {
-    r0.setlength(1, 1);
-    q.setlength(slx.nvar+slx.ncon, slx.nvar+slx.ncon);
+                            NormalOpt &slx) {
+    a.setlength(slx.nvar,legals.size());
     sm_1.setlength(slx.nvar);
-    for (int i = 0; i < q.rows(); ++i)
-        for (int j = 0; j < q.cols(); ++j)
-            q[i][j] = 0;
+    // for (int i = 0; i < slx.nvar; ++i)
+    //     //sm_1[i] = 1.0/sqrt(slx.inv_m*get_mass(zone->nodes[i/3])).item<double>();
+    //     sm_1[i] = 1.0/sqrt(get_mass(zone->nodes[i/3])).item<double>();
+
     for (int n = 0; n < zone->nodes.size(); n++) {
         const Node *node = zone->nodes[n];
         if (zone->mesh_num[n] == -1) {
@@ -1044,35 +1044,52 @@ void precompute_derivative(real_2d_array &a, real_2d_array &q, real_2d_array &r0
             for (int k = 0; k < 6; ++k) 
                 sm_1[zone->node_index[n]+k] = 1.0/sqrt(node->total_mass).item<double>();  
         }
-    }
-
-    for (int ii = 0; ii < zone->nodes.size(); ++ii) {
-
-        const Node *node = zone->nodes[ii];
-        if (zone->mesh_num[ii] == -1) {
-            for (int k = 0; k < 3; ++k) 
-{
-        int i = zone->node_index[ii]+k;
-        q[i][i] = sqrt(slx.inv_m*get_mass(node)).item<double>();
-        for (int j = 0; j < slx.ncon; ++j)
-            q[i][j+slx.nvar] = grads[j][i]*lambda[j];
-}
-        } else {
-            for (int k = 0; k < 6; ++k) 
-{
-        int i = zone->node_index[ii]+k;
-        q[i][i] = sqrt(slx.inv_m*node->total_mass).item<double>();
-        for (int j = 0; j < slx.ncon; ++j)
-            q[i][j+slx.nvar] = grads[j][i]*lambda[j];
-}
-        }
     } 
-    for (int j = 0; j < slx.ncon; ++j) {
+
+
+    for (int k = 0; k < legals.size(); ++k)
         for (int i = 0; i < slx.nvar; ++i)
-            q[j+slx.nvar][i] = grads[j][i];
-        q[j+slx.nvar][j+slx.nvar] = tmp[j];
-    } 
-
+            a[i][k]=grads[legals[k]][i] * sm_1[i]; //sqrt(m^-1)
+    real_1d_array tau, r1lam1, lamp;
+    tau.setlength(slx.nvar);
+    
+    rmatrixqr(a, slx.nvar, legals.size(), tau);
+    real_2d_array qtmp, r, r1;
+    int cols = legals.size();
+    if (cols>slx.nvar)cols=slx.nvar;
+    rmatrixqrunpackq(a, slx.nvar, legals.size(), tau, cols, qtmp);
+    rmatrixqrunpackr(a, slx.nvar, legals.size(), r);
+    // get rid of degenerate G
+    int newdim = 0;
+    for (;newdim < cols; ++newdim)
+        if (abs(r[newdim][newdim]) < 1e-6)
+            break;
+    r0.setlength(newdim, newdim);
+    r1.setlength(newdim, legals.size() - newdim);
+    q.setlength(slx.nvar, newdim);
+    for (int i = 0; i < slx.nvar; ++i)
+        for (int j = 0; j < newdim; ++j)
+            q[i][j] = qtmp[i][j];
+    for (int i = 0; i < newdim; ++i) {
+        for (int j = 0; j < newdim; ++j)
+            r0[i][j] = r[i][j];
+        for (int j = newdim; j < legals.size(); ++j)
+            r1[i][j-newdim] = r[i][j];
+    }
+    r1lam1.setlength(newdim);
+    for (int i = 0; i < newdim; ++i) {
+        r1lam1[i] = 0;
+        for (int j = newdim; j < legals.size(); ++j)
+            r1lam1[i] += r1[i][j-newdim] * lambda[legals[j]];
+    }
+    ae_int_t info;
+    alglib::densesolverreport rep;
+    rmatrixsolve(r0, (ae_int_t)newdim, r1lam1, info, rep, lamp);
+    for (int j = 0; j < newdim; ++j)
+        lambda[legals[j]] += lamp[j];
+    for (int j = newdim; j < legals.size(); ++j)
+        lambda[legals[j]] = 0;
+    
 }
 
 vector<Tensor> apply_inelastic_projection_forward(Tensor xold, Tensor ws, Tensor ns, ImpactZone *zone) {
@@ -1094,16 +1111,18 @@ vector<Tensor> apply_inelastic_projection_forward(Tensor xold, Tensor ws, Tensor
 
 
     ti.tock();
-    //cout << " auglag = "<< ti.last << endl;
+    // cout << " auglag = "<< ti.last << endl;
+    ti.tick();
 
 
     vector<int> legals;
-    double *grads[slx.ncon], tmp[slx.ncon];
+    double *grads[slx.ncon], tmp;
     
     for (int i = 0; i < slx.ncon; ++i) {
-        tmp[i] = slx.constraint(&slx.tmp[0],i,sign);
-        tmp[i] *= sign*(-1);
+        tmp = slx.constraint(&slx.tmp[0],i,sign);
         grads[i] = NULL;
+        if (sign==1 && tmp>1e-6) continue;//sign==1:tmp>=0
+        if (sign==-1 && tmp<-1e-6) continue;
         grads[i] = new double[slx.nvar];
         for (int j = 0; j < slx.nvar; ++j)
             grads[i][j]=0;
@@ -1111,9 +1130,11 @@ vector<Tensor> apply_inelastic_projection_forward(Tensor xold, Tensor ws, Tensor
         legals.push_back(i);
     }
     real_2d_array a, q, r;
-    real_1d_array sm_1;
+    real_1d_array sm_1;//sqrt(m^-1)
+    precompute_derivative(a, q, r, lambda, sm_1, legals, grads, zone, slx);
 
-    precompute_derivative(a, q, r, lambda, sm_1, legals, grads, zone, slx,tmp);
+    ti.tock();
+    //cout << " precompute = "<< ti.last << endl;
 
     Tensor q_tn = arr2ten(q), r_tn = arr2ten(r);
     Tensor lam_tn = ptr2ten(&lambda[0], lambda.size());
@@ -1168,33 +1189,40 @@ vector<Tensor> compute_derivative(real_1d_array &ans, ImpactZone *zone,
                         vector<double> &lambda, bool verbose=false) {
     
     //cout << "backward \n" ;
-    real_1d_array  dz, dlam0, dlam, ana, dldw0, dldn0, dldx0;
+    real_1d_array qtx, dz, dlam0, dlam, ana, dldw0, dldn0;
     int nvar = zone->nvar;
     int ncon = zone->impacts.size();
+    qtx.setlength(q.cols());
     ana.setlength(nvar);
-    dldn0.setlength(ncon*3); 
+    dldn0.setlength(ncon*3);
     dldw0.setlength(ncon*4);
     dz.setlength(nvar);
-    dlam0.setlength(nvar+ncon);
+    dlam0.setlength(q.cols());
     dlam.setlength(ncon);
-    dldx0.setlength(nvar+ncon);
-    for (int i = 0; i < nvar; ++i)
-        dldx0[i] = dldx[i];
-    for (int i = 0; i < ncon; ++i)
-        dldx0[i+nvar] = 0;
     for (int i = 0; i < nvar; ++i)
         ana[i] = dz[i] = 0;
     for (int i = 0; i < ncon*3; ++i) dldn0[i] = 0;
     for (int i = 0; i < ncon*4; ++i) dldw0[i] = 0;
-    // dlam = R^-1 * qtx
-    ae_int_t info;
-    alglib::densesolverreport rep;
-    rmatrixsolve(q, (ae_int_t)(nvar+ncon), dldx0, info, rep, dlam0);
-    for (int i = 0; i < nvar; ++i)
-        dz[i] = dlam0[i];
-    for (int j = 0; j < ncon; ++j)
-        dlam[j] = dlam0[j+nvar];
-   
+    // qtx = qt * sqrt(m^-1) dldx
+  
+    for (int i = 0; i < q.cols(); ++i) {
+        qtx[i] = 0;
+
+        for (int j = 0; j < nvar; ++j) {
+            qtx[i] += q[j][i] * dldx[j] * sm_1[j];
+        }
+
+    }
+    // dz = sqrt(m^-1) (sqrt(m^-1) dldx - q * qtx)
+    for (int i = 0; i < nvar; ++i) {
+        dz[i] = dldx[i] * sm_1[i];
+        for (int j = 0; j < q.cols(); ++j)
+            dz[i] -= q[i][j] * qtx[j];
+        dz[i] *= sm_1[i];
+    }
+
+    //part1: dldq * dqdxt = M dz
+
     for (int i = 0; i < nvar; ++i)
         ana[i] += dz[i] / sm_1[i] / sm_1[i];
 

@@ -125,7 +125,7 @@ This experiment requires MuJoCo environment. Install [MuJoCo](http://www.mujoco.
 python exp_mujoco.py
 ```
 <div align="center">
-<img width="300px" src="https://github.com/YilingQiao/linkfiles/raw/master/icml20/mj_mismatch.gif"> 
+<img width="100px" src="https://github.com/YilingQiao/linkfiles/raw/master/icml20/mj_mismatch.gif"> 
 </div>
 
 ## Bibtex

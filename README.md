@@ -89,20 +89,34 @@ bash script_abqr.sh
 python exp_momentum.py
 ```
 
+<div align="center">
+<img width="300px" src="https://github.com/YilingQiao/linkfiles/raw/master/icml20/momentum.gif"> 
+</div>
+
 ### Two-way coupling - Trampoline
 ```bash
 python exp_trampoline.py
 ```
 
+<div align="center">
+<img width="300px" src="https://github.com/YilingQiao/linkfiles/raw/master/icml20/trampoline.gif"> 
+</div>
+
+
 ### Two-way coupling - Domino
 ```bash
 python exp_domino.py
 ```
+<div align="center">
+<img width="300px" src="https://github.com/YilingQiao/linkfiles/raw/master/icml20/domino.gif"> 
+</div>
+
 
 ### Two-way coupling - armadillo and bunny
 ```bash
 python exp_bunny.py
 ```
+
 
 ### Domain transfer - motion control in MuJoCo
 
@@ -110,12 +124,14 @@ This experiment requires MuJoCo environment. Install [MuJoCo](http://www.mujoco.
 ```bash
 python exp_mujoco.py
 ```
-
+<div align="center">
+<img width="300px" src="https://github.com/YilingQiao/linkfiles/raw/master/icml20/mj_mismatch.gif"> 
+</div>
 
 ## Bibtex
 ```
 @inproceedings{Qiao2020Scalable,
-author  = {Qiao, Yiling and Liang, Junbang and Koltun, Vladlen and Lin, Ming C.},
+author  = {Qiao, Yi-Ling and Liang, Junbang and Koltun, Vladlen and Lin, Ming C.},
 title  = {Scalable Differentiable Physics for Learning and Control},
 booktitle = {ICML},
 year  = {2020},

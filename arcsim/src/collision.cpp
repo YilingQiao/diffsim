@@ -1426,12 +1426,7 @@ static int t2a_solve_cubic (double a, double b, double c, double d, double x[3])
 static double t2a_sub_signed_ee_distance( double* x1mx0,  double* y0mx0,  double* y1mx0,
                             double* y0mx1,  double* y1mx1,  double* y1my0,
                            double *n, double *w, double thres, bool &over) {
-    // Tensor _n; if (!n) n = &_n;
-    // Tensor _w[4]; if (!w) w = _w;
-
     t2a_cross(n, x1mx0, y1my0);
-    //t2a_sub(n, x1mx0, x1mx0);
-
     w[0]=w[1]=w[2]=w[3]=0;
     if (t2a_norm2(n) < 1e-6) {
         over = true;
@@ -1441,14 +1436,6 @@ static double t2a_sub_signed_ee_distance( double* x1mx0,  double* y0mx0,  double
     double h = -t2a_dot(y0mx0, n);
     over = (abs(h) > thres);
       if (over) return h;
-    // Tensor vec0 = torch::stack({y1mx1,y0mx0,y1mx1,y0mx0});
-    // Tensor vec1 = torch::stack({y0mx1,y1mx0,y1mx0,y0mx1});
-    // Tensor ab = tensordot(cross(vec0, vec1, 1), *n, {1},{0}).reshape({2,2});
-    // ab = ab / sum(ab,1,true);
-    // w[0] = ab[0][0];
-    // w[1] = ab[0][1];
-    // w[2] = -ab[1][0];
-    // w[3] = -ab[1][1];
 
     double a0 = t2a_stp(y1mx1, y0mx1, n), a1 = t2a_stp(y0mx0, y1mx0, n),
            b0 = t2a_stp(y1mx1, y1mx0, n), b1 = t2a_stp(y0mx0, y0mx1, n);
@@ -1462,8 +1449,6 @@ static double t2a_sub_signed_ee_distance( double* x1mx0,  double* y0mx0,  double
 
 static double t2a_sub_signed_vf_distance( double *y0,  double *y1,  double *y2,
                            double *n, double *w, double thres, bool &over) {
-    // Tensor _n; if (!n) n = &_n;
-    // Tensor _w[4]; if (!w) w = _w;
     double temp1[3], temp2[3];
     t2a_sub(temp1, y1, y0);
     t2a_sub(temp2, y2, y0);
@@ -1493,20 +1478,11 @@ bool collision_test (Impact::Type type, const Node *node0, const Node *node1,
     int t0 = omp_get_thread_num();
         ++CO::cnt[t0];
     impact.type = type;
-    //if ((is_free(node0)&is_free(node1)&is_free(node2)&is_free(node3)) ^
-    //    (is_free(node0)|is_free(node1)|is_free(node2)|is_free(node3)))
-    //        cout << "!!!!" << endl;
 
     impact.imp_nodes.clear();
     impact.imp_Js.clear();    
     impact.mesh_num.clear();
-    // TODO initialize x0
 
-    //if (is_free(node0)) cout << node0->d_x0[0] << " [0] " << node0->d_x[0] << endl;
-    //if (is_free(node1)) cout << node1->d_x0[0] << " [1] " << node1->d_x[0] << endl;
-    //if (is_free(node2)) cout << node2->d_x0[0] << " [2] " << node2->d_x[0] << endl;
-    //if (is_free(node3)) cout << node3->d_x0[0] << " [3] " << node3->d_x[0] << endl;
- 
     impact.nodes[0] = (Node*)node0;
     impact.nodes[1] = (Node*)node1;
     impact.nodes[2] = (Node*)node2;
@@ -1536,16 +1512,10 @@ bool collision_test (Impact::Type type, const Node *node0, const Node *node1,
 
     
     double d_t[4];
-    // cout << "a: " <<a0 << " "<< a1 << " "<< a2 << " "<< a3 << " \n";
     int nsol = t2a_solve_cubic(a3, a2, a1, a0, d_t);
     d_t[nsol] = 1;
 
-    // int nsol = t.size(0);
-    // t[nsol] = 1; // also check at end of timestep
-    
-    //cout << nsol << endl;
     for (int i = 0; i < nsol; i++) {
-        //cout << d_t[i] << endl;
         if ((d_t[i] < 0) || (d_t[i] > 1))
             continue;
         impact.t = ONE * d_t[i];
@@ -1583,15 +1553,7 @@ bool collision_test (Impact::Type type, const Node *node0, const Node *node1,
        
         if (t2a_dot(n, temp_sum) > 0)
             t2a_mul_scalar(n, n, -1);
-        // compute nodes
 
-        // if (abs(n[0])<1e-8) n[0]*=1e-10;
-        // if (abs(n[1])<1e-8) n[1]*=1e-10;
-        // if (abs(n[2])<1e-8) n[2]*=1e-10;
-
-        // cout << type << " type - n " << n[0] << " " << n[1] << " " << n[2] << endl;
-        // cout << "add jacobian\n";
-        
         contact_jacobian(impact, (Node*)node0, 0);
         contact_jacobian(impact, (Node*)node1, 1);
         contact_jacobian(impact, (Node*)node2, 2);
@@ -1609,7 +1571,6 @@ bool collision_test (Impact::Type type, const Node *node0, const Node *node1,
     return false;
 }
 
-// Independent impacts
 
 bool operator< (const Impact &impact0, const Impact &impact1) {
     return (impact0.t +0.0001< impact1.t).item<int>();
@@ -1621,19 +1582,9 @@ vector<Impact> independent_impacts (const vector<Impact> &impacts) {
     vector<Impact> sorted = impacts;
     sort(sorted.begin(), sorted.end());
     vector<Impact> indep;
-    //cout << "all impact num " << sorted.size();
     for (int e = 0; e < sorted.size(); e++) {
         const Impact &impact = sorted[e];
-        //cout << "impact " << e << " " << impact.t << endl;
-
-        //cout << impact.imp_nodes[0]->x << endl;
-        //cout << impact.imp_nodes[1]->x << endl;
-        //cout << impact.imp_nodes[2]->x << endl;
-        //cout << impact.imp_nodes[3]->x << endl;
-        //cout << impact.nodes[0]->x << endl;
-        //cout << impact.nodes[1]->x << endl;
-        //cout << impact.nodes[2]->x << endl;
-        //cout << impact.nodes[3]->x << endl;
+ 
         bool con = false;
         for (int e1 = 0; e1 < indep.size(); e1++)
             if (conflict(impact, indep[e1]))
@@ -1661,26 +1612,18 @@ void add_impacts (const vector<Impact> &impacts, vector<ImpactZone*> &zones, vec
     for (int z = 0; z < zones.size(); z++)
         zones[z]->active = false;
 
-    //cout << "impact size \n" << impacts.size() << endl;
-    //cout << "zones size \n" << zones.size() << endl;
     for (int i = 0; i < impacts.size(); i++) {
         const Impact &impact = impacts[i];
-       
         Node *node = impact.imp_nodes[impact.imp_nodes[0]->movable ? 0 : 3];
-
         ImpactZone *zone = find_or_create_zone(node, zones); 
-
         for (int n = 0; n < 4; n++) {
             if (impact.imp_nodes[n]->movable)
                 merge_zones(zone, find_or_create_zone(impact.imp_nodes[n], zones),
                         zones);
         }
-    
         zone->impacts.push_back(impact);
         zone->active = true;
     }
-
-
 }
 
 ImpactZone *find_or_create_zone (const Node *node, vector<ImpactZone*> &zones) {
@@ -1691,16 +1634,11 @@ ImpactZone *find_or_create_zone (const Node *node, vector<ImpactZone*> &zones) {
         is_cloth  = false;
         dummy_node = (*::obs_meshes)[m]->dummy_node;
     }
-
-    //+ "dummy_node ^^^^ " << dummy_node->x << endl;
-
     for (int z = 0; z < zones.size(); z++)
         if (is_in(dummy_node, zones[z]->nodes))
             return zones[z];
     ImpactZone *zone = new ImpactZone;
     zone->mesh_num.clear();
-
-
     if (is_cloth) {
         zone->mesh_num.push_back(-1);
         zone->nvar = 3;
@@ -1708,9 +1646,6 @@ ImpactZone *find_or_create_zone (const Node *node, vector<ImpactZone*> &zones) {
         zone->mesh_num.push_back(m);
         zone->nvar = 6;
     }
-
-    //cout << "- xold\n" << dummy_node->xold << endl;
-    //cout << "- m\n" << m << endl;
 
     zone->nodes.push_back(dummy_node);
     zones.push_back(zone);
@@ -1724,11 +1659,8 @@ void merge_zones (ImpactZone* zone0, ImpactZone *zone1,
         return;
     append(zone0->nodes, zone1->nodes);
     append(zone0->impacts, zone1->impacts);
-
     append(zone0->mesh_num, zone1->mesh_num);
-
     zone0->nvar += zone1->nvar;
-
     exclude(zone1, zones);
     delete zone1;
 }
@@ -1741,7 +1673,6 @@ struct NormalOpt: public NLConOpt {
     double ini_c = ::thickness.item<double>();
     double ini_c1 = ::thickness.item<double>();
     double t2a_invm;
-
 
     NormalOpt (): zone(NULL), inv_m(ZERO) {nvar = ncon = 0;}
     NormalOpt (ImpactZone *zone): zone(zone), inv_m(ZERO) {
@@ -1776,10 +1707,6 @@ void precompute_derivative(real_2d_array &a, real_2d_array &q, real_2d_array &r0
                             NormalOpt &slx) {
     a.setlength(slx.nvar,legals.size());
     sm_1.setlength(slx.nvar);
-    // for (int i = 0; i < slx.nvar; ++i)
-    //     //sm_1[i] = 1.0/sqrt(slx.inv_m*get_mass(zone->nodes[i/3])).item<double>();
-    //     sm_1[i] = 1.0/sqrt(get_mass(zone->nodes[i/3])).item<double>();
-
     for (int n = 0; n < zone->nodes.size(); n++) {
         const Node *node = zone->nodes[n];
         if (zone->mesh_num[n] == -1) {
@@ -1804,7 +1731,7 @@ void precompute_derivative(real_2d_array &a, real_2d_array &q, real_2d_array &r0
     if (cols>slx.nvar)cols=slx.nvar;
     rmatrixqrunpackq(a, slx.nvar, legals.size(), tau, cols, qtmp);
     rmatrixqrunpackr(a, slx.nvar, legals.size(), r);
-    // get rid of degenerate G
+
     int newdim = 0;
     for (;newdim < cols; ++newdim)
         if (abs(r[newdim][newdim]) < 1e-6)
@@ -1842,22 +1769,11 @@ vector<Tensor> apply_inelastic_projection_forward(Tensor xold, Tensor ws, Tensor
     Timer ti;
     ti.tick();
 
-    //cout << " auglag 1 " << endl;
     auto slx = NormalOpt(zone);
-
-
     double x[slx.nvar],oricon[slx.ncon];
     int sign;
-    //slx.initialize(x);
-
-
-    //cout << " auglag 2 " << endl;
     auto lambda = augmented_lagrangian_method(slx);
 
-
-    ti.tock();
-    // cout << " auglag = "<< ti.last << endl;
-    ti.tick();
 
 
     vector<int> legals;
@@ -1879,7 +1795,6 @@ vector<Tensor> apply_inelastic_projection_forward(Tensor xold, Tensor ws, Tensor
     precompute_derivative(a, q, r, lambda, sm_1, legals, grads, zone, slx);
 
     ti.tock();
-    //cout << " precompute = "<< ti.last << endl;
 
     Tensor q_tn = arr2ten(q), r_tn = arr2ten(r);
     Tensor lam_tn = ptr2ten(&lambda[0], lambda.size());
@@ -1917,12 +1832,6 @@ void apply_inelastic_projection (ImpactZone *zone,
     zone->n = vector<double>(dn, dn+zone->impacts.size()*3);
     Tensor out_x = func(inp_xold, inp_w, inp_n, zone).cast<Tensor>();
 
-    //cout << "inp_xold \n" << inp_xold << endl;
-    //cout << "inp_w \n" << inp_w << endl;
-    //cout << "inp_n \n" << inp_n << endl;
-    //cout << "out_x \n" << out_x << endl;
-    
-    // Tensor out_x = apply_inelastic_projection_forward(inp_xold, inp_w, inp_n, zone)[0];
     for (int i = 0; i < zone->nodes.size(); ++i)
         zone->nodes[i]->x = out_x.slice(0, zone->node_index[i],
                              zone->node_index[i] + zone->nodes[i]->x.sizes()[0]);
@@ -1933,7 +1842,6 @@ vector<Tensor> compute_derivative(real_1d_array &ans, ImpactZone *zone,
                         real_1d_array &dldx,
                         vector<double> &lambda, bool verbose=false) {
     
-    //cout << "backward \n" ;
     real_1d_array qtx, dz, dlam0, dlam, ana, dldw0, dldn0;
     int nvar = zone->nvar;
     int ncon = zone->impacts.size();
@@ -1949,14 +1857,11 @@ vector<Tensor> compute_derivative(real_1d_array &ans, ImpactZone *zone,
     for (int i = 0; i < ncon*3; ++i) dldn0[i] = 0;
     for (int i = 0; i < ncon*4; ++i) dldw0[i] = 0;
     // qtx = qt * sqrt(m^-1) dldx
-  
     for (int i = 0; i < q.cols(); ++i) {
         qtx[i] = 0;
-
         for (int j = 0; j < nvar; ++j) {
             qtx[i] += q[j][i] * dldx[j] * sm_1[j];
         }
-
     }
     // dz = sqrt(m^-1) (sqrt(m^-1) dldx - q * qtx)
     for (int i = 0; i < nvar; ++i) {
@@ -1965,20 +1870,16 @@ vector<Tensor> compute_derivative(real_1d_array &ans, ImpactZone *zone,
             dz[i] -= q[i][j] * qtx[j];
         dz[i] *= sm_1[i];
     }
-
     //part1: dldq * dqdxt = M dz
-
     for (int i = 0; i < nvar; ++i)
         ana[i] += dz[i] / sm_1[i] / sm_1[i];
-
-    //cout << grad_xold<< endl;
 
     Tensor grad_xold = torch::from_blob(ana.getcontent(), {nvar}, TNOPT).clone();
     Tensor grad_w = torch::from_blob(dldw0.getcontent(), {ncon*4}, TNOPT).clone();
     Tensor grad_n = torch::from_blob(dldn0.getcontent(), {ncon* 3}, TNOPT).clone();
     delete zone;
 
-    return {grad_xold, grad_w*0, grad_n*0};//
+    return {grad_xold, grad_w*0, grad_n*0};
 }
 
 vector<Tensor> apply_inelastic_projection_backward(Tensor dldx_tn, Tensor ans_tn, Tensor q_tn, Tensor r_tn, Tensor lam_tn, Tensor sm1_tn, Tensor legals_tn, ImpactZone *zone) {
@@ -1995,29 +1896,20 @@ void NormalOpt::initialize (double *x) const {
     int start_dim = 0;
     for (int n = 0; n < zone->nodes.size(); n++) {
         set_subvec(x, zone->node_index[n], zone->nodes[n]->x);
-
-
         Node *node = zone->nodes[n];
-
         if (zone->mesh_num[n] == -1) {
             set_subvec(node->d_x, 0, node->x);
             set_subvec(node->d_xold, 0, node->xold);
-            //set_subvec(node->d_mass, 0, node->m);
             node->d_mass[0] = node->m.item<double>();
 
         } else {
             set_subvec(node->d_x, 0, node->x.slice(0, 3, 6));
             set_subvec(node->d_xold, 0, node->xold.slice(0, 3, 6));
-            // set_subvec(node->d_mass, 0, node->total_mass.view([1]));
             node->d_mass[0] = node->total_mass.item<double>();
-
-            // cout << "?? m " << node->d_mass[0] << endl;
-            // cout << "?? m2 " << node->total_mass << endl;
 
             set_subvec(node->d_angx, 0, node->x.slice(0, 0, 3));
             set_subvec(node->d_angxold, 0, node->xold.slice(0, 0, 3));
 
-            // TODO test
             auto accessor_ang_inertia = node->ang_inertia.packed_accessor<double,2>();
             for (int i = 0; i < 3; i++)
                 for (int j = 0; j < 3; j++) 
@@ -2025,21 +1917,9 @@ void NormalOpt::initialize (double *x) const {
         }
     }
 
-    //cout << "initialize\n";
-    //for (int i = 0; i < nvar; ++i) {
-    //    cout <<x[i] <<"\n";
-    //}
 }
 
 void NormalOpt::precompute (const double *x) const {
-    // for (int n = 0; n < zone->nodes.size(); n++) {
-    //     bool is_cloth = (zone->mesh_num[n] == -1);
-    //     zone->nodes[n]->x = get_subvec(x, is_cloth, zone->node_index[n]);
-    //     if (!is_cloth)
-    //         update_rigid_trans(zone->mesh_num[n]);
-    // }
-
-    
     for (int n = 0; n < zone->nodes.size(); n++) {
         if (zone->mesh_num[n] == -1) {
             t2a_get_subvec(zone->nodes[n]->d_x, x, zone->node_index[n]);
@@ -2050,29 +1930,10 @@ void NormalOpt::precompute (const double *x) const {
             t2a_update_rigid_trans(zone->mesh_num[n]);
         }
     }
-    //cout << "precompute\n";
-    //for (int i = 0; i < nvar; i++)
-    //    cout << x[i] << " ";
 }
 
 double NormalOpt::objective (const double *x) const {
     double e = 0;
-  
-    // cout << "objective \n";
-    // for (int n = 0; n < zone->nodes.size(); n++) {
-    //     Tensor dx = node->x - node->xold;
-    //     if (zone->mesh_num[n] == -1) {
-    //         e = e + (inv_m*get_mass(node)*dot(dx, dx)/2).item<double>();
-    //     } else {
-    //         dx = dx.reshape({6,1});
-    //         Tensor w = dx.slice(0,0,3);
-    //         Tensor v = dx.slice(0,3,6);
-    //         Tensor e_ang = inv_m*w.t().matmul(node->ang_inertia).matmul(w).reshape({1})/2;
-    //         Tensor e_lin = inv_m*node->total_mass * v.t().matmul(v).reshape({1})/2;
-    //         e = e + e_ang.item<double>() + e_lin.item<double>();
-    //     }
-    // }
-
     double temp[3], temp2[3];
 
     for (int n = 0; n < zone->nodes.size(); n++) {
@@ -2086,128 +1947,56 @@ double NormalOpt::objective (const double *x) const {
         } else {
             t2a_sub(temp, node->d_x, node->d_xold);
             double e_lin = t2a_dot(temp, temp)* node->d_mass[0] * t2a_invm;
-
-            // cout << "a " << temp[0] << endl;
-
             t2a_sub(temp, node->d_angx, node->d_angxold);
-            // cout << "b " << temp[0] << endl;
             t2a_vec_mul_matrix(temp2, temp, node->d_ang_inertia);
-            // cout << "c " << temp2[0] << endl;
             double e_ang = t2a_dot(temp, temp2) * t2a_invm;
-
             e = e + e_lin + e_ang;
         }
     }
-
-    // cout << "objective end\n";
-    //cout << "objective: " << e << endl;
-
-
     return e;
 }
 
 void NormalOpt::obj_grad (const double *x, double *grad) const {
-    // int start_dim = 0;
-    // for (int n = 0; n < zone->nodes.size(); n++) {
-    //     const Node *node = zone->nodes[n];
-    //     Tensor dx = node->x - node->xold;
 
-    //     if (zone->mesh_num[n] == -1) {
-    //         set_subvec(grad, start_dim, inv_m*get_mass(node)*dx);
-    //     } else {
-    //         dx = dx.reshape({6,1});
-    //         Tensor w = dx.slice(0,0,3);
-    //         Tensor v = dx.slice(0,3,6);
-    //         Tensor p_ang = inv_m*node->ang_inertia.matmul(w);
-    //         Tensor p_lin = inv_m*node->total_mass * v;
-
-    //         Tensor v_grad = torch::cat({p_ang, p_lin}, 0).squeeze();
-           
-
-    //         set_subvec(grad, start_dim, v_grad);
-    //     }
-    //     start_dim += zone->nodes[n]->xold.sizes()[0];
-    // }
-
-    // cout << "obj_grad \n";
     double temp[3], temp2[3];
     int start_dim = 0;
     for (int n = 0; n < zone->nodes.size(); n++) {
-
         const Node *node = zone->nodes[n];
-
         if (zone->mesh_num[n] == -1) {
-            
             t2a_sub(temp, node->d_x, node->d_xold);
-           
             t2a_mul_scalar(temp, temp, node->d_mass[0]*t2a_invm);
-        
             t2a_set_subvec(grad, start_dim, temp);
-
-
-
-
             start_dim += 3;
-
         } else {
-            // p_ang = inv_m*node->ang_inertia.matmul(w);
             t2a_sub(temp, node->d_angx, node->d_angxold);
             t2a_matrix_mul_vec(temp2, node->d_ang_inertia, temp);
             t2a_mul_scalar(temp2, temp2, t2a_invm);
             t2a_set_subvec(grad, start_dim, temp2);
-
-
-            //cout << "obj_grad-1 " << temp2[0] << endl;
-            //cout << "obj_grad-2 " << temp2[1] << endl;
-            //cout << "obj_grad-3 " << temp2[2] << endl;
-            // Tensor p_lin = inv_m*node->total_mass * v;
             t2a_sub(temp, node->d_x, node->d_xold);
             t2a_mul_scalar(temp, temp, t2a_invm * node->d_mass[0]);
             t2a_set_subvec(grad, start_dim+3, temp);
-
-
-            //cout << "obj_grad-4 " << temp[0] << endl;
-
             start_dim += 6;
         }
     }
-
-
-    // cout << "obj_grad end\n";
 
 }
 
 double NormalOpt::constraint (const double *x, int j, int &sign) const {
     sign = -1;
     const Impact &impact = zone->impacts[j];
-
     double c1 = ini_c1;
-
-    // for (int n = 0; n < 4; n++) {
-    //     Tensor curnewx = impact.nodes[n]->x;
-    //     double *dx1 = curnewx.data<double>();
-    //     for (int k = 0; k < 3; ++k) {
-    //         c1 -= zone->w[j*4+n]*zone->n[j*3+k]*dx1[k];
-    //     }
-        
-    // }
-    // cout << "constraint \n";
     for (int n = 0; n < 4; n++) {
         double *dx1 = impact.nodes[n]->d_x;
         for (int k = 0; k < 3; ++k) {
             c1 -= zone->w[j*4+n]*zone->n[j*3+k]*dx1[k];
         }
-        
     }
-
     return c1;
 }
 
 void NormalOpt::con_grad (const double *x, int j, double factor,
                           double *grad) const {
     const Impact &impact = zone->impacts[j];
-
-
     for (int n = 0; n < 4; n++) {
         Node *node = impact.imp_nodes[n];
         int i = find(node, zone->nodes);
@@ -2215,28 +2004,19 @@ void NormalOpt::con_grad (const double *x, int j, double factor,
         if (i != -1) {
             if (zone->mesh_num[i] == -1) {
                 for (int k = 0; k < 3; ++k) {
-                    grad[zone->node_index[i]+k] -= factor*zone->w[j*4+n]*zone->n[j*3+k];
-                    
+                    grad[zone->node_index[i]+k] -= factor*zone->w[j*4+n]*zone->n[j*3+k];  
                 }
             } else {
                 for (int q = 0; q < 6; q++) {
                     double sum_grad = 0.0;
                     for (int k = 0; k < 3; k++) {
                         sum_grad += factor*zone->w[j*4+n]*zone->n[j*3+k]*impact.d_Js[n][k][q];
-                    
-                        //cout << "con_grad- " << q << "-" << k << factor*zone->w[j*4+n]*zone->n[j*3+k]*impact.d_Js[n][k][q] << endl;
-                        //cout << "con_grad- " << q << "-" << k << impact.d_Js[n][k][q] << endl;
-
                     }
-                
                     grad[zone->node_index[i]+q] -= sum_grad;
-                  
                 }
             }
         }      
     }
-
-    // cout << "con_grad end\n";
 }
 
 void NormalOpt::finalize (const double *x) {
@@ -2244,7 +2024,6 @@ void NormalOpt::finalize (const double *x) {
     for (int i = 0; i < nvar; ++i) {
         tmp[i] = x[i];
     }
-    //exit(0);
 }
 
 Tensor &get_xold (const Node *node) {
@@ -2255,12 +2034,9 @@ Tensor &get_xold (const Node *node) {
 
 }; //namespace CO
 
- 
 void collision_response (Simulation &sim, vector<Mesh*> &meshes, const vector<Constraint*> &cons,
                          const vector<Mesh*> &obs_meshes, bool verbose) {
     CO::collision_response(sim, meshes, cons, obs_meshes, verbose);
 }
-
-
 
 #endif

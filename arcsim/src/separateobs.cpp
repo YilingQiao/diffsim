@@ -70,20 +70,16 @@ void separate_obstacles (vector<Mesh*> &obs_meshes,
     ::meshes = &meshes;
     SO::xold = node_positions(obs_meshes);
     SO::nold = face_normals(obs_meshes);
-    cout << "create bvh" << endl;
     vector<AccelStruct*> obs_accs = create_accel_structs(obs_meshes, false),
                          accs = create_accel_structs(meshes, false);
     vector<Ixn> ixns;
     int iter;
     for (iter = 0; iter < max_iter; iter++) {
-    cout << "find ixns" << endl;
         vector<Ixn> new_ixns = find_intersections(accs, obs_accs);
         if (new_ixns.empty())
             break;
         append(ixns, new_ixns);
-    cout << "solve ixns" << endl;
         solve_ixns(ixns);
-    cout << "update_accel_struct" << endl;
         for (int m = 0; m < obs_meshes.size(); m++) {
             compute_ws_data(*obs_meshes[m]);
             update_accel_struct(*obs_accs[m]);
@@ -561,8 +557,6 @@ void SeparationOpt::finalize (const double *x) {
 
 void separate_obstacles (vector<Mesh*> &obs_meshes,
                          const vector<Mesh*> &meshes) {
-    cout << "separate obs" << endl;
     SO::separate_obstacles(obs_meshes, meshes);
-    cout << "separate obs finish" << endl;
 }
 

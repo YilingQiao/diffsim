@@ -705,7 +705,7 @@ void load_material_data (Cloth::Material &material, const string &filename, bool
     cout << "reuse!!" << endl;
     }
     material.density = material.densityori*1;
-    material.bending = 1e-4*material.bendingori.unsqueeze(0).unsqueeze(1);
+    material.bending = material.bendingori.unsqueeze(0).unsqueeze(1);
     StretchingData data = torch::zeros({4,2,5},TNOPT);
     data.slice(1,0,1) = material.stretchingori[0].unsqueeze(1).unsqueeze(2).repeat({1,1,5});
     for (int i = 0; i < 5; i++) {

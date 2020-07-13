@@ -90,6 +90,7 @@ Quaternion Quaternion::from_euler(const Tensor &euler) {
     return q;
 }
 
+
 Tensor Quaternion::to_euler(const Tensor &s, const Tensor &v) {
     Tensor w = s;
     Tensor x=v[0], y=v[1], z=v[2];

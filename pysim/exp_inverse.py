@@ -73,7 +73,7 @@ def run_sim(steps,sim,param_g):
 
 	# sim.obstacles[2].curr_state_mesh.dummy_node.x = param_g[1]
 	print("step")
-	for step in range(10):
+	for step in range(20):
 		print(step)
 
 		dx = []
@@ -121,8 +121,8 @@ def do_train(cur_step,optimizer,sim,param_g):
 		# print(ans)
 		# asdf.asdf
 		print("=======================================")
-		# print(param_g.data)
-		# print(param_g.grad.data)
+		#print(param_g.data)
+		#print(param_g.grad.data)
 		f.write('epoch {}:  loss={} \n'.format(epoch,  loss.data))
 		print('epoch {}:  loss={} \n'.format(epoch, loss.data))
 
@@ -141,9 +141,9 @@ with open(out_path+('/log%s.txt'%timestamp),'w',buffering=1) as f:
 	sim=arcsim.get_sim()
 	# reset_sim(sim)
 
-	param_g = torch.zeros([10, 2],dtype=torch.float64, requires_grad=True)
+	param_g = torch.zeros([20, 2],dtype=torch.float64, requires_grad=True)
 
-	lr = 0.3
+	lr = 0.1
 	momentum = 0.4
 	f.write('lr={} momentum={}\n'.format(lr,momentum))
 	optimizer = torch.optim.SGD([{'params':param_g,'lr':lr}],momentum=momentum)

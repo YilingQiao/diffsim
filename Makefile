@@ -62,7 +62,7 @@ WARNINGS := -Wall -Wno-sign-compare -Wcomment
 INCLUDE_DIRS += $(BLAS_INCLUDE)
 
 # Automatic dependency generation (nvcc is handled separately)
-CXXFLAGS += -MMD -MP
+CXXFLAGS += -MMD -MP -DFAST_MODE
 
 # Complete build flags.
 COMMON_FLAGS += $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir)) \

@@ -64,7 +64,6 @@ struct Node {
     std::vector<Vert*> verts;
     Tensor y; // plastic embedding
     Tensor x, x0, v; // position, old (collision-free) position, velocity
-
     bool preserve; // don't remove this node
     bool movable = true; // fixed or not
     // topological data
@@ -79,17 +78,12 @@ struct Node {
 
     Tensor ang_inertia, total_mass, xold, scale;
 
-    // // tensor to double
+#ifdef FAST_MODE
     double d_x[3], d_xold[3], d_x0[3];
     double d_angx[3], d_angxold[3];
     double d_mass[1];
     double d_ang_inertia[3][3];
-
-
-    // double *d_x, *d_xold;
-    // double *d_angx, *d_angxold;
-    // double *d_mass;
-    // double **d_ang_inertia;
+#endif
 
     Node () {}
     explicit Node (const Tensor &y, const Tensor &x, const Tensor &v, int label=0):

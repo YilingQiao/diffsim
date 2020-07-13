@@ -100,8 +100,6 @@ Tensor sub_signed_ee_distance(const Tensor &x1mx0, const Tensor &y0mx0, const Te
     return h;
 }
 
-
-
 bool set_unsigned_ve_distance (const Tensor &x, const Tensor &y0, const Tensor &y1,
                                Tensor *_d, Tensor *_n,
                                Tensor *_wx, Tensor *_wy0, Tensor *_wy1) {

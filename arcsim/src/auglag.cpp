@@ -56,10 +56,17 @@ vector<double> augmented_lagrangian_method (NLConOpt &problem, OptOptions opt,
     //   cout << "\tc=" << ::problem->constraint(&x[0], i, sign) << endl;
     mincgstate state;
     mincgreport rep;
+
+
+  
+
     mincgcreate(x, state);
     const int max_total_iter = opt.max_iter(),
               max_sub_iter = sqrt(max_total_iter);
     int iter = 0;
+
+
+
 
     while (iter < max_total_iter) {
      
@@ -91,16 +98,12 @@ inline double clamp_violation (double x, int sign) {
 
 static void auglag_value_and_grad (const real_1d_array &x, double &value,
                                    real_1d_array &grad, void *ptr) {
-
-
-  
+    
 
     ::problem->precompute(&x[0]);
     value = ::problem->objective(&x[0]);
     ::problem->obj_grad(&x[0], &grad[0]);
 
- 
-      
 
     static const int nthreads = omp_get_max_threads();
     static double *values = new double[nthreads];
@@ -128,7 +131,6 @@ static void auglag_value_and_grad (const real_1d_array &x, double &value,
     for (int i = 0; i < ::problem->nvar; i++)
         for (int t = 0; t < nthreads; t++)
             grad[i] += grads[t][i];
-
 
 }
 

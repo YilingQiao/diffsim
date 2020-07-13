@@ -118,7 +118,7 @@ void for_overlapping_faces (const vector<AccelStruct*> &accs,
                             const vector<AccelStruct*> &obs_accs,
                             Tensor thickness0, BVHCallback callback,
                             bool parallel) {
-    omp_set_num_threads(8);
+    omp_set_num_threads(1);
     double thickness = thickness0.item<double>();
     int nnodes = (int)ceil(sqrt(2*omp_get_max_threads()));
     vector<BVHNode*> nodes = collect_upper_nodes(accs, nnodes);
@@ -135,12 +135,17 @@ void for_overlapping_faces (const vector<AccelStruct*> &accs,
                                       callback);
     }
 
+    // cout << "obs_accs.size(): " << obs_accs.size() << endl;
     nodes = collect_upper_nodes(obs_accs, nnodes);
 #pragma omp parallel for
     for (int n = 0; n < nodes.size(); n++) {
         for_overlapping_faces(nodes[n], thickness, callback);
         for (int m = 0; m < n; m++)
             for_overlapping_faces(nodes[n], nodes[m], thickness, callback);
+        //for (int o = 0; o < obs_accs.size(); o++)
+        //    if (obs_accs[o]->root)
+        //        for_overlapping_faces(nodes[n], obs_accs[o]->root, thickness,
+        //                              callback);
     }
 
     omp_set_num_threads(nthreads);

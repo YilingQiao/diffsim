@@ -25,7 +25,7 @@
     }
     ],
     "disable":["remeshing"],
-    "gravity":[0,0,-1],
+    "gravity":[0,0,-4],
     "handles": [{"nodes": [30,25,60,54], "end_time": 4}],
     "magic": {"repulsion_thickness": 5e-3, "collision_stiffness": 1e7}
 }

@@ -103,9 +103,6 @@ inline void set_subvec (Tensor &x, int i, const Tensor &xi) {
 inline void add_subvec (Tensor &x, int i, const Tensor &xi) {
     x.slice(0,i*3,i*3+3) +=xi;}//= x.slice(0,i*3,i*3+3) + xi;}
 
-// ---------------- t 2 array
-
-// ----------------
 inline std::istream &operator>>(std::istream &in, Tensor &x) {
   double x0;
   in >> x0;

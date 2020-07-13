@@ -32,6 +32,47 @@
 #include "constraint.hpp"
 using torch::Tensor;
 
+#ifndef FAST_MODE
+
+void collision_response (Simulation &sim, std::vector<Mesh*> &meshes,
+                         const std::vector<Constraint*> &cons,
+                         const std::vector<Mesh*> &obs_meshes,bool verbose=false);
+namespace CO {
+struct Impact {
+    enum Type {VF, EE} type;
+    Tensor t;
+    Node *nodes[4];
+    Tensor w[4];
+    Tensor n;
+
+    std::vector<Node*>  imp_nodes;
+    std::vector<Tensor> imp_Js;     // partial pdot /partial qdot
+    std::vector<int>    mesh_num; // 0 cloth  >0 rigid number
+    Impact () {}
+    //Impact (Type type, const Node *n0, const Node *n1, const Node *n2,
+    //        const Node *n3): type(type) {
+    //    nodes[0] = (Node*)n0;
+    //    nodes[1] = (Node*)n1;
+    //    nodes[2] = (Node*)n2;
+    //    nodes[3] = (Node*)n3;
+    //}
+};
+
+struct ImpactZone {
+    vector<Node*> nodes;
+    vector<Impact> impacts;
+    vector<double> w, n;
+    vector<Tensor> xs;
+    vector<Tensor> x0s;
+    vector<int> mesh_num;
+    vector<int> node_index;
+    bool active;
+    int nvar;
+};
+} //namespace CO
+
+#else
+
 
 
 void collision_response (Simulation &sim, std::vector<Mesh*> &meshes,
@@ -145,5 +186,8 @@ inline void t2a_normalize(double *x) {
 
 
 
+
+
+#endif
 
 #endif

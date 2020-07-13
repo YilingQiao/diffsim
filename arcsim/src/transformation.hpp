@@ -83,7 +83,4 @@ DTransformation get_dtrans (const Motion &motion, Tensor t);
 Tensor apply_dtrans (const DTransformation &dT, const Tensor &x0, Tensor *vel=NULL);
 Tensor apply_dtrans_vec (const DTransformation &dT, const Tensor &v0);
 
-
-
-
 #endif

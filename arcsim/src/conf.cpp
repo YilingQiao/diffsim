@@ -191,7 +191,27 @@ void parse (Cloth::Remeshing&, const Json::Value&);
 struct Velocity {Tensor v, w; Tensor o;};
 void parse (Velocity &, const Json::Value &);
 void apply_velocity (Mesh &mesh, const Velocity &vel);
-
+ 
+#ifndef FAST_MODE
+void parse (Cloth &cloth, const Json::Value &json) {
+    string filename;
+    parse(filename, json["mesh"]);
+    load_obj(cloth.mesh, filename);
+    cloth.mesh.isCloth = true;
+    Transformation transform;
+    parse(transform, json["transform"]);
+    if ((transform.scale != 1).item<int>())
+        for (int v = 0; v < cloth.mesh.verts.size(); v++)
+            cloth.mesh.verts[v]->u = cloth.mesh.verts[v]->u * transform.scale;
+    compute_ms_data(cloth.mesh);
+    apply_transformation(cloth.mesh, transform);
+    //Velocity velocity;
+    //parse(velocity, json["velocity"]);
+    //apply_velocity(cloth.mesh, velocity);
+    parse(cloth.materials, json["materials"]);
+    parse(cloth.remeshing, json["remeshing"]);
+}
+#else
 void parse (Cloth &cloth, const Json::Value &json) {
     string filename;
     parse(filename, json["mesh"]);
@@ -218,6 +238,8 @@ void parse (Cloth &cloth, const Json::Value &json) {
     parse(cloth.materials, json["materials"]);
     parse(cloth.remeshing, json["remeshing"]);
 }
+#endif
+
 
 void parse (Transformation& transform, const Json::Value &json) {
     vector<double> rot(4);
@@ -262,8 +284,8 @@ void parse (Cloth::Material *&material, const Json::Value &json) {
     stretching_mult *= thicken;
     bending_mult *= thicken;
     material->density = material->density * density_mult;
+   
     material->stretching = material->stretching * stretching_mult;
-
     material->bending = material->bending * bending_mult;
     // cout << material->bending << endl;
     parse_tn<1>(material->damping, json["damping"], ZERO);
@@ -486,7 +508,7 @@ void parse_obstacles (vector<Obstacle> &obstacles, const Json::Value &json,
        
     }
 }
-
+#ifndef FAST_MODE
 void parse_obstacle (Obstacle &obstacle, const Json::Value &json,
                      const vector<Motion> &motions) {
     string filename;
@@ -510,8 +532,58 @@ void parse_obstacle (Obstacle &obstacle, const Json::Value &json,
 
     Tensor com = ZERO3;
     int n_nodes = obstacle.base_mesh.nodes.size();
-    // if (n_nodes > 10)
-    //     n_nodes = 10;
+    
+    for (int i = 0; i < n_nodes; i++) {
+        com = com + obstacle.base_mesh.nodes[i]->x;
+    }
+    com = com / n_nodes;
+
+
+
+    for (int i = 0; i < obstacle.base_mesh.nodes.size(); i++) {
+        obstacle.base_mesh.nodes[i]->x = obstacle.base_mesh.nodes[i]->x - com;
+    }
+
+    obstacle.curr_state_mesh.dummy_node = new Node();
+    Node *dummy_node = obstacle.curr_state_mesh.dummy_node;
+    dummy_node->scale = ONE;
+    dummy_node->x  = torch::cat({ZERO3, com});
+    dummy_node->x0 = dummy_node->x + ZERO6;
+
+
+    int movable;
+    parse(movable, json["movable"], 1);
+    dummy_node->movable = (movable==1) ? true : false;
+    //cout << movable << " "  << dummy_node->movable << endl;
+
+    parse_tn<6>(dummy_node->v, json["velocity"], ZERO6);
+
+}
+#else
+void parse_obstacle (Obstacle &obstacle, const Json::Value &json,
+                     const vector<Motion> &motions) {
+    string filename;
+    parse(filename, json["mesh"]);
+    load_obj(obstacle.base_mesh, filename);
+    obstacle.base_mesh.isCloth = false;
+
+    obstacle.file_mesh = deep_copy(obstacle.base_mesh);
+
+    Transformation transform;
+    parse(transform, json["transform"]); 
+    apply_transformation(obstacle.base_mesh, transform);
+    //obstacle.euler = transform.euler;
+    int m;
+    parse(m, json["motion"], -1);
+    obstacle.transform_spline = (m != -1) ? &motions[m] : NULL;
+    parse_tn<1>(obstacle.start_time, json["start_time"], ZERO);
+    parse_tn<1>(obstacle.end_time, json["end_time"], infinity);
+
+    obstacle.get_mesh(ZERO);
+
+    Tensor com = ZERO3;
+    int n_nodes = obstacle.base_mesh.nodes.size();
+
     for (int i = 0; i < n_nodes; i++) {
         com = com + obstacle.base_mesh.nodes[i]->x;
     }
@@ -519,7 +591,7 @@ void parse_obstacle (Obstacle &obstacle, const Json::Value &json,
 
     for (int i = 0; i < obstacle.base_mesh.nodes.size(); i++) {
         obstacle.base_mesh.nodes[i]->x = obstacle.base_mesh.nodes[i]->x - com;
-        // set_subvec(obstacle.base_mesh.nodes[i]->d_x, 0, obstacle.base_mesh.nodes[i]->x);
+    
     }
 
 
@@ -544,6 +616,7 @@ void parse_obstacle (Obstacle &obstacle, const Json::Value &json,
     parse_tn<6>(dummy_node->v, json["velocity"], ZERO6);
 
 }
+#endif
 
 void parse_morph (Morph&, const Json::Value&, const vector<Cloth>&);
 void parse (Spline<Morph::Weights>::Point &, const Json::Value &);
@@ -632,13 +705,14 @@ void load_material_data (Cloth::Material &material, const string &filename, bool
     cout << "reuse!!" << endl;
     }
     material.density = material.densityori*1;
-    material.bending = material.bendingori.unsqueeze(0).unsqueeze(1);
+    material.bending = 1e-4*material.bendingori.unsqueeze(0).unsqueeze(1);
     StretchingData data = torch::zeros({4,2,5},TNOPT);
     data.slice(1,0,1) = material.stretchingori[0].unsqueeze(1).unsqueeze(2).repeat({1,1,5});
     for (int i = 0; i < 5; i++) {
         data.slice(1,1,2).slice(2,i,i+1) = material.stretchingori[i+1].unsqueeze(1).unsqueeze(2);
     }
     data = data.unsqueeze(0);
+
     evaluate_stretching_samples(material.stretching, data);
 }
 

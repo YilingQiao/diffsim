@@ -17,9 +17,9 @@ class CollisionFunc(torch.autograd.Function):
 	def backward(ctx, dldz):
 		st = time.time()
 		ans = tuple(arcsim.apply_inelastic_projection_backward(dldz, *(ctx.saved_tensors+(ctx.intermediate,)))+[None])
-		# print("backward----------------------")
-		# print(dldz)
-		# print(ans)
+		#print("backward----------------------")
+		#print(dldz)
+		#print(ans)
 		#print('collsion backward time={} for nvar={}'.format(time.time()-st,dldz.shape[0]))
 		return ans
 

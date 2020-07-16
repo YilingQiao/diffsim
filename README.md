@@ -5,7 +5,10 @@
 
 *Yi-Ling Qiao, Junbang Liang, Vladlen Koltun, Ming C. Lin*
 
-(in progress)
+[[Project]](https://gamma.umd.edu/researchdirections/mlphysics/diffsim/)
+[[arXiv]](https://arxiv.org/abs/2007.02168)
+[[Video]](https://icml.cc/virtual/2020/poster/5767)
+[[GitHub]](https://github.com/YilingQiao/diffsim)
 
 ## Setup
 1. Create a conda virtual environment and activate it.

@@ -303,9 +303,6 @@ vector<Impact> find_impacts (const vector<AccelStruct*> &accs,
         append(impacts, CO::impacts[t]);
 
     }
-
-   
-
     return impacts;
 }
 
@@ -696,6 +693,10 @@ vector<Tensor> apply_inelastic_projection_forward(Tensor xold, Tensor ws, Tensor
     Tensor sm1_tn = ptr2ten(sm_1.getcontent(), sm_1.length());
     Tensor legals_tn = ptr2ten(&legals[0], legals.size());
     Tensor ans = ptr2ten(&slx.tmp[0], slx.nvar);
+
+
+
+
     for (int i = 0; i < slx.ncon; ++i) {
        delete [] grads[i];
     }
@@ -779,6 +780,7 @@ vector<Tensor> compute_derivative(real_1d_array &ans, ImpactZone *zone,
  
     for (int i = 0; i < nvar; ++i)
         ana[i] += dz[i] / sm_1[i] / sm_1[i];
+
     //part2: dldg * dgdw * dwdxt
     // for (int j = 0; j < ncon; ++j) {
     //     Impact &imp=zone->impacts[j];
@@ -803,6 +805,42 @@ vector<Tensor> compute_derivative(real_1d_array &ans, ImpactZone *zone,
     //         }
     //     }
     // }
+
+    // part2: dldg * dgdw * dwdxt
+    for (int j = 0; j < ncon; ++j) {
+        Impact &imp=zone->impacts[j];
+        double *dldn = dldn0.getcontent() + j*3;
+        for (int n = 0; n < 4; n++) {
+            // auto accessor_J = impact.imp_Js[n].packed_accessor32<double,2>();
+            Tensor curnewx = imp.nodes[n]->x;
+            double *dx1 = curnewx.data<double>();
+
+            int i = find(imp.imp_nodes[n], zone->nodes);
+            double &dldw = dldw0[j*4+n];
+
+            if (zone->mesh_num[i] == -1) {
+                for (int k = 0; k < 3; ++k) {
+                    //g=-w*n
+                    dldw += (dlam[j]*dx1[k]+
+                            lambda[j]*dz[zone->node_index[i]+k])*imp.n[k].item<double>();
+                    //part3: dldg * dgdn 
+                    dldn[k] += imp.w[n].item<double>()*(dlam[j]*ans[zone->node_index[i]+k]+lambda[j]*dz[zone->node_index[i]+k]);
+                }
+            } else {
+                auto accessor_J = imp.imp_Js[n].packed_accessor32<double,2>();
+                for (int k = 0; k < 3; k++) {
+                    dldw += dlam[j]*dx1[k]*imp.n[k].item<double>();
+                    dldn[k] += imp.w[n].item<double>()*dlam[j]*ans[zone->node_index[i]+k] ;
+                    for (int q = 0; q < 6; q++) {
+                        dldw += lambda[j]*dz[zone->node_index[i]+q]*accessor_J[k][q]*imp.n[k].item<double>();
+                        dldn[k] += imp.w[n].item<double>()*lambda[j]*dz[zone->node_index[i]+q]*accessor_J[k][q];
+                    }
+                }
+
+            }
+        }
+    }
+
     Tensor grad_xold = torch::from_blob(ana.getcontent(), {nvar}, TNOPT).clone();
     Tensor grad_w = torch::from_blob(dldw0.getcontent(), {ncon*4}, TNOPT).clone();
     Tensor grad_n = torch::from_blob(dldn0.getcontent(), {ncon* 3}, TNOPT).clone();
@@ -882,7 +920,6 @@ void NormalOpt::obj_grad (const double *x, double *grad) const {
 
 double NormalOpt::constraint (const double *x, int j, int &sign) const {
     sign = -1;
-    double c = ::thickness.item<double>();
     double c1 = ::thickness.item<double>();
     const Impact &impact = zone->impacts[j];
     for (int n = 0; n < 4; n++) {
@@ -901,23 +938,23 @@ void NormalOpt::con_grad (const double *x, int j, double factor,
     for (int n = 0; n < 4; n++) {
         Node *node = impact.imp_nodes[n];
         int i = find(node, zone->nodes);
-        if (i != -1) {
-            if (zone->mesh_num[i] == -1) {
-                for (int k = 0; k < 3; ++k) {
-                    grad[zone->node_index[i]+k] -= factor*zone->w[j*4+n]*zone->n[j*3+k];
-                }
-            } else {
-                auto accessor_J = impact.imp_Js[n].packed_accessor32<double,2>();
-                for (int q = 0; q < 6; q++) {
-                    double sum_grad = 0.0;
-                    for (int k = 0; k < 3; k++) {
-                        sum_grad += factor*zone->w[j*4+n]*zone->n[j*3+k]*accessor_J[k][q];
-                    }
-                    grad[zone->node_index[i]+q] -= sum_grad;
-                }
 
+        if (zone->mesh_num[i] == -1) {
+            for (int k = 0; k < 3; ++k) {
+                grad[zone->node_index[i]+k] -= factor*zone->w[j*4+n]*zone->n[j*3+k];
             }
+        } else {
+            auto accessor_J = impact.imp_Js[n].packed_accessor32<double,2>();
+            for (int q = 0; q < 6; q++) {
+                double sum_grad = 0.0;
+                for (int k = 0; k < 3; k++) {
+                    sum_grad += factor*zone->w[j*4+n]*zone->n[j*3+k]*accessor_J[k][q];
+                }
+                grad[zone->node_index[i]+q] -= sum_grad;
+            }
+
         }
+        
     }
 }
 

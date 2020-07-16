@@ -53,7 +53,7 @@ void copy_file (const string &input, const string &output);
 
 void init_physics (const string &json_file, string outprefix,
                    bool is_reloading) {
-cout << "json" << endl;
+
     if (!outprefix.empty())
         ensure_existing_directory(outprefix);
     load_json(json_file, sim);

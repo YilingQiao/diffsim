@@ -44,7 +44,7 @@ void line_search_newtons_method (const NLOpt &problem, OptOptions opt,
     Tensor x = torch::zeros({n},TNOPT), g = torch::zeros({n},TNOPT);
     SpMat H(n/3,n/3);// = torch::zeros({n,n},TNOPT);
     problem.initialize(x);
-    Tensor f_old = infinity;
+    Tensor f_old = INFINITY;
     int iter;
     for (iter = 0; iter < opt.max_iter(); iter++) {
         problem.precompute(x);

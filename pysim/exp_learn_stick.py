@@ -69,7 +69,7 @@ def run_sim(steps, sim, net, goal):
 	#np.random.random(), np.random.random(), -np.random.random()],dtype=torch.float64)
 
 	for step in range(steps):
-		remain_time = torch.tensor([(steps - step)/50],dtype=torch.float64)
+		remain_time = torch.tensor([(steps - step)/steps],dtype=torch.float64)
 		net_output = net(torch.cat([sim.obstacles[0].curr_state_mesh.dummy_node.x - goal,
 									sim.obstacles[0].curr_state_mesh.dummy_node.v, 
 									remain_time]))
@@ -88,10 +88,10 @@ def run_sim(steps, sim, net, goal):
 def do_train(cur_step,optimizer,sim,net):
 	epoch = 0
 	while True:
-		steps = int(1*15*spf)
+		steps = int(1*20*spf)
 		reset_sim(sim)
 
-		sigma = 0.4
+		sigma = 0.1
 		x = np.random.random()*sigma - 0.5*sigma + np.random.randint(2)*2-1
 
 		goal = torch.tensor([0.0000, 0.0000, 0.0000,
@@ -154,7 +154,7 @@ with open(out_path+('/log%s.txt'%timestamp),'w',buffering=1) as f:
 		print("load: %s\n success" % torch_model_path)
 
 	lr = 0.001
-	momentum = 0.9
+	momentum = 0.6
 	f.write('lr={} momentum={}\n'.format(lr,momentum))
 	#optimizer = torch.optim.SGD([{'params':net.parameters(),'lr':lr}],momentum=momentum)
 	optimizer = torch.optim.Adam(net.parameters(),lr=lr)

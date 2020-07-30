@@ -417,7 +417,7 @@ bool collision_test (Impact::Type type, const Node *node0, const Node *node1,
            a2 = stp(x1, v2, v3) + stp(v1, x2, v3) + stp(v1, v2, x3),
            a3 = stp(v1, v2, v3);
   
-    Tensor t = solve_cubic(a3, a2, a1, a0);
+    Tensor t = solve_cubic(a3, a2, a1, a0).detach();
     int nsol = t.size(0);
 
     for (int i = 0; i < nsol; i++) {
@@ -845,7 +845,7 @@ vector<Tensor> compute_derivative(real_1d_array &ans, ImpactZone *zone,
     Tensor grad_w = torch::from_blob(dldw0.getcontent(), {ncon*4}, TNOPT).clone();
     Tensor grad_n = torch::from_blob(dldn0.getcontent(), {ncon* 3}, TNOPT).clone();
     delete zone;
-    return {grad_xold, grad_w*0, grad_n*0};
+    return {grad_xold, grad_w, grad_n};
 }
 
 vector<Tensor> apply_inelastic_projection_backward(Tensor dldx_tn, Tensor ans_tn, Tensor q_tn, Tensor r_tn, Tensor lam_tn, Tensor sm1_tn, Tensor legals_tn, ImpactZone *zone) {

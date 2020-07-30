@@ -40,7 +40,7 @@ using torch::Tensor;
 template <typename T> struct Min {
     Tensor key;
     T val;
-    Min (): key(infinity), val() {}
+    Min (): key(INFINITY), val() {}
     void add (Tensor key, T val) {
         if ((key < this->key).template item<int>()) {
             this->key = key;

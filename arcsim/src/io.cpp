@@ -195,7 +195,7 @@ vector<Face*> triangulate (const vector<Vert*> &verts) {
     Tensor best_min_angle = ZERO;
     int best_root = -1;
     for (int i = 0; i < n; i++) {
-        Tensor min_angle = infinity;
+        Tensor min_angle = INFINITY;
         const Vert *vert0 = verts[i];
         for (int j = 2; j < n; j++) {
             const Vert *vert1 = verts[(i+j-1)%n], *vert2 = verts[(i+j)%n];

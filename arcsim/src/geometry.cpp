@@ -44,7 +44,7 @@ Tensor sub_signed_vf_distance(const Tensor &y0, const Tensor &y1, const Tensor &
     w[0]=w[1]=w[2]=w[3]=ZERO;
     if ((norm2(*n) < 1e-6).item<int>()) {
         over = true;
-        return infinity;
+        return INFINITY;
     }
     *n = normalize(*n);
     Tensor h = -dot(y0, *n);
@@ -76,7 +76,7 @@ Tensor sub_signed_ee_distance(const Tensor &x1mx0, const Tensor &y0mx0, const Te
     w[0]=w[1]=w[2]=w[3]=ZERO;
     if ((norm2(*n) < 1e-6).item<int>()) {
         over = true;
-        return infinity;
+        return INFINITY;
     }
     *n = normalize(*n);
     Tensor h = -dot(y0mx0, *n);
@@ -206,7 +206,7 @@ Tensor unsigned_vf_distance (const Tensor &x,
     Tensor _w[4]; if (!w) w = _w;
     w[0]=w[1]=w[2]=w[3]=ZERO;
     *n=ZERO3;
-    Tensor d = infinity;
+    Tensor d = INFINITY;
     set_unsigned_vf_distance(x, y0, y1, y2, &d, n, &w[0], &w[1], &w[2], &w[3]);
     return d;
 }
@@ -218,7 +218,7 @@ Tensor unsigned_ee_distance (const Tensor &x0, const Tensor &x1,
     Tensor _w[4]; if (!w) w = _w;
     w[0]=w[1]=w[2]=w[3]=ZERO;
     *n=ZERO3;
-    Tensor d = infinity;
+    Tensor d = INFINITY;
     set_unsigned_ee_distance(x0, x1, y0, y1, &d, n, &w[0], &w[1], &w[2], &w[3]);
     return d;
 }

@@ -62,7 +62,7 @@ public:
     //Tensor euler, trans, scale;
     //Tensor x, x0, v, acceleration;
 
-    Obstacle (): start_time(ZERO), end_time(infinity), activated(false) {}
+    Obstacle (): start_time(ZERO), end_time(INFINITY), activated(false) {}
 };
 
 // // Default arguments imply it's a static obstacle

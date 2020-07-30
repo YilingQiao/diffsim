@@ -47,7 +47,7 @@ using torch::Tensor;
 #define  ZERO3 (torch::zeros({3}, TNOPT))
 #define  ZERO6 (torch::zeros({6}, TNOPT))
 #define  ZERO33 (torch::zeros({3,3}, TNOPT))
-//#define  infinity (std::numeric_limits<double>::infinity()*ONE)
+#define  INFINITY (std::numeric_limits<double>::infinity()*ONE)
 
 const torch::TensorOptions TNOPT = torch::dtype(torch::kF64);
 // const Tensor EYE3=torch::eye(3,TNOPT);
@@ -58,7 +58,7 @@ const torch::TensorOptions TNOPT = torch::dtype(torch::kF64);
 // const Tensor ZERO3=(torch::zeros({3}, TNOPT));
 // const Tensor ZERO6=(torch::zeros({6}, TNOPT));
 // const Tensor ZERO33=(torch::zeros({3,3}, TNOPT));
-const Tensor infinity = std::numeric_limits<double>::infinity()*ONE;
+//const Tensor infinity = std::numeric_limits<double>::infinity()*ONE;
 
 inline Tensor perp (const Tensor &u) {return torch::stack({-u[1],u[0]});}
 

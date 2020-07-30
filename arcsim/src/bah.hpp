@@ -36,7 +36,7 @@ using torch::Tensor;
 
 struct Box {
     Tensor umin, umax;
-    Box (): umin(torch::stack({infinity,infinity})), umax(torch::stack({-infinity,-infinity})) {}
+    Box (): umin(torch::stack({INFINITY,INFINITY})), umax(torch::stack({-INFINITY,-INFINITY})) {}
     Box (const Tensor &u): umin(u), umax(u) {}
 	Box &operator+= (const Tensor &u);
 	Box &operator+= (const Box &box);

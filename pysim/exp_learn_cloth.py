@@ -78,8 +78,12 @@ def reset_sim(sim, epoch, goal):
 # 	return loss
 def get_loss(ans, goal):
 	#[0.0000, 0.0000, 0.0000, 0.7500, 0.6954, 0.3159
-	dif = ans - goal
-	loss = torch.norm(dif.narrow(0, 3, 3), p=2)
+	diff = ans - goal
+	loss = torch.norm(diff.narrow(0, 3, 3), p=2)
+
+	print(ans)
+	print(goal)
+	print(loss)
 
 	return loss
 
@@ -101,8 +105,6 @@ def run_sim(steps, sim, net, goal):
 			net_input.append(sim.cloths[0].mesh.nodes[handles[i]].x)
 			net_input.append(sim.cloths[0].mesh.nodes[handles[i]].v)
 
-
-
 		# dis = sim.obstacles[0].curr_state_mesh.dummy_node.x - goal
 		# net_input.append(dis.narrow(0, 3, 3))
 		net_input.append(remain_time)
@@ -112,11 +114,8 @@ def run_sim(steps, sim, net, goal):
 		# outputs = net_output.view([4, 3])
 		
 		for i in range(len(handles)):
-			# sim_input = net_output
 			sim_input = torch.cat([torch.tensor([0, 0],dtype=torch.float64), net_output[i].view([1])])
 			sim.cloths[0].mesh.nodes[handles[i]].v += sim_input 
-
-		# sim.gravity = outputs[1]
 
 		arcsim.sim_step()
 
@@ -127,25 +126,12 @@ def run_sim(steps, sim, net, goal):
 		ans1 = ans1 + node.x
 	ans1 /= cnt
 
-	# ans1 = sim.cloths[0].mesh.nodes[62].x
 	ans1 = torch.cat([torch.tensor([0, 0, 0],dtype=torch.float64),
 							ans1])
 
 	# ans  = ans1
 	ans = sim.obstacles[0].curr_state_mesh.dummy_node.x
 	
-	# cnt = 0
-	# ans1 = torch.tensor([0, 0, 0],dtype=torch.float64)
-	# for node in sim.cloths[0].mesh.nodes:
-	# 	cnt += 1
-	# 	ans1 = ans1 + node.x
-	# ans1 /= cnt
-
-	# #print(ans)
-	# ans = (ans + torch.cat([torch.tensor([0, 0, 0],dtype=torch.float64),
-	# 						ans1]))/2
-
-	# ans  = sim.obstacles[0].curr_state_mesh.dummy_node.x
 	loss = get_loss(ans1, goal)
 
 	return loss, ans
@@ -154,10 +140,10 @@ def do_train(cur_step,optimizer,sim,net):
 	epoch = 0
 	while True:
 		# steps = int(1*15*spf)
-		steps = 40
+		steps = 20
 
-		sigma = 0
-		z = np.random.random()*sigma + 1
+		sigma = 0.05
+		z = np.random.random()*sigma + 0.5
 
 		y = np.random.random()*sigma - sigma/2
 		x = np.random.random()*sigma - sigma/2
@@ -169,25 +155,12 @@ def do_train(cur_step,optimizer,sim,net):
 		goal = goal + ini_co
 
 		reset_sim(sim, epoch, goal)
-		# goal = torch.tensor([0.0000, 0.0000, 0.0000,
-		# x, 
-		# 0, 
-		# 2+np.random.random()*sigma - 0.5*sigma],dtype=torch.float64)
 
 		st = time.time()
 		loss, ans = run_sim(steps, sim, net, goal)
 		en0 = time.time()
 		
 		optimizer.zero_grad()
-
-		
-		# print('step={}'.format(cur_step))
-		# print('loss={}'.format(loss.data))
-		# f.write('step {}: loss={}\n'.format(cur_step, loss.data))
-		# print('step {}: loss={}\n'.format(cur_step, loss.data))
-
-		print(loss)
-		print(ans)
 
 		loss.backward()
 

@@ -111,13 +111,13 @@ void load_json (const string &configFilename, Simulation &sim) {
         parse_tn<1>(sim.frame_time, json["frame_time"]);
         parse(sim.frame_steps, json["frame_steps"], 1);
         sim.step_time = sim.frame_time/sim.frame_steps;
-        parse_tn<1>(sim.end_time, json["end_time"], infinity);
+        parse_tn<1>(sim.end_time, json["end_time"], INFINITY);
         parse(sim.end_frame, json["end_frame"], 2147483647);
     } else if (!json["timestep"].empty()) {
         parse_tn<1>(sim.step_time, json["timestep"]);
         parse(sim.frame_steps, json["save_frames"], 1);
         sim.frame_time = sim.step_time*sim.frame_steps;
-        parse_tn<1>(sim.end_time, json["duration"], infinity);
+        parse_tn<1>(sim.end_time, json["duration"], INFINITY);
         sim.end_frame = 2147483647;
     }
     sim.time = ZERO;
@@ -289,19 +289,19 @@ void parse (Cloth::Material *&material, const Json::Value &json) {
     material->bending = material->bending * bending_mult;
     // cout << material->bending << endl;
     parse_tn<1>(material->damping, json["damping"], ZERO);
-    parse_tn<1>(material->strain_min, json["strain_limits"][0u], -infinity);
-    parse_tn<1>(material->strain_max, json["strain_limits"][1], infinity);
-    parse_tn<1>(material->yield_curv, json["yield_curv"], infinity);
+    parse_tn<1>(material->strain_min, json["strain_limits"][0u], -INFINITY);
+    parse_tn<1>(material->strain_max, json["strain_limits"][1], INFINITY);
+    parse_tn<1>(material->yield_curv, json["yield_curv"], INFINITY);
     parse_tn<1>(material->weakening, json["weakening"], ZERO);
 }
 
 void parse (Cloth::Remeshing &remeshing, const Json::Value &json) {
-    parse_tn<1>(remeshing.refine_angle, json["refine_angle"], infinity);
-    parse_tn<1>(remeshing.refine_compression, json["refine_compression"], infinity);
-    parse_tn<1>(remeshing.refine_velocity, json["refine_velocity"], infinity);
-    parse_tn<1>(remeshing.size_min, json["size"][0u], -infinity);
-    parse_tn<1>(remeshing.size_max, json["size"][1], infinity);
-    parse_tn<1>(remeshing.aspect_min, json["aspect_min"], -infinity);
+    parse_tn<1>(remeshing.refine_angle, json["refine_angle"], INFINITY);
+    parse_tn<1>(remeshing.refine_compression, json["refine_compression"], INFINITY);
+    parse_tn<1>(remeshing.refine_velocity, json["refine_velocity"], INFINITY);
+    parse_tn<1>(remeshing.size_min, json["size"][0u], -INFINITY);
+    parse_tn<1>(remeshing.size_max, json["size"][1], INFINITY);
+    parse_tn<1>(remeshing.aspect_min, json["aspect_min"], -INFINITY);
 }
 
 // Other things
@@ -333,7 +333,7 @@ void parse (Motion::Point&, const Json::Value&);
 void parse (Motion &motion, const Json::Value &json) {
     parse(motion.points, json);
     for (int p = 0; p < motion.points.size(); p++)
-        if ((motion.points[p].v.scale == infinity).item<int>()) // no velocity specified
+        if ((motion.points[p].v.scale == INFINITY).item<int>()) // no velocity specified
             fill_in_velocity(motion, p);
 }
 
@@ -341,7 +341,7 @@ void parse (Motion::Point &mp, const Json::Value &json) {
     parse_tn<1>(mp.t, json["time"]);
     parse(mp.x, json["transform"]);
     if (json["velocity"].isNull())
-        mp.v.scale = infinity; // raise a flag
+        mp.v.scale = INFINITY; // raise a flag
     else {
         parse(mp.v, json["velocity"]);
         if ((mp.v.scale == 1).item<int>())
@@ -394,7 +394,7 @@ void parse_handle (vector<Handle*> &hans, const Json::Value &json,
     }
     Tensor start_time, end_time, fade_time;
     parse_tn<1>(start_time, json["start_time"], ZERO);
-    parse_tn<1>(end_time, json["end_time"], infinity);
+    parse_tn<1>(end_time, json["end_time"], INFINITY);
     parse_tn<1>(fade_time, json["fade_time"], ZERO);
     for (int h = nhans; h < hans.size(); h++) {
         hans[h]->start_time = start_time;
@@ -489,7 +489,7 @@ void parse_obstacles (vector<Obstacle> &obstacles, const Json::Value &json,
             obs.base_mesh.isCloth = false;
             obs.transform_spline = (i<motions.size()) ? &motions[i] : NULL;
             obs.start_time = ZERO;
-            obs.end_time = infinity;
+            obs.end_time = INFINITY;
             obs.get_mesh(ZERO);
             obstacles.push_back(obs);
         }
@@ -526,7 +526,7 @@ void parse_obstacle (Obstacle &obstacle, const Json::Value &json,
     parse(m, json["motion"], -1);
     obstacle.transform_spline = (m != -1) ? &motions[m] : NULL;
     parse_tn<1>(obstacle.start_time, json["start_time"], ZERO);
-    parse_tn<1>(obstacle.end_time, json["end_time"], infinity);
+    parse_tn<1>(obstacle.end_time, json["end_time"], INFINITY);
 
     obstacle.get_mesh(ZERO);
 
@@ -577,7 +577,7 @@ void parse_obstacle (Obstacle &obstacle, const Json::Value &json,
     parse(m, json["motion"], -1);
     obstacle.transform_spline = (m != -1) ? &motions[m] : NULL;
     parse_tn<1>(obstacle.start_time, json["start_time"], ZERO);
-    parse_tn<1>(obstacle.end_time, json["end_time"], infinity);
+    parse_tn<1>(obstacle.end_time, json["end_time"], INFINITY);
 
     obstacle.get_mesh(ZERO);
 

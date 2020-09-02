@@ -800,17 +800,19 @@ extern int genmmd_(int*, int*, int*, int*, int*, int*, int*, int*, int*,
 /* otherwise, declare them, since they are not always declared */
 /* in math.h (e.g., gcc -std=c89 -pedantic); these are for     */
 /* gcc 3.3.1                                                   */
-
+/*
 #ifndef isnan
 extern int isnan(double);
 #endif
+*/
 #ifndef finite
 extern int finite(double);
 #endif
+/*
 #ifndef isinf
 extern int isinf(double);
 #endif
-
+*/ // We do not use gcc 3.3 in diffsim (#4)
 extern int taucs_potrf(char*, int*, taucs_datatype*, int*, int*);
 extern int taucs_trsm(char *, char *, char *, char *, 
 			int*, int*, taucs_datatype*, taucs_datatype*, int *, 

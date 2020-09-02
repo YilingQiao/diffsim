@@ -15,6 +15,14 @@
 ```bash
 conda create -n diffsim python=3.6 -y
 conda activate diffsim
+
+# install dependencies
+sudo apt install gcc-4.8 gcc-5
+sudo apt-get install libblas-dev liblapack-dev
+sudo apt-get install libopenblas-dev
+sudo apt-get install gfortran
+sudo apt-install scons
+sudo apt-install libpng-dev
 ```
 
 2. Download and build the project.
